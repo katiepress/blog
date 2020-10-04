@@ -1,9 +1,10 @@
 ---
-title: "Hello R Markdown"
-author: "Frida Gomam"
-date: 2015-07-23T21:13:14-05:00
+title: "The Truth is Out There"
+author: "Katie Press"
+date: 2020-10-04
 categories: ["R"]
-tags: ["R Markdown", "plot", "regression"]
+featured: true
+tags: ["Text Analysis", "X-Files", "Web Scraping"]
 ---
 
 ```{r setup, include=FALSE}

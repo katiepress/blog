@@ -71,7 +71,7 @@ disable_profile = true
 # Add your social network accounts to the profile section on the left
 # by entering your username. The links to your account will be
 # created automatically.
-    github          = "gohugoio"
+    github          = ""
     gitlab          = ""
     bitbucket       = ""
     jsfiddle        = ""
@@ -98,7 +98,7 @@ disable_profile = true
     facebook        = ""
     facebook_admin  = ""
     twitter_domain  = ""
-    twitter         = "gohugoio"
+    twitter         = ""
 
 # Enable and disable widgets for the right sidebar
 [params.widgets]

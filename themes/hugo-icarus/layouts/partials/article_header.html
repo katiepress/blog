@@ -11,11 +11,11 @@
             <i class="fa fa-calendar"></i>
             <time datetime="{{ .Date }}" itemprop="datePublished">{{ .Date.Format .Site.Params.date_format }}</time>
             &middot;
-            {{ .WordCount }}
+           <!-- {{ .WordCount }} 
             {{ with .Site.Data.l10n.articles.words }}{{.}}{{end}}
             &middot;
             {{ .ReadingTime }}
-            {{ with .Site.Data.l10n.articles.readingtime }}{{.}}{{end}}
+            {{ with .Site.Data.l10n.articles.readingtime }}{{.}}{{end}}-->
         </div>
         {{ end }}
         {{ if isset .Params "categories" }}

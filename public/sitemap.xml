@@ -48,58 +48,8 @@
   </url>
   
   <url>
-    <loc>/tags/markdown/</loc>
-    <lastmod>2017-05-20T12:10:51+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2017/05/20/markdown-cheat-sheet/</loc>
-    <lastmod>2017-05-20T12:10:51+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2017/05/20/using-the-gallery-shortcode/</loc>
-    <lastmod>2017-05-20T12:00:23+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2017/05/20/formulas-with-mathjax-longer-title-right-here/</loc>
-    <lastmod>2017-05-20T11:58:06+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/about/</loc>
     <lastmod>2017-05-19T21:49:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/golang/</loc>
-    <lastmod>2015-10-02T21:49:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/10/02/how-to-add-pages-to-the-menu/</loc>
-    <lastmod>2015-10-02T21:49:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/hugo/</loc>
-    <lastmod>2015-10-02T21:49:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/programming/</loc>
-    <lastmod>2015-10-02T21:49:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/programming/</loc>
-    <lastmod>2015-10-02T21:49:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/theme/</loc>
-    <lastmod>2015-10-02T21:49:20+02:00</lastmod>
   </url>
   
 </urlset>

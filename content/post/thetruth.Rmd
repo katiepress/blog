@@ -4,7 +4,7 @@ author: "Katie Press"
 date: 2020-10-04
 categories: ["R"]
 featured: true
-banner: "css/images/thetruth1_plot1.png"
+banner: "css/images/thetruth1_plot1 copy 2.png"
 tags: ["Text Analysis", "X-Files", "Web Scraping"]
 output: 
   blogdown::html_page:

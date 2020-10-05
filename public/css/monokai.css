@@ -10,7 +10,7 @@ Monokai style - ported by Luigi Maselli - http://grigio.org
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: #232928; /* 272822*/
+  background: #232928 ; /* 3f3f3f 272822*/
   -webkit-text-size-adjust: none;
 }
 

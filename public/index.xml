@@ -13,7 +13,7 @@
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/10/04/the-truth-is-out-there/</guid>
-      <description>I’m a huge X-Files fan. I also love working with text data. I’ve had an idea floating around for a while to do a tidy text analysis on X-Files episode scripts. But…how to get the data? That’s where web scraping comes in. The X-Files has been around long enough that there are tons of fandom sites, and you can easily find transcripts of the original 9 seasons.</description>
+      <description>I’m a huge X-Files fan. I also love working with text data. I’ve had an idea floating around for a while to do a tidy text analysis on X-Files episode scripts. The X-Files has been around long enough that there are tons of fandom sites, and you can easily find transcripts of the original 9 seasons.First, I wanted to get some basic information about the episodes, so that’s what this post will focus on.</description>
     </item>
     
   </channel>

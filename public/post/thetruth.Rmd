@@ -23,7 +23,7 @@ library(tidytext)
 ```
 
 
-I'm a huge X-Files fan. I also love working with text data. I've had an idea floating around for a while to do a tidy text analysis on X-Files episode scripts. But...how to get the data? That's where web scraping comes in. The X-Files has been around long enough that there are tons of fandom sites, and you can easily find transcripts of the original 9 seasons.First, I wanted to get some basic information about the episodes, so that's what this post will focus on. There are over 200 of them, after all! My first thought was to go to Wikipedia. There is a page with tables for each season and I can use that as the base URL for scraping. 
+I'm a huge X-Files fan. I also love working with text data. I've had an idea floating around for a while to do a tidy text analysis on X-Files episode scripts. The X-Files has been around long enough that there are tons of fandom sites, and you can easily find transcripts of the original 9 seasons.First, I wanted to get some basic information about the episodes, so that's what this post will focus on. My first thought was to go to Wikipedia. There is a page with tables for each season and I can use that as the base URL for scraping. 
 
 Packages used in this first episode:
 
@@ -31,6 +31,8 @@ Packages used in this first episode:
 - Janitor, which has a couple of functions I like to use, especially clean_names() to clean and remove special characters from column names in new datasets. 
 - Rvest, which can be used to scrape data from websites. 
 - Googlesheets4, which is an update of the original googlesheets package. I can use this to store my data because I have more than one computer I use on a regular basis.  
+- Extrafont (pretty self-explanatory).
+- Ggiraph for graph animation.
 
 Now, on to the X-Files.
 
@@ -40,11 +42,11 @@ wiki <- "https://en.wikipedia.org/wiki/List_of_The_X-Files_episodes"
 
 To find out what selector you need to look at the tables of interest, you can use a Chrome extension called SelectorGadget, or you can just right click on the specific spot on a website and choose "inspect" in the dropdown menu that comes up - which is what I usually do.
 
-![](/post/thetruth_part1_files/thetruth1_screenshot1.png){width=600px height=400px}
+![](/post/thetruth_files/thetruth1_screenshot1.png){width=600px height=400px}
 
 In this case it's pretty easy, the html nodes I'm interested in are simply "table" class. 
 
-![](/post/thetruth_part1_files/thetruth1_screenshot2.png){width=600px height=400px}
+![](/post/thetruth_files/thetruth1_screenshot2.png){width=600px height=400px}
 
 At first glance, it looks like tables 2 through 14 are "wiki episode table". That's one more than I would expect, because there are nine original seasons, and then two follow-up seasons that came out more recently (10-11). However, there are also two X-Files movies, which appear to have separate tables. I don't want to deal with those right now really, so I will leave them out when I scrape the tables. 
 
@@ -64,7 +66,7 @@ tables <- wiki %>%
   html_table(fill = TRUE)
 ```
 
-I won't show all the tables just for the sake of space, but here is the first one. It looks like the "prod code" column is going to cause issues when I try and map them to one dataframe, because in some cases there are hyperlinks which results in inconsistent column names.
+I won't show all the tables just for the sake of space, but here is the first one. It looks like the "prod code" column is going to cause issues when I try and map them to one dataframe, because in some cases there are hyperlinks which results in inconsistent column names. (Hint: the table is interactive so you can flip over to the other columns or down to the next page). 
 
 ```{r}
 head(tables[[1]]) 
@@ -160,13 +162,13 @@ table_df <- table_df %>%
   mutate(description = temp %>% flatten() %>% unlist() %>% str_trim(., side = "both"))
 ```
 
-Here's the table so far: 
+Here's the table so far. 
 
 ```{r}
 head(table_df)
 ```
 
-There is still some cleaning to be done. I have to fix the last episode of season 9, because it's actually two episodes (201/202). In the wikipedia table it's combined as one. 
+There is still some cleaning to be done. I have to fix the last episode of season 9, because it's actually two episodes (201/202). In the wikipedia table they are both on one line.
 
 ```{r}
 table_df <- table_df %>%
@@ -204,14 +206,15 @@ color.11 <- c( "#672418", "#D7542F", "#7b5d45",
 tooltip.css <- "text-align:center;font-style:bold;color:white;"
 
 my_theme <- theme(legend.position = "none",
-        axis.text = element_text(family = "Agency FB", size = 12),
+        axis.text = element_text(family = "Agency FB", size = 12, color = "#232928"),
         axis.title.y = element_blank(),
-        axis.title.x = element_text(family = "Agency FB", size = 14, vjust = -.5),
-        panel.background = element_rect(color = "#AFAEB2", fill="#232928"),
+        axis.title.x = element_text(family = "Agency FB", size = 14, vjust = -.5, color= "#232928"),
+        panel.background = element_rect(color = "#AFAEB2", fill="#232928"
+                                        ),
         panel.grid.major = element_line(color = "#AFAEB2"))
 ```
 
-Now I can plot the episodes by season and rating. The ggiraph package has a function that will add tooltips to a regular R plot, so I've added the episode number and title and it will pop up as your mouse hovers over each point. I put some additional theme formatting in my_theme that I'm not showing here due to space. But as you can see in the girafe object I decided to use the "Agency FB" font, it seemed appropriate. 
+Now I can plot the episodes by season and rating. The ggiraph package has a function that will add tooltips to a regular R plot, so I've added the episode number and title and it will pop up as your mouse hovers over each point. I put some additional theme formatting in my_theme that I'm not showing here due to space. But as you can see in the girafe object I decided to use the "Agency FB" font (it seemed appropriate). 
 
 ```{r}
 p <- table_df %>% 

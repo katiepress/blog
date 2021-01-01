@@ -6,14 +6,24 @@
     <description>Recent content on KPress R Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Truth is Out There Part II</title>
+      <link>/2021/01/01/the-truth-is-out-there-part-ii/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/2021/01/01/the-truth-is-out-there-part-ii/</guid>
+      <description>In the last “episode” I created a dataset of X-Files episodes using web scraping. The simple episode descriptions are not going to give me the depth of information I need for a real text analysis, so it’s time to get some more data!
+Many of the X-Files episode transcripts are available online, so I found a website I could use to scrape most of the text I need. First, I’m going to create a list of episode links that I can use to download the transcripts.</description>
+    </item>
+    
     <item>
       <title>The Truth is Out There</title>
       <link>/2020/10/04/the-truth-is-out-there/</link>
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/10/04/the-truth-is-out-there/</guid>
-      <description>I’m a huge X-Files fan. I also love working with text data. I’ve had an idea floating around for a while to do a tidy text analysis on X-Files episode scripts. The X-Files has been around long enough that there are tons of fandom sites, and you can easily find transcripts of the original 9 seasons.First, I wanted to get some basic information about the episodes, so that’s what this post will focus on.</description>
+      <description>I’m a huge X-Files fan. I also love working with text data. I’ve had an idea floating around for a while to do a text analysis on X-Files episode scripts - the first 9 seasons are easy to find online. First, I want to get some basic information about the episodes, so that’s what this post will focus on. My first thought was to go to Wikipedia.</description>
     </item>
     
   </channel>

@@ -4,7 +4,6 @@ author: "Katie Press"
 date: 2021-01-01
 categories: ["R"]
 featured: false
-draft: false
 banner: ""
 tags: ["Text Analysis", "X-Files", "Web Scraping"]
 output: 
@@ -109,6 +108,6 @@ ep_text &lt;- ep_text %&gt;%
     )
   ))</code></pre>
 <p>Now I’ll join the table from the previous post, by episode title.</p>
-<pre class="r"><code>#ep_text &lt;- ep_text %&gt;% left_join(table_df, by = c(&quot;source&quot; = &quot;title&quot;))</code></pre>
+<pre class="r"><code>ep_text &lt;- ep_text %&gt;% left_join(table_df, by = c(&quot;source&quot; = &quot;title&quot;))</code></pre>
 <p>And finally, save the dataset. In the next episode I’ll do some text analysis and create new charts, but I’m going to split them up at this point because this post will take forever to run and slow everything down if I keep adding.</p>
 <pre class="r"><code>saveRDS(ep_text, &quot;./ep_text.RDS&quot;)</code></pre>

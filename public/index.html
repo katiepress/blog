@@ -27,7 +27,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-10-04T00:00:00+00:00" />
+<meta property="og:updated_time" content="2021-01-01T00:00:00+00:00" />
 
     
     <meta itemprop="name" content="KPress R Blog">
@@ -157,7 +157,7 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        1
+        2
         <span>Posts</span>
       </div>
       <div class="article-info-block">
@@ -240,6 +240,156 @@
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
+        </a>
+
+        <header class="article-header">
+    <a href="/2021/01/01/the-truth-is-out-there-part-ii/">
+    <h1 class="article-title" itemprop="name">
+        The Truth is Out There Part II
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2021-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-01-01</time>
+            &middot;
+           
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="/categories/r">R</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="/tags/text-analysis">Text Analysis</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/tags/x-files">X-Files</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/tags/web-scraping">Web Scraping</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                In the last “episode” I created a dataset of X-Files episodes using web scraping. The simple episode descriptions are not going to give me the depth of information I need for a real text analysis, so it’s time to get some more data!
+Many of the X-Files episode transcripts are available online, so I found a website I could use to scrape most of the text I need. First, I’m going to create a list of episode links that I can use to download the transcripts.
+            </p>
+            <p class="article-more-link">
+                <a href="/2021/01/01/the-truth-is-out-there-part-ii/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="/2021/01/01/the-truth-is-out-there-part-ii/" data-id="cd524d5f4233ea76051302c79498067c" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="/2021/01/01/the-truth-is-out-there-part-ii/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
         <a href="/2020/10/04/the-truth-is-out-there/" itemprop="url">
             <img src="/css/images/thetruth1_plot1%20copy%202.png" class="article-banner">
         
@@ -301,7 +451,7 @@
 
         <div class="article-entry" itemprop="articleBody">
             <p>
-                I’m a huge X-Files fan. I also love working with text data. I’ve had an idea floating around for a while to do a tidy text analysis on X-Files episode scripts. The X-Files has been around long enough that there are tons of fandom sites, and you can easily find transcripts of the original 9 seasons.First, I wanted to get some basic information about the episodes, so that’s what this post will focus on.
+                I’m a huge X-Files fan. I also love working with text data. I’ve had an idea floating around for a while to do a text analysis on X-Files episode scripts - the first 9 seasons are easy to find online. First, I want to get some basic information about the episodes, so that’s what this post will focus on. My first thought was to go to Wikipedia.
             </p>
             <p class="article-more-link">
                 <a href="/2020/10/04/the-truth-is-out-there/">
@@ -452,7 +602,7 @@
                 <a class="category-list-link" href="/categories/r">
                     r
                 </a>
-                <span class="category-list-count">1</span>
+                <span class="category-list-count">2</span>
             </li>
             
         </ul>
@@ -477,7 +627,7 @@
                 <a class="category-list-link" href="/tags/text-analysis">
                     text-analysis
                 </a>
-                <span class="category-list-count">1</span>
+                <span class="category-list-count">2</span>
             </li>
             
             <li class="category-list-item">
@@ -485,7 +635,7 @@
                 <a class="category-list-link" href="/tags/web-scraping">
                     web-scraping
                 </a>
-                <span class="category-list-count">1</span>
+                <span class="category-list-count">2</span>
             </li>
             
             <li class="category-list-item">
@@ -493,7 +643,7 @@
                 <a class="category-list-link" href="/tags/x-files">
                     x-files
                 </a>
-                <span class="category-list-count">1</span>
+                <span class="category-list-count">2</span>
             </li>
             
         </ul>
@@ -557,8 +707,8 @@
 <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2020
-      Copyright © 2020, Katie Press; all rights reserved.
+      &copy; 2021
+      Copyright © 2021, Katie Press; all rights reserved.
     </div>
   </div>
 </footer>

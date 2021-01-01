@@ -23,7 +23,7 @@ library(tidytext)
 ```
 
 
-I'm a huge X-Files fan. I also love working with text data. I've had an idea floating around for a while to do a tidy text analysis on X-Files episode scripts. The X-Files has been around long enough that there are tons of fandom sites, and you can easily find transcripts of the original 9 seasons.First, I wanted to get some basic information about the episodes, so that's what this post will focus on. My first thought was to go to Wikipedia. There is a page with tables for each season and I can use that as the base URL for scraping. 
+I'm a huge X-Files fan. I also love working with text data. I've had an idea floating around for a while to do a text analysis on X-Files episode scripts - the first 9 seasons are easy to find online. First, I want to get some basic information about the episodes, so that's what this post will focus on. My first thought was to go to Wikipedia. There is a page with tables for each season and I can use that as the base URL for scraping. 
 
 Packages used in this first episode:
 
@@ -197,6 +197,11 @@ table_df <- table_df %>%
   mutate(title = str_remove_all(title, "‡")) %>% 
   mutate(full_title = paste0("Episode ", no_inseason, "\n", title))
 ```
+
+```{r}
+saveRDS(table_df, "./table_df.RDS")
+```
+
 
 ```{r include=FALSE}
 color.11 <- c( "#672418", "#D7542F", "#7b5d45",

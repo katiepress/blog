@@ -1,10 +1,10 @@
 ---
-title: "I Want To Believe"
+title: "The Truth is Out There Part II"
 author: "Katie Press"
 date: 2021-01-01
 categories: ["R"]
-featured: true
-draft: true
+featured: false
+draft: false
 banner: ""
 tags: ["Text Analysis", "X-Files", "Web Scraping"]
 output: 
@@ -21,6 +21,10 @@ library(lubridate)
 library(ggiraph)
 library(extrafont)
 library(tidytext)
+```
+
+```{r include=FALSE}
+#table_df <- read_rds("post/table_df.RDS")
 ```
 
 In the last "episode" I created a dataset of X-Files episodes using web scraping. The simple episode descriptions are not going to give me the depth of information I need for a real text analysis, so it's time to get some more data! 
@@ -137,7 +141,16 @@ ep_text <- ep_text %>%
   ))
 ```
 
+Now I'll join the table from the previous post, by episode title.
+
+```{r}
+#ep_text <- ep_text %>% left_join(table_df, by = c("source" = "title"))
+```
+
+And finally, save the dataset. In the next episode I'll do some text analysis and create new charts, but I'm going to split them up at this point because this post will take forever to run and slow everything down if I keep adding. 
 
 ```{r}
 saveRDS(ep_text, "./ep_text.RDS")
 ```
+
+

@@ -8,16 +8,6 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/x-files/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>I Want To Believe</title>
-      <link>/2021/01/01/i-want-to-believe/</link>
-      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/2021/01/01/i-want-to-believe/</guid>
-      <description>This is a test paragraph paragraph paragraph.The site has been served under the directory “/Users/katienachman/Desktop/blog”. I have tried to reopen it for you with servr::browse_last(). If you do want to start a new server, you may stop existing servers with blogdown::stop_server(), or restart R. Normally you should not need to serve the.
-head(ep_text) {&#34;columns&#34;:[{&#34;label&#34;:[&#34;source&#34;],&#34;name&#34;:[1],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;title&#34;],&#34;name&#34;:[2],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;text&#34;],&#34;name&#34;:[3],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;speaker&#34;],&#34;name&#34;:[4],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;line&#34;],&#34;name&#34;:[5],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;season&#34;],&#34;name&#34;:[6],&#34;type&#34;:[&#34;fctr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;no_overall&#34;],&#34;name&#34;:[7],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;no_inseason&#34;],&#34;name&#34;:[8],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;directed_by&#34;],&#34;name&#34;:[9],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;written_by&#34;],&#34;name&#34;:[10],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;original_air_date&#34;],&#34;name&#34;:[11],&#34;type&#34;:[&#34;date&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;prod_code&#34;],&#34;name&#34;:[12],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;no_viewers&#34;],&#34;name&#34;:[13],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;rating&#34;],&#34;name&#34;:[14],&#34;type&#34;:[&#34;dbl&#34;],&#34;align&#34;:[&#34;right&#34;]},{&#34;label&#34;:[&#34;description&#34;],&#34;name&#34;:[15],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]},{&#34;label&#34;:[&#34;full_title&#34;],&#34;name&#34;:[16],&#34;type&#34;:[&#34;chr&#34;],&#34;align&#34;:[&#34;left&#34;]}],&#34;data&#34;:[{&#34;1&#34;:&#34;1&#34;,&#34;2&#34;:&#34;PILOT&#34;,&#34;3&#34;:&#34;JOHN TRUITT: I put the time of death between eight and twelve hours ago. No visible cause&#34;</description>
-    </item>
-    
-    <item>
       <title>The Truth is Out There Part II</title>
       <link>/2021/01/01/the-truth-is-out-there-part-ii/</link>
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>

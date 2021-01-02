@@ -159,7 +159,7 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        3
+        2
         <span>Posts</span>
       </div>
       <div class="article-info-block">
@@ -238,155 +238,6 @@
     <section id="main">
     
     
-
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        <a href="/2021/01/01/i-want-to-believe/" itemprop="url">
-            <img src="/css/images/thetruth1_plot1%20copy%202.png" class="article-banner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="/2021/01/01/i-want-to-believe/">
-    <h1 class="article-title" itemprop="name">
-        I Want To Believe
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2021-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-01-01</time>
-            &middot;
-           
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="/categories/r">R</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="/tags/text-analysis">Text Analysis</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="/tags/x-files">X-Files</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                This is a test paragraph paragraph paragraph.The site has been served under the directory “/Users/katienachman/Desktop/blog”. I have tried to reopen it for you with servr::browse_last(). If you do want to start a new server, you may stop existing servers with blogdown::stop_server(), or restart R. Normally you should not need to serve the.
-head(ep_text) {"columns":[{"label":["source"],"name":[1],"type":["chr"],"align":["left"]},{"label":["title"],"name":[2],"type":["chr"],"align":["left"]},{"label":["text"],"name":[3],"type":["chr"],"align":["left"]},{"label":["speaker"],"name":[4],"type":["chr"],"align":["left"]},{"label":["line"],"name":[5],"type":["chr"],"align":["left"]},{"label":["season"],"name":[6],"type":["fctr"],"align":["left"]},{"label":["no_overall"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["no_inseason"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["directed_by"],"name":[9],"type":["chr"],"align":["left"]},{"label":["written_by"],"name":[10],"type":["chr"],"align":["left"]},{"label":["original_air_date"],"name":[11],"type":["date"],"align":["right"]},{"label":["prod_code"],"name":[12],"type":["chr"],"align":["left"]},{"label":["no_viewers"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["rating"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["description"],"name":[15],"type":["chr"],"align":["left"]},{"label":["full_title"],"name":[16],"type":["chr"],"align":["left"]}],"data":[{"1":"1","2":"PILOT","3":"JOHN TRUITT: I put the time of death between eight and twelve hours ago. No visible cause"
-            </p>
-            <p class="article-more-link">
-                <a href="/2021/01/01/i-want-to-believe/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="/2021/01/01/i-want-to-believe/" data-id="0c6cc4514d5f9a54f0ce523463aa513f" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="/2021/01/01/i-want-to-believe/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -711,32 +562,6 @@ Many of the X-Files episode transcripts are available online, so I found a websi
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="/2021/01/01/i-want-to-believe/" class="thumbnail">
-                    
-            `            <span style="background-image:url(/css/images/thetruth1_plot1%20copy%202.png)" alt="I Want To Believe" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    
-                    <p class="item-category">
-                        
-                        <a class="article-category-link" href="/categories/r">
-                        R
-                        </a>
-                    </p>
-                    
-                    
-                    <p class="item-title"><a href="/2021/01/01/i-want-to-believe/" class="title">I Want To Believe</a></p>
-                    <p class="item-date">
-                        <time datetime="2021-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-01-01</time>
-                    </p>
-                </div>
-            </li>
-            
-            <li>
-                <div class="item-thumbnail">
                     <a href="/2020/10/04/the-truth-is-out-there/" class="thumbnail">
                     
             `            <span style="background-image:url(/css/images/thetruth1_plot1%20copy%202.png)" alt="The Truth is Out There" class="thumbnail-image"></span>
@@ -779,7 +604,7 @@ Many of the X-Files episode transcripts are available online, so I found a websi
                 <a class="category-list-link" href="/categories/r">
                     r
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">2</span>
             </li>
             
         </ul>
@@ -804,7 +629,7 @@ Many of the X-Files episode transcripts are available online, so I found a websi
                 <a class="category-list-link" href="/tags/text-analysis">
                     text-analysis
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">2</span>
             </li>
             
             <li class="category-list-item">
@@ -820,7 +645,7 @@ Many of the X-Files episode transcripts are available online, so I found a websi
                 <a class="category-list-link" href="/tags/x-files">
                     x-files
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">2</span>
             </li>
             
         </ul>

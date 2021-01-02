@@ -157,7 +157,7 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        3
+        2
         <span>Posts</span>
       </div>
       <div class="article-info-block">
@@ -236,156 +236,6 @@
     <section id="main">
     
     
-
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="/2021/01/01/i-want-to-believe/">
-    <h1 class="article-title" itemprop="name">
-        I Want To Believe
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2021-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-01-01</time>
-            &middot;
-           
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="/categories/r">R</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="/tags/text-analysis">Text Analysis</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="/tags/x-files">X-Files</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="/tags/web-scraping">Web Scraping</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                In this episode, I’ll be using data that was scraped in the previous post, The Truth Is Out There Part II. I will be using methods from the tidytext package, many of which are outlined in the free eBook Tidy Text Mining, which I highly recommend.
-words_df &lt;- ep_text %&gt;% select(-text, -title, -description, -prod_code) %&gt;% select(season, source, no_overall, everything()) %&gt;% unnest_tokens(word, line) %&gt;% mutate(speaker = str_to_title(speaker)) Delete the stop words
-            </p>
-            <p class="article-more-link">
-                <a href="/2021/01/01/i-want-to-believe/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="/2021/01/01/i-want-to-believe/" data-id="087ff1e59e514e7e4a241e53e760242c" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="/2021/01/01/i-want-to-believe/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -752,7 +602,7 @@ Many of the X-Files episode transcripts are available online, so I found a websi
                 <a class="category-list-link" href="/categories/r">
                     r
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">2</span>
             </li>
             
         </ul>
@@ -777,7 +627,7 @@ Many of the X-Files episode transcripts are available online, so I found a websi
                 <a class="category-list-link" href="/tags/text-analysis">
                     text-analysis
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">2</span>
             </li>
             
             <li class="category-list-item">
@@ -785,7 +635,7 @@ Many of the X-Files episode transcripts are available online, so I found a websi
                 <a class="category-list-link" href="/tags/web-scraping">
                     web-scraping
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">2</span>
             </li>
             
             <li class="category-list-item">
@@ -793,7 +643,7 @@ Many of the X-Files episode transcripts are available online, so I found a websi
                 <a class="category-list-link" href="/tags/x-files">
                     x-files
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">2</span>
             </li>
             
         </ul>

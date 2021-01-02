@@ -8,16 +8,6 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>I Want To Believe</title>
-      <link>/2021/01/01/i-want-to-believe/</link>
-      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/2021/01/01/i-want-to-believe/</guid>
-      <description>In this episode, I’ll be using data that was scraped in the previous post, The Truth Is Out There Part II. I will be using methods from the tidytext package, many of which are outlined in the free eBook Tidy Text Mining, which I highly recommend.
-words_df &amp;lt;- ep_text %&amp;gt;% select(-text, -title, -description, -prod_code) %&amp;gt;% select(season, source, no_overall, everything()) %&amp;gt;% unnest_tokens(word, line) %&amp;gt;% mutate(speaker = str_to_title(speaker)) Delete the stop words</description>
-    </item>
-    
-    <item>
       <title>The Truth is Out There Part II</title>
       <link>/2021/01/01/the-truth-is-out-there-part-ii/</link>
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>

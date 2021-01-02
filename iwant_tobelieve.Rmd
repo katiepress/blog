@@ -1,0 +1,28 @@
+---
+title: "I Want To Believe"
+author: "Katie Press"
+date: 2021-01-01
+categories: ["R"]
+featured: true
+draft: true
+banner: "css/images/thetruth1_plot1 copy 2.png"
+tags: ["Text Analysis", "X-Files"]
+output: 
+  blogdown::html_page:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, show=TRUE)
+library(tidyverse)
+library(rvest)
+library(janitor)
+library(lubridate)
+library(ggiraph)
+library(extrafont)
+library(tidytext)
+```
+
+```{r include=FALSE}
+table_df <- read_rds("./table_df.RDS")
+```

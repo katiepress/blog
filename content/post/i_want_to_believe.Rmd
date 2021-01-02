@@ -1,0 +1,47 @@
+---
+title: "I Want To Believe"
+author: "Katie Press"
+date: 2021-01-01
+categories: ["R"]
+featured: false
+draft: true 
+banner: ""
+tags: ["Text Analysis", "X-Files", "Web Scraping"]
+output: 
+  blogdown::html_page:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, show=TRUE)
+library(tidyverse)
+library(rvest)
+library(janitor)
+library(lubridate)
+library(ggiraph)
+library(extrafont)
+library(tidytext)
+```
+
+```{r include=FALSE}
+ep_text <- read_rds("./ep_text.RDS")
+```
+
+In this episode, I'll be using data that was scraped in the previous post, [The Truth Is Out There Part II](http://127.0.0.1:4321/2021/01/01/the-truth-is-out-there-part-ii/). I will be using methods from the tidytext package, many of which are outlined in the free eBook [Tidy Text Mining](https://www.tidytextmining.com/), which I highly recommend.
+
+
+```{r}
+words_df <- ep_text %>% 
+  select(-text, -title, -description, -prod_code) %>% 
+  select(season, source, no_overall, everything()) %>% 
+  unnest_tokens(word, line) %>% 
+  mutate(speaker = str_to_title(speaker))
+```
+
+Delete the stop words
+```{r}
+data("stop_words")
+
+words_df <- anti_join(words_df, stop_words)
+```
+

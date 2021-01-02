@@ -5,4 +5,6 @@ menu: main
 title: About
 ---
 
-Add some information about yourself.
+I'm an R expert and data enthusiast from Madison, Wisconsin. I love learning new coding languages and working with data. 
+
+<img src="/about/_index_files/tuxedo2.jpg" alt="" width="200px" height="400px"/>

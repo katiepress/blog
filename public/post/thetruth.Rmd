@@ -249,3 +249,8 @@ google_df <- googlesheets4::gs4_create("xfles_episodes",
                                    sheets = table_df)
 ```
 
+
+```{r}
+saveRDS(table_df, "./table_df.RDS")
+```
+

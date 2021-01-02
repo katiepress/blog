@@ -500,7 +500,7 @@ code {
   }
 }
 */
-
+/*january*/
 #sub-nav #profile-nav #profile-anchor {
   display: none; /*used to be display: block*/
   height: 40px;
@@ -515,7 +515,7 @@ code {
   clear: both;
 }
 #sub-nav #profile-nav .avatar {
-  display: none; /*was blank, added this line*/
+  display: none; /*was blank, added this line january*/
 }
 #sub-nav #profile-nav .fa {
   float: left;

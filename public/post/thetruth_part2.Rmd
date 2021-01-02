@@ -152,4 +152,8 @@ And finally, save the dataset. In the next episode I'll do some text analysis an
 saveRDS(ep_text, "./ep_text.RDS")
 ```
 
+```{r include=FALSE}
+saveRDS(ep_text, "~/Desktop/blog/content/post/ep_text.RDS")
+```
+
 

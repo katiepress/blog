@@ -2226,3 +2226,8 @@ ol.toc {
 .highlight .code .selector-id {
   font-weight: bold;
 }
+.mc_embed_signup .title {
+  line-height: 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}

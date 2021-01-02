@@ -1,0 +1,40 @@
+---
+title: "I Want To Believe"
+author: "Katie Press"
+date: 2021-01-01
+categories: ["R"]
+featured: false
+draft: true
+banner: ""
+tags: ["Text Analysis", "X-Files"]
+output: 
+  blogdown::html_page:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, show=TRUE)
+library(tidyverse)
+library(rvest)
+library(janitor)
+library(lubridate)
+library(ggiraph)
+library(extrafont)
+library(tidytext)
+```
+
+```{r eval=FALSE, include=FALSE}
+ep_text <- readRDS("~/Desktop/blog/content/post/ep_text.RDS")
+```
+
+
+Hello, this is a test post. Now let's look at some data. 
+
+```{r}
+data(mtcars)
+
+mtcars
+
+```
+
+

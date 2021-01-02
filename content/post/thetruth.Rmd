@@ -23,6 +23,7 @@ library(tidytext)
 ```
 
 
+
 I'm a huge X-Files fan. I also love working with text data. I've had an idea floating around for a while to do a text analysis on X-Files episode scripts - the first 9 seasons are easy to find online. First, I want to get some basic information about the episodes, so that's what this post will focus on. My first thought was to go to Wikipedia. There is a page with tables for each season and I can use that as the base URL for scraping. 
 
 Packages used in this first episode:

@@ -20,7 +20,6 @@
     <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}"/>
     <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
     <link rel="stylesheet" href="{{ "css/font-awesome.min.css" | absURL }}">
-    <link rel="stylesheet" href="{{ "css/monokai.css" | absURL }}"> 
     <link rel="stylesheet" href="{{ "fancybox/jquery.fancybox.css" | absURL }}">
     {{ range .Site.Params.custom_css }}
     <link rel="stylesheet" href="{{ . | absURL }}">
@@ -46,3 +45,7 @@
 </head>
 <body>
 <div class="container">
+
+<link rel="stylesheet" href="{{"css/tomorrow-night-eighties.css" | absURL}}" rel="stylesheet" id="theme-stylesheet">
+<script src="{{ "js/highlight.pack.js" | absURL }}"></script>
+<script>hljs.initHighlightingOnLoad();</script>

@@ -30,6 +30,8 @@ library(extrafont)
 library(tidytext)
 ```
 
+# Background
+
 I've had an idea floating around for a while to do a tidy text analysis on X-Files episode scripts. The X-Files has been around long enough that there are tons of fandom sites, and you can easily find transcripts of the original 9 seasons.First, I wanted to get some basic information about the episodes, so that's what this post will focus on. My first thought was to go to Wikipedia. There is a page with tables for each season and I can use that as the base URL for scraping. 
 
 Packages used in this first episode:
@@ -43,16 +45,13 @@ Packages used in this first episode:
 
 Now, on to the X-Files.
 
-```{r}
-wiki <- "https://en.wikipedia.org/wiki/List_of_The_X-Files_episodes"
-```
-
-
+## Scraping from Wikipedia Tables
 To find out what selector you need to look at the tables of interest, you can use a Chrome extension called SelectorGadget, or you can just right click on the specific spot on a website and choose "inspect" in the dropdown menu that comes up - which is what I usually do.
 
 In this case it's pretty easy, the html nodes I'm interested in are simply "table" class. At first glance, it looks like tables 2 through 14 are "wiki episode table". That's one more than I would expect, because there are nine original seasons, and then two follow-up seasons that came out more recently (10-11). However, there are also two X-Files movies, which appear to have separate tables. I don't want to deal with those right now really, so I will leave them out when I scrape the tables. 
 
 ```{r}
+wiki <- "https://en.wikipedia.org/wiki/List_of_The_X-Files_episodes"
 
 wiki %>% 
   read_html() %>% 
@@ -126,6 +125,7 @@ table_df <- table_df %>%
          no_viewers = as.numeric(word(no_viewers, 1, sep = "\\[")))
 ```
 
+## Scraping Data from IMDB
 I also thought I would get some episode ratings from IMDB as well. First I'll go to the IMDB link for X-Files episodes. Now this is a situation where I will have to navigate to different pages because there is one page for every season. However, all of the pages can be reached using the same link as a base, and pasting the season number onto the end of the string. This code results in a list of 11 links for the read_html function to follow.
 
 ```{r}
@@ -175,6 +175,7 @@ Here's the table so far.
 table_df
 ```
 
+## Plotting Episode Ratings
 There is still some cleaning to be done. I have to fix the last episode of season 9, because it's actually two episodes (201/202). In the wikipedia table they are both on one line.
 
 ```{r}

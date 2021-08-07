@@ -8,44 +8,146 @@
 // 5. Remove `hljs-` of all CSS class name. E.g : `.hljs-comment` becomes `.comment`
 // 6. Comment line 61 (`'themes/tranquilpeak',`) of `source/_css/tranquilpeak.scss` file
 // 7. Run `grunt buildProd` to build the theme and see the result
+// atom 1 dark reasonable, base 16 gigavolt, material palenight, nebula, base 16 porple, QTcreator dark, github dark
 /*
 // Default code block
 pre > code {
-    background: ;
-    color: ;
+    background: #282c34;
+    color: #abb2bf;
 }
 
 // Default inline code
 code {
-    background-color: ;
+    background-color: #282c34;
 }
 
 // Tabbed code block tab
 // If your theme is dark then use a lighter background
 // to see clearly which tab is active
 .codeblock--tabbed figcaption .tab.active {
-    background: ;
-    color: ;
+    background: #282c34;
+    color: #abb2bf;
 }
 
 // highlight code block
 figure.highlight,
 .codeblock {
-    background: ;
-    color: ;
+    background: #282c34;
+    color: #abb2bf;
 
     figcaption {
-        background: ;
-        color: ;
+        background: #282c34;
+        color: #abb2bf;
     }
     .gutter {
-        background: ;
-        border-right-color: ;
+        background: #282c34;
+        border-right-color: #e6e6e6;
         .line {
-            color: ;
+            color: #aaaaaa;
         }
     }
     // PUT YOUR THEME HERE
 
+.keyword,
+.operator,
+.pattern-match {
+	color: #f92672
+}
+
+.function,
+.pattern-match .constructor {
+	color: #61aeee
+}
+
+.function .params {
+	color: #a6e22e
+}
+
+.function .params .typing {
+	color: #fd971f
+}
+
+.module-access .module {
+	color: #7e57c2
+}
+
+.constructor {
+	color: #e2b93d
+}
+
+.constructor .string {
+	color: #98c379
+}
+
+.comment,
+.quote {
+	color: #b18eb1;
+	font-style: italic
+}
+
+.doctag,
+.formula {
+	color: #c678dd
+}
+
+.deletion,
+.name,
+.section,
+.selector-tag,
+.subst {
+	color: #e06c75
+}
+
+.literal {
+	color: #56b6c2
+}
+
+.addition,
+.attribute,
+.meta .string,
+.regexp,
+.string {
+	color: #98c379
+}
+
+.built_in,
+.class .title,
+.title.class_ {
+	color: #e6c07b
+}
+
+.attr,
+.number,
+.selector-attr,
+.selector-class,
+.selector-pseudo,
+.template-variable,
+.type,
+.variable {
+	color: #d19a66
+}
+
+
+
+.bullet,
+.link,
+.meta,
+.selector-id,
+.symbol,
+.title {
+	color: #61aeee
+}
+
+.emphasis {
+	font-style: italic
+}
+
+.strong {
+	font-weight: 700
+}
+
+.link {
+	text-decoration: underline
+}
 }
 */

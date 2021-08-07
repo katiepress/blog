@@ -34,7 +34,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background: #fff;
-	font-family: "Open Sans", sans-serif;
+	font-family: "Open Sans", serif;
 	font-size: 1.6rem;
 	line-height: 1.9em;
 	letter-spacing: .01em;
@@ -169,7 +169,7 @@ pre>code {
 	line-height: 2.7rem;
 	font-size: 1.4rem
 }
-
+/* flag code color background*/
 code {
 	font-size: 1.5rem;
 	display: inline-block;
@@ -951,7 +951,7 @@ pre.code-highlight>code {
 }
 /* #c975b6 flag sidebar color*/ 
 #sidebar .sidebar-profile .sidebar-profile-name {
-	font-size: 1.1em;
+	font-size: 2.5em;
 	color: #8cc8ed
 }
 
@@ -1015,7 +1015,7 @@ pre.code-highlight>code {
 	#sidebar[data-behavior="2"] .sidebar-profile .sidebar-profile-name,
 	#sidebar[data-behavior="4"] .sidebar-profile .sidebar-profile-name,
 	#sidebar[data-behavior="5"] .sidebar-profile .sidebar-profile-name {
-		font-size: 1.6rem
+		font-size: 2.5rem
 	}
 	#sidebar[data-behavior="1"] ul.sidebar-buttons li.sidebar-button,
 	#sidebar[data-behavior="2"] ul.sidebar-buttons li.sidebar-button,
@@ -1193,7 +1193,7 @@ pre.code-highlight>code {
 	}
 	#sidebar[data-behavior="4"] .sidebar-profile .sidebar-profile-name,
 	#sidebar[data-behavior="5"] .sidebar-profile .sidebar-profile-name {
-		font-size: 2rem
+		font-size: 2.5rem
 	}
 	#sidebar[data-behavior="4"] ul.sidebar-buttons li.sidebar-button,
 	#sidebar[data-behavior="5"] ul.sidebar-buttons li.sidebar-button {
@@ -1312,7 +1312,7 @@ pre.code-highlight>code {
 	}
 	#sidebar[data-behavior="1"] ul.sidebar-buttons li.sidebar-button .sidebar-button-link .sidebar-button-icon,
 	#sidebar[data-behavior="2"] ul.sidebar-buttons li.sidebar-button .sidebar-button-link .sidebar-button-icon {
-		font-size: 2.5rem;
+		font-size: 2rem;
 		display: inline-block;
 		text-align: center;
 		width: 30px;
@@ -1360,7 +1360,7 @@ pre.code-highlight>code {
 		width: 100%
 	}
 	#sidebar[data-behavior="3"] ul.sidebar-buttons li.sidebar-button .sidebar-button-link .sidebar-button-icon {
-		font-size: 2.5rem;
+		font-size: 2rem;
 		display: inline-block;
 		text-align: center;
 		width: 30px;
@@ -1413,7 +1413,7 @@ pre.code-highlight>code {
 	}
 	#sidebar[data-behavior="4"] ul.sidebar-buttons li.sidebar-button .sidebar-button-link .sidebar-button-icon,
 	#sidebar[data-behavior="5"] ul.sidebar-buttons li.sidebar-button .sidebar-button-link .sidebar-button-icon {
-		font-size: 2.5rem;
+		font-size: 2rem;
 		display: inline-block;
 		text-align: center;
 		width: 30px;
@@ -1429,7 +1429,7 @@ pre.code-highlight>code {
 		width: auto;
 		height: 35px;
 		line-height: 35px;
-		font-size: 1.5rem;
+		font-size: 2rem;
 		letter-spacing: .3px;
 		vertical-align: middle
 	}
@@ -1462,7 +1462,7 @@ pre.code-highlight>code {
 		width: 100%
 	}
 	#sidebar[data-behavior="6"] ul.sidebar-buttons li.sidebar-button .sidebar-button-link .sidebar-button-icon {
-		font-size: 2.5rem;
+		font-size: 2rem;
 		display: inline-block;
 		text-align: center;
 		width: 30px;
@@ -1536,7 +1536,7 @@ pre.code-highlight>code {
 		white-space: nowrap
 	}
 	#sidebar[data-behavior="1"] ul.sidebar-buttons li.sidebar-button .sidebar-button-link .sidebar-button-icon {
-		font-size: 2.5rem;
+		font-size: 2rem;
 		float: left;
 		text-align: center;
 		width: 30px;
@@ -1582,7 +1582,7 @@ pre.code-highlight>code {
 		margin-bottom: 5px
 	}
 	#sidebar[data-behavior="2"] .sidebar-profile .sidebar-profile-name {
-		font-size: 1.6rem
+		font-size: 2.5rem
 	}
 	#sidebar[data-behavior="2"] ul.sidebar-buttons li.sidebar-button {
 		text-align: left
@@ -1594,7 +1594,7 @@ pre.code-highlight>code {
 		padding-top: 0
 	}
 	#sidebar[data-behavior="2"] ul.sidebar-buttons li.sidebar-button .sidebar-button-link .sidebar-button-icon {
-		font-size: 2.5rem;
+		font-size: 2rem;
 		display: inline-block;
 		text-align: center;
 		width: 30px;
@@ -1640,7 +1640,7 @@ pre.code-highlight>code {
 		width: 100%
 	}
 	#sidebar[data-behavior="3"] ul.sidebar-buttons li.sidebar-button .sidebar-button-link .sidebar-button-icon {
-		font-size: 2.5rem;
+		font-size: 2rem;
 		display: inline-block;
 		text-align: center;
 		width: 30px;
@@ -1712,7 +1712,7 @@ pre.code-highlight>code {
 		white-space: nowrap
 	}
 	#sidebar[data-behavior="4"] ul.sidebar-buttons li.sidebar-button .sidebar-button-link .sidebar-button-icon {
-		font-size: 2.5rem;
+		font-size: 2rem;
 		float: left;
 		text-align: center;
 		width: 30px;
@@ -1771,7 +1771,7 @@ pre.code-highlight>code {
 		padding-top: 0
 	}
 	#sidebar[data-behavior="5"] ul.sidebar-buttons li.sidebar-button .sidebar-button-link .sidebar-button-icon {
-		font-size: 2.5rem;
+		font-size: 2rem;
 		display: inline-block;
 		text-align: center;
 		width: 30px;
@@ -1818,7 +1818,7 @@ pre.code-highlight>code {
 		width: 100%
 	}
 	#sidebar[data-behavior="6"] ul.sidebar-buttons li.sidebar-button .sidebar-button-link .sidebar-button-icon {
-		font-size: 2.5rem;
+		font-size: 2rem;
 		display: inline-block;
 		text-align: center;
 		width: 30px;
@@ -2049,7 +2049,7 @@ pre.code-highlight>code {
 
 .caption {
 	display: block;
-	font-family: Merriweather, serif;
+	font-family: Roboto, sans-serif;
 	font-size: 1.3rem;
 	color: #81929d;
 	text-align: center;
@@ -2685,7 +2685,7 @@ a.fancybox {
 .post .post-content {
 	text-rendering: optimizelegibility;
 	letter-spacing: -.3px;
-	font-family: Merriweather, serif;
+	font-family: Roboto, sans-serif;
 	color: #5d686f;
 	margin-top: 20px;
 	font-weight: 400;
@@ -3127,7 +3127,7 @@ a.fancybox {
 .postShorten .postShorten-excerpt {
 	text-rendering: optimizelegibility;
 	letter-spacing: -.3px;
-	font-family: Merriweather, serif;
+	font-family: Roboto, sans-serif;
 	color: #5d686f;
 	font-weight: 400;
 	overflow: hidden;
@@ -3491,7 +3491,7 @@ a.tag--small {
 }
 
 .font-merryweather {
-	font-family: Merriweather, serif
+	font-family: Roboto, sans-serif
 }
 
 .tooltip,
@@ -3772,8 +3772,8 @@ a.tag--small {
 }
 
 pre>code {
-	background: #f7f8f8;
-	color: #333
+	background: #282c34;
+	color: #abb2bf
 }
 
 pre>code.codeblock {
@@ -3781,18 +3781,19 @@ pre>code.codeblock {
 }
 
 code {
-	background-color: #f7f8f8
+	background-color: #282c34
 }
 
 .codeblock--tabbed figcaption .tab.active {
 	background: #349ef3;
-	color: #fff
+	color: #333
 }
+/* flag code first thing to change color is the regular text color inside codeblock*/
 
 .codeblock,
 figure.highlight {
-	background: #f7f8f8;
-	color: #333
+	background: #282c34;
+	color: #abb2bf
 }
 
 .codeblock figcaption,
@@ -3814,12 +3815,12 @@ figure.highlight .gutter .line {
 
 .codeblock .comment,
 figure.highlight .comment {
-	color: #969896
+	color: #b18eb1
 }
 
 .codeblock .string,
 figure.highlight .string {
-	color: #183691
+	color: #9CCC65
 }
 
 .codeblock .keyword,

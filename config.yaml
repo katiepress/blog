@@ -1,0 +1,97 @@
+baseURL: https://example.org/
+languageCode: en-us
+defaultContentLanguage: en-us
+title: KPress R Blog
+theme: hugo-tranquilpeak-theme
+disqusShortname: hugo-tranquilpeak-theme
+paginate: 7
+canonifyurls: yes
+permalinks:
+  post: /:year/:month/:slug/
+taxonomies:
+  archive: archives
+  category: categories
+  tag: tags
+markup:
+  goldmark:
+    renderer:
+      unsafe: yes
+author:
+  bio: R Programmer, Data Enthusiast
+  job: Researcher
+  location: USA
+  gravatarEmail: 
+  name: Katie Press
+  picture: /img/tuxedo.jpg
+  twitter: katie_press
+menu:
+  links:
+    - identifier: github
+      name: GitHub
+      pre: <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      url: https://github.com/katiepress
+      weight: 1
+#    - identifier: stackoverflow
+#      name: Stack Overflow
+#      pre: <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+#      url: https://stackoverflow.com/users/636472/kakawait
+#      weight: 2
+  main:
+    - identifier: blog
+      name: Blog
+      pre: <i class="sidebar-button-icon fa fa-lg fa-code"></i>
+      url: /
+      weight: 1
+    - identifier: categories
+      name: Categories
+      pre: <i class="sidebar-button-icon fa fa-lg fa-sitemap"></i>
+      url: /categories
+      weight: 2
+    - identifier: tags
+      name: Tags
+      pre: <i class="sidebar-button-icon fa fa-lg fa-hashtag"></i>
+      url: /tags
+      weight: 3
+    - identifier: archives
+      name: Archives
+      pre: <i class="sidebar-button-icon fa fa-lg fa-floppy-o"></i>
+      url: /archives
+      weight: 4
+    - identifier: about
+      name: About
+      pre: <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      url: /#about
+      weight: 5
+  misc:
+    - identifier: rss
+      name: RSS
+      pre: <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      url: /index.xml
+      weight: 1
+params:
+  autoThumbnailImage: yes
+  clearReading: yes
+  coverImage: images/space3.jpg
+  description: Hugo tranquilpeak theme demo
+  customCSS: ["/static/css/custom.scss"]
+  header:
+    rightLink:
+      class: ''
+      icon: ''
+      url: /#about
+  hierarchicalCategories: yes
+  imageGallery: yes
+  sharingOptions:
+    - icon: fa-facebook-official
+      name: Facebook
+      url: https://www.facebook.com/sharer/sharer.php?u=%s
+    - icon: fa-twitter
+      name: Twitter
+      url: https://twitter.com/intent/tweet?text=%s
+    - icon: fa-google-plus
+      name: Google+
+      url: https://plus.google.com/share?url=%s
+  sidebarBehavior: 1
+  syntaxHighlighter: highlight.js
+  thumbnailImage: yes
+  thumbnailImagePosition: bottom

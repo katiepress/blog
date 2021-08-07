@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R Markdown on KPress R Blog</title>
-    <link>https://example.org/tags/r-markdown/</link>
+    <link>https://hardcore-noyce-5a4ea6.netlify.app/tags/r-markdown/</link>
     <description>Recent content in R Markdown on KPress R Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://example.org/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://hardcore-noyce-5a4ea6.netlify.app/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Truth Is Out There</title>
-      <link>https://example.org/2020/10/index.en-us/</link>
+      <link>https://hardcore-noyce-5a4ea6.netlify.app/2020/10/index.en-us/</link>
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.org/2020/10/index.en-us/</guid>
-      <description>&lt;script src=&#34;https://example.org/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://example.org/rmarkdown-libs/d3-bundle/d3-bundle.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://example.org/rmarkdown-libs/d3-lasso/d3-lasso.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://example.org/rmarkdown-libs/save-svg-as-png/save-svg-as-png.min.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;https://example.org/rmarkdown-libs/ggiraphjs/ggiraphjs.min.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;https://example.org/rmarkdown-libs/ggiraphjs/ggiraphjs.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://example.org/rmarkdown-libs/girafe-binding/girafe.js&#34;&gt;&lt;/script&gt;
+      <guid>https://hardcore-noyce-5a4ea6.netlify.app/2020/10/index.en-us/</guid>
+      <description>&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/d3-bundle/d3-bundle.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/d3-lasso/d3-lasso.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/save-svg-as-png/save-svg-as-png.min.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/ggiraphjs/ggiraphjs.min.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/ggiraphjs/ggiraphjs.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/girafe-binding/girafe.js&#34;&gt;&lt;/script&gt;
 &lt;p&gt;Creating an X-Files episode dataset using web scraping.&lt;/p&gt;</description>
     </item>
     

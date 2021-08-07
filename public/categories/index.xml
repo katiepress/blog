@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on KPress R Blog</title>
-    <link>https://example.org/categories/</link>
+    <link>https://hardcore-noyce-5a4ea6.netlify.app/categories/</link>
     <description>Recent content in Categories on KPress R Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://example.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://hardcore-noyce-5a4ea6.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>R</title>
-      <link>https://example.org/categories/r/</link>
+      <link>https://hardcore-noyce-5a4ea6.netlify.app/categories/r/</link>
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.org/categories/r/</guid>
+      <guid>https://hardcore-noyce-5a4ea6.netlify.app/categories/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>X-Files</title>
-      <link>https://example.org/categories/x-files/</link>
+      <link>https://hardcore-noyce-5a4ea6.netlify.app/categories/x-files/</link>
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.org/categories/x-files/</guid>
+      <guid>https://hardcore-noyce-5a4ea6.netlify.app/categories/x-files/</guid>
       <description></description>
     </item>
     
     <item>
       <title>releases</title>
-      <link>https://example.org/categories/releases/</link>
+      <link>https://hardcore-noyce-5a4ea6.netlify.app/categories/releases/</link>
       <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://example.org/categories/releases/</guid>
+      <guid>https://hardcore-noyce-5a4ea6.netlify.app/categories/releases/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tranquilpeak</title>
-      <link>https://example.org/categories/tranquilpeak/</link>
+      <link>https://hardcore-noyce-5a4ea6.netlify.app/categories/tranquilpeak/</link>
       <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://example.org/categories/tranquilpeak/</guid>
+      <guid>https://hardcore-noyce-5a4ea6.netlify.app/categories/tranquilpeak/</guid>
       <description></description>
     </item>
     
     <item>
       <title>features</title>
-      <link>https://example.org/categories/features/</link>
+      <link>https://hardcore-noyce-5a4ea6.netlify.app/categories/features/</link>
       <pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://example.org/categories/features/</guid>
+      <guid>https://hardcore-noyce-5a4ea6.netlify.app/categories/features/</guid>
       <description></description>
     </item>
     

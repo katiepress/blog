@@ -2,77 +2,77 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Olympics on KPress R Blog</title>
-    <link>https://hardcore-noyce-5a4ea6.netlify.app/tags/olympics/</link>
+    <link>https://katiepress.us/tags/olympics/</link>
     <description>Recent content in Olympics on KPress R Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hardcore-noyce-5a4ea6.netlify.app/tags/olympics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katiepress.us/tags/olympics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tidy Tuesday: Paralympic Medals</title>
-      <link>https://hardcore-noyce-5a4ea6.netlify.app/2021/08/tidy-tuesday-paralympic-medals/</link>
+      <link>https://katiepress.us/2021/08/tidy-tuesday-paralympic-medals/</link>
       <pubDate>Wed, 04 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://hardcore-noyce-5a4ea6.netlify.app/2021/08/tidy-tuesday-paralympic-medals/</guid>
-      <description>&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/d3-bundle/d3-bundle.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/d3-lasso/d3-lasso.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/save-svg-as-png/save-svg-as-png.min.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/ggiraphjs/ggiraphjs.min.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/ggiraphjs/ggiraphjs.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/girafe-binding/girafe.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/d3-bundle/d3-bundle.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/d3-lasso/d3-lasso.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/save-svg-as-png/save-svg-as-png.min.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/ggiraphjs/ggiraphjs.min.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/ggiraphjs/ggiraphjs.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/girafe-binding/girafe.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/d3-bundle/d3-bundle.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/d3-lasso/d3-lasso.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/save-svg-as-png/save-svg-as-png.min.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/ggiraphjs/ggiraphjs.min.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/ggiraphjs/ggiraphjs.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/girafe-binding/girafe.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/d3-bundle/d3-bundle.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/d3-lasso/d3-lasso.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/save-svg-as-png/save-svg-as-png.min.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/ggiraphjs/ggiraphjs.min.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/ggiraphjs/ggiraphjs.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/girafe-binding/girafe.js&#34;&gt;&lt;/script&gt;</description>
+      <guid>https://katiepress.us/2021/08/tidy-tuesday-paralympic-medals/</guid>
+      <description>&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/d3-bundle/d3-bundle.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/d3-lasso/d3-lasso.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/save-svg-as-png/save-svg-as-png.min.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://katiepress.us/rmarkdown-libs/ggiraphjs/ggiraphjs.min.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/ggiraphjs/ggiraphjs.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/girafe-binding/girafe.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/d3-bundle/d3-bundle.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/d3-lasso/d3-lasso.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/save-svg-as-png/save-svg-as-png.min.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://katiepress.us/rmarkdown-libs/ggiraphjs/ggiraphjs.min.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/ggiraphjs/ggiraphjs.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/girafe-binding/girafe.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/d3-bundle/d3-bundle.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/d3-lasso/d3-lasso.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/save-svg-as-png/save-svg-as-png.min.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://katiepress.us/rmarkdown-libs/ggiraphjs/ggiraphjs.min.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/ggiraphjs/ggiraphjs.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/girafe-binding/girafe.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/d3-bundle/d3-bundle.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/d3-lasso/d3-lasso.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/save-svg-as-png/save-svg-as-png.min.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://katiepress.us/rmarkdown-libs/ggiraphjs/ggiraphjs.min.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/ggiraphjs/ggiraphjs.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/girafe-binding/girafe.js&#34;&gt;&lt;/script&gt;</description>
     </item>
     
     <item>
       <title>Tidy Tuesday: Olympic Medals</title>
-      <link>https://hardcore-noyce-5a4ea6.netlify.app/2021/07/tidy-tuesday-olympic-medals/</link>
+      <link>https://katiepress.us/2021/07/tidy-tuesday-olympic-medals/</link>
       <pubDate>Mon, 26 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://hardcore-noyce-5a4ea6.netlify.app/2021/07/tidy-tuesday-olympic-medals/</guid>
-      <description>&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/core-js/shim.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react-dom.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactwidget/react-tools.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactable-binding/reactable.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/core-js/shim.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react-dom.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactwidget/react-tools.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactable-binding/reactable.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/core-js/shim.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react-dom.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactwidget/react-tools.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactable-binding/reactable.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/core-js/shim.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react-dom.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactwidget/react-tools.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactable-binding/reactable.js&#34;&gt;&lt;/script&gt;</description>
+      <guid>https://katiepress.us/2021/07/tidy-tuesday-olympic-medals/</guid>
+      <description>&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/core-js/shim.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/react/react.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/react/react-dom.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/reactwidget/react-tools.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/reactable-binding/reactable.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/core-js/shim.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/react/react.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/react/react-dom.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/reactwidget/react-tools.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/reactable-binding/reactable.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/core-js/shim.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/react/react.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/react/react-dom.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/reactwidget/react-tools.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/reactable-binding/reactable.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/core-js/shim.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/react/react.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/react/react-dom.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/reactwidget/react-tools.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/reactable-binding/reactable.js&#34;&gt;&lt;/script&gt;</description>
     </item>
     
   </channel>

@@ -13,7 +13,7 @@ thumbnailImage: /img/sentiment_small.png
 thumbnailImagePosition: top
 coverImage: /img/sentiment.png
 ---
-Sentiment analysis of X-Files scripts using tidytext.
+Sentiment analysis of X-Files scripts using tidytext
 <!--more-->
 
 ```{r setup, include=FALSE}

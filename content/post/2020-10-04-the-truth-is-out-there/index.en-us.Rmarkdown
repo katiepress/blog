@@ -14,7 +14,7 @@ thumbnailImage: /img/dots_small.png
 thumbnailImagePosition: top
 coverImage: /img/dots.png
 ---
-Creating an X-Files episode dataset using web scraping.
+Creating an X-Files episode dataset using web scraping
 <!--more-->
 
 ```{r setup, include=FALSE}

@@ -16,7 +16,7 @@ thumbnailImagePosition: top
 coverImage: /img/thetruth_part2_plot.png
 ---
 
-Web scraping X-Files episode transcripts.
+Web scraping X-Files episode transcripts
 <!--more-->
 
 

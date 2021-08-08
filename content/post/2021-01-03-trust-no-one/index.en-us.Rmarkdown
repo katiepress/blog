@@ -28,7 +28,7 @@ library(textdata)
 library(dashboardthemes)
 library(ggplot2)
 library(treemapify)
-
+library(reactable)
 #font_import()
 
 loadfonts()
@@ -65,8 +65,14 @@ ep_words <- anti_join(ep_words, stop_words)
 
 The most common word is Mulder, which makes sense. But Scully is fifth, behind phone, agent, and "yeah". 
 
-```{r}
-count(ep_words, word, sort= TRUE)
+```{r echo=FALSE}
+reactable(count(ep_words, word, sort= TRUE),
+          bordered = TRUE,
+                     highlight = TRUE,
+                     striped = TRUE,
+                     compact = TRUE,
+                     wrap = FALSE
+          )
 ```
 ## Sentiment Analysis
 
@@ -102,7 +108,7 @@ my_theme <- theme(legend.position = "none",
 Using inner_join so that only the words that exist in both datasets will be included, I can look at the sentiments of the main characters. Overall, the text does have a negative tone for all speakers. It looks like Frohike is winnning the positivity contest by a landslide though, which checks out.
 
 ```{r message=FALSE, warning=FALSE}
-ep_words %>% 
+tb1 <- ep_words %>% 
   filter(speaker %in% main.characters) %>% 
   inner_join(bing) %>% 
   group_by(speaker) %>% 
@@ -112,12 +118,40 @@ ep_words %>%
   spread(sentiment, n)
 ```
 
+```{r echo=FALSE}
+reactable(tb1, 
+          bordered = TRUE,
+                     highlight = TRUE,
+                     striped = TRUE,
+                     compact = TRUE,
+                     wrap = FALSE)
+```
+
+
 I'm interested to see what the nrc and loughran sentiment datasets look like for the main characters as well. It looks like there are 10 sentiments in the nrc dataset, and only 6 in the loughran dataset. Of those 6, I realized that most of the words in my dataset fall into the "negative" category, which makes it pretty much unusable for my purposes.
 
-```{r}
-count(nrc, sentiment)
-count(lran, sentiment)
+#### NRC Words
+```{r echo=FALSE}
+reactable(count(nrc, sentiment)
+  ,
+  bordered = TRUE,
+                     highlight = TRUE,
+                     striped = TRUE,
+                     compact = TRUE,
+                     wrap = FALSE
+)
 ```
+
+#### LRAN Words
+```{r echo=FALSE}
+reactable(count(lran, sentiment),
+          bordered = TRUE,
+                     highlight = TRUE,
+                     striped = TRUE,
+                     compact = TRUE,
+                     wrap = FALSE)
+```
+
 When I join the nrc dataset, it looks like more than one sentiment can be tied to each word, which is interesting.
 
 ```{r}
@@ -125,9 +159,20 @@ nrc_main <- ep_words %>%
   filter(speaker %in% main.characters) %>% 
   inner_join(nrc) %>% 
   select(season, speaker, word, sentiment)
-
-head(nrc_main)
 ```
+
+```{r echo=FALSE}
+reactable(head(nrc_main)
+  ,
+  bordered = TRUE,
+                     highlight = TRUE,
+                     striped = TRUE,
+                     compact = TRUE,
+                     wrap = FALSE
+)
+```
+
+
 Let's compare the sentiments of the main speakers. Apparently X is never surprised or joyful, and it looks like Byers is the most trusting ... again, that checks out.
 
 ```{r}

@@ -30,6 +30,7 @@ library(ggiraph)
 library(extrafont)
 library(tidytext)
 library(ggplot2)
+library(reactable)
 ```
 
 
@@ -59,8 +60,6 @@ Now get the data into tidy format. This might not be the absolute best way of do
 ```{r eval=FALSE, include=TRUE}
 episodes <- episodes %>% 
   map_df(bind_cols, .id = "source")
-
-head(episodes)[1:3]
 ```
 
 So I can just use gather to put them in the proper (long) format that I want, and filter out the NAs resulting from the different columns. 
@@ -69,9 +68,8 @@ So I can just use gather to put them in the proper (long) format that I want, an
 episodes <- episodes %>% 
   gather(title, text, -source) %>% 
   filter(!is.na(text))
-
-head(episodes)
 ```
+
 
 Now I want to do some more text manipulation and cleaning. First I'll look for speakers, which is usually a capitalized name followed by a colon. Then put the spoken text in a separate column. Note that there will be exceptions, text analysis is not an exact science and you can drive yourself crazy trying to fix small issues.
 
@@ -94,7 +92,6 @@ I'll check to see how many lines each speaker has. This is also a good way to fi
 ```{r eval=FALSE, include=TRUE}
 temp <- count(ep_text, speaker) %>% arrange(desc(n))
 
-temp
 ```
 
 For example, I see that "CUT TO" has 297 lines and "( CUT TO" has 126 lines, so I obviously want to get rid of it because that's not a real speaker. This is where X-Files knowledge comes in handy, because I already know that "X" and DEEP THROAT" are actual speakers. I'm also going to get rid of speakers that are just numbers (formatting issue, probably times). I can't just exclude all of the speakers that include numbers, because there are some that are legitimate. For example, "Man 1", and there is an entire episode that takes place in the past (in addition to other flashbacks), so you have things like "1939 Scully". It's a great episode so I definitely don't want to miss that! For that reason I'll also just keep a character vector of speakers to exclude in addition to the str_detect. Getting rid of anything with a bracket is also partciularly useful. Finally, I will filter out any speaker with only one line, because this will get rid of a lot of noise as well.

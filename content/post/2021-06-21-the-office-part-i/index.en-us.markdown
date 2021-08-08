@@ -1,5 +1,5 @@
 ---
-title: The Office Part I
+title: 'The Office Part I: Employee Attrition'
 author: Katie Press
 date: '2021-06-22'
 slug: the-office-part-i
@@ -11,7 +11,7 @@ tags:
   - The Office
 autoThumbnailImage: false
 thumbnailImage: /img/jobrole_small.png
-thumbnailImagePosition: top
+thumbnailImagePosition: bottom
 coverImage: /img/jobrole.png
 metaAlignment: center
 summary: "Ask me about regression modeling and if you don't, I'll tell you anyway"

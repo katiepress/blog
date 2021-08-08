@@ -10,7 +10,7 @@ tags:
   - Olympics
 autoThumbnailImage: false
 thumbnailImage: /img/still_plot_small.png
-thumbnailImagePosition: top
+thumbnailImagePosition: bottom
 coverImage: /img/still_plot.png
 coverMeta: out
 coverSize: partial

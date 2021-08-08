@@ -1,7 +1,7 @@
 ---
 title: 'Tidy Tuesday: Drought Conditions'
 author: Katie Press
-date: '2021-07-19'
+date: '2021-07-20'
 slug: tidy-tuesday-drought-conditions/
 categories:
   - TidyTuesday
@@ -10,7 +10,7 @@ tags:
   - Animation
 autoThumbnailImage: false
 thumbnailImage: /img/drought_map_small.png
-thumbnailImagePosition: top
+thumbnailImagePosition: bottom
 coverImage: /img/drought_map.png
 summary: "Creating an animated heatmap of drought conditions across U.S. counties with ggplot2"
 metaAlignment: center

@@ -11,7 +11,7 @@ tags:
   - The Office
 autoThumbnailImage: false
 thumbnailImage: /img/slope_words_small.png
-thumbnailImagePosition: top
+thumbnailImagePosition: bottom
 coverImage: /img/slope_words.png
 coverMeta: out
 coverSize: partial

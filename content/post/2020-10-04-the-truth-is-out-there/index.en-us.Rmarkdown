@@ -11,7 +11,7 @@ tags:
   - Datasets
 autoThumbnailImage: false
 thumbnailImage: /img/dots_small.png
-thumbnailImagePosition: top
+thumbnailImagePosition: bottom
 coverImage: /img/dots.png
 metaAlignment: center
 summary: "Creating an X-Files episode dataset using web scraping"

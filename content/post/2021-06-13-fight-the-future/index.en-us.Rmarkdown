@@ -10,7 +10,7 @@ tags:
   - Modeling
 autoThumbnailImage: false
 thumbnailImage: /img/bbstock_small.png
-thumbnailImagePosition: top
+thumbnailImagePosition: bottom
 coverImage: /img/bbstock.png
 metaAlignment: center
 summary: "Stock forecasting with Prophet"

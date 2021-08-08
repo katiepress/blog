@@ -11,7 +11,7 @@ tags:
   - Datasets
 autoThumbnailImage: false
 thumbnailImage: /img/sentiment_small.png
-thumbnailImagePosition: top
+thumbnailImagePosition: bottom
 coverImage: /img/sentiment.png
 metaAlignment: center
 summary: "Sentiment analysis of X-Files scripts using tidytext"

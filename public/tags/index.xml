@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on KPress R Blog</title>
+    <title>Tags on Blog Home</title>
     <link>https://katiepress.us/tags/</link>
-    <description>Recent content in Tags on KPress R Blog</description>
+    <description>Recent content in Tags on Blog Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 04 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katiepress.us/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -46,7 +46,7 @@
     <item>
       <title>Maps</title>
       <link>https://katiepress.us/tags/maps/</link>
-      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://katiepress.us/tags/maps/</guid>
       <description></description>

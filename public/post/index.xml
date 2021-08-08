@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on KPress R Blog</title>
+    <title>Posts on Blog Home</title>
     <link>https://katiepress.us/post/</link>
-    <description>Recent content in Posts on KPress R Blog</description>
+    <description>Recent content in Posts on Blog Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 04 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katiepress.us/post/index.xml" rel="self" type="application/rss+xml" />
@@ -77,10 +77,10 @@
     
     <item>
       <title>Tidy Tuesday: Drought Conditions</title>
-      <link>https://katiepress.us/blog/2021-07-19-tidy-tuesday-drought-conditions/</link>
-      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
+      <link>https://katiepress.us/blog/2021-07-20-tidy-tuesday-drought-conditions/</link>
+      <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://katiepress.us/blog/2021-07-19-tidy-tuesday-drought-conditions/</guid>
+      <guid>https://katiepress.us/blog/2021-07-20-tidy-tuesday-drought-conditions/</guid>
       <description>&lt;script src=&#34;https://katiepress.us/rmarkdown-libs/core-js/shim.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;https://katiepress.us/rmarkdown-libs/react/react.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;https://katiepress.us/rmarkdown-libs/react/react-dom.min.js&#34;&gt;&lt;/script&gt;
@@ -145,7 +145,7 @@
     </item>
     
     <item>
-      <title>The Office Part I</title>
+      <title>The Office Part I: Employee Attrition</title>
       <link>https://katiepress.us/blog/2021-06-22-the-office-part-i/</link>
       <pubDate>Tue, 22 Jun 2021 00:00:00 +0000</pubDate>
       

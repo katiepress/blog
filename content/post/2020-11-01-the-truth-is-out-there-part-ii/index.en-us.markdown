@@ -11,7 +11,7 @@ tags:
   - Datasets
 autoThumbnailImage: false
 thumbnailImage: /img/thetruth_part2_small.png
-thumbnailImagePosition: top
+thumbnailImagePosition: bottom
 coverImage: /img/thetruth_part2_plot.png
 metaAlignment: center
 summary: "Web scraping X-Files episode transcripts"

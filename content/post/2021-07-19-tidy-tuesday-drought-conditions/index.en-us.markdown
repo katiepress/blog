@@ -6,14 +6,14 @@ slug: tidy-tuesday-drought-conditions/
 categories:
   - TidyTuesday
 tags:
-  - Datasets
   - Maps
-keywords:
-  - tech
+  - Animation
 autoThumbnailImage: false
 thumbnailImage: /img/drought_map_small.png
 thumbnailImagePosition: top
 coverImage: /img/drought_map.png
+summary: "Creating an animated heatmap of drought conditions across U.S. counties with ggplot2"
+metaAlignment: center
 ---
 
 <script src="/rmarkdown-libs/core-js/shim.min.js"></script>
@@ -22,8 +22,6 @@ coverImage: /img/drought_map.png
 <script src="/rmarkdown-libs/reactwidget/react-tools.js"></script>
 <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
 <script src="/rmarkdown-libs/reactable-binding/reactable.js"></script>
-
-Creating an animated heatmap of drought conditions across U.S. counties with ggplot2
 <!--more-->
 
 ## Data Import and Cleaning
@@ -168,9 +166,4 @@ p <- map_usa %>%
 #animate(p, renderer = gifski_renderer("drought.gif"))
 ```
 
-<div class="figure" style="text-align: center">
-
-<span id="fig:img-with-knitr"></span>
-<img src="/img/drought.gif" width="1200px">
-
-</div>
+<img src="/img/drought.gif" alt="Drought Map" class="center">

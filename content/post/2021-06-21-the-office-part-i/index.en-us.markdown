@@ -1,19 +1,20 @@
 ---
 title: The Office Part I
 author: Katie Press
-date: '2021-06-21'
-slug: index.en-us
+date: '2021-06-22'
+slug: the-office-part-i
 categories:
-  - R
-  - The Office
+  - Projects
 tags:
   - Datasets
-keywords:
-  - tech
+  - Modeling
+  - The Office
 autoThumbnailImage: false
 thumbnailImage: /img/jobrole_small.png
 thumbnailImagePosition: top
 coverImage: /img/jobrole.png
+metaAlignment: center
+summary: "Ask me about regression modeling and if you don't, I'll tell you anyway"
 ---
 
 <script src="/rmarkdown-libs/core-js/shim.min.js"></script>
@@ -172,8 +173,6 @@ coverImage: /img/jobrole.png
 <script src="/rmarkdown-libs/reactwidget/react-tools.js"></script>
 <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
 <script src="/rmarkdown-libs/reactable-binding/reactable.js"></script>
-
-Ask me about regression modeling and if you don’t, I’ll tell you anyway
 <!--more-->
 
 # Background

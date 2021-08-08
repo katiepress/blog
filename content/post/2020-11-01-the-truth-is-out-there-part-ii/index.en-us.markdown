@@ -1,22 +1,22 @@
 ---
-title: The Truth Is Out There Part II
+title: I Want to Believe
 author: Katie Press
 date: '2020-11-01'
-slug: index.en-us
+slug: i-want-to-believe
 categories:
-  - R
-  - X-Files
+  - Projects
 tags:
   - Web Scraping
-keywords:
-  - tech
+  - X-Files
+  - Datasets
 autoThumbnailImage: false
 thumbnailImage: /img/thetruth_part2_small.png
 thumbnailImagePosition: top
 coverImage: /img/thetruth_part2_plot.png
+metaAlignment: center
+summary: "Web scraping X-Files episode transcripts"
 ---
 
-Web scraping X-Files episode transcripts
 <!--more-->
 
 

@@ -2,19 +2,21 @@
 title: The Truth Is Out There
 author: Katie Press
 date: '2020-10-04'
-slug: index.en-us
+slug: the-truth-is-out-there
 categories:
-  - R
-  - X-Files
+  - Projects
 tags:
-  - R Markdown
+  - X-Files
   - Web Scraping
+  - Datasets
 autoThumbnailImage: false
 thumbnailImage: /img/dots_small.png
 thumbnailImagePosition: top
 coverImage: /img/dots.png
+metaAlignment: center
+summary: "Creating an X-Files episode dataset using web scraping"
 ---
-Creating an X-Files episode dataset using web scraping
+
 <!--more-->
 
 ```{r setup, include=FALSE}

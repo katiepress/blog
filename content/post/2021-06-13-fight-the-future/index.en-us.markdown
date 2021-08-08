@@ -1,11 +1,10 @@
 ---
 title: Fight The Future
 author: Katie Press
-date: '2021-06-13'
-slug: index.en-us
+date: '2021-01-03'
+slug: fight-the-future
 categories:
-  - R
-  - Stocks
+  - Projects
 tags:
   - Stocks
   - Modeling
@@ -13,8 +12,10 @@ autoThumbnailImage: false
 thumbnailImage: /img/bbstock_small.png
 thumbnailImagePosition: top
 coverImage: /img/bbstock.png
+metaAlignment: center
+summary: "Stock forecasting with Prophet"
 ---
-Stock forecasting with Prophet
+
 <!--more-->
 
 
@@ -367,7 +368,7 @@ stocks %>%
 ```
 
 ```
-## Warning: Removed 228 row(s) containing missing values (geom_path).
+## Warning: Removed 234 row(s) containing missing values (geom_path).
 ```
 
 <img src="/post/2021-06-13-fight-the-future/index.en-us_files/figure-html/unnamed-chunk-20-1.png" width="672" />

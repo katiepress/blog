@@ -2,16 +2,19 @@
 title: Trust No One
 author: Katie Press
 date: '2021-01-03'
-slug: index.en-us
+slug: trust-no-one
 categories:
-  - R
-  - X-Files
+  - Projects
 tags:
   - Web Scraping
+  - X-Files
+  - Datasets
 autoThumbnailImage: false
 thumbnailImage: /img/sentiment_small.png
 thumbnailImagePosition: top
 coverImage: /img/sentiment.png
+metaAlignment: center
+summary: "Sentiment analysis of X-Files scripts using tidytext"
 ---
 
 <script src="/rmarkdown-libs/core-js/shim.min.js"></script>
@@ -44,8 +47,6 @@ coverImage: /img/sentiment.png
 <script src="/rmarkdown-libs/reactwidget/react-tools.js"></script>
 <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
 <script src="/rmarkdown-libs/reactable-binding/reactable.js"></script>
-
-Sentiment analysis of X-Files scripts using tidytext
 <!--more-->
 
 In the last two episodes, I created an [X-Files episode dataset](https://kpress.dev/blog/2021-01-03-the-truth-is-out-there/) and [web-scraped episode scripts](https://kpress.dev/blog/2020-10-04-the-truth-is-out-there-part-ii/). Now it’s time for some real text analysis. Most of this is going to be based on Julia Silge’s work on tidy text mining, which can be found in her [free eBook](https://www.tidytextmining.com/). And of course, all of this is based on the principles of tidy data - see [this paper](https://vita.had.co.nz/papers/tidy-data.pdf) by tidyverse author Hadley Wickham for more details.

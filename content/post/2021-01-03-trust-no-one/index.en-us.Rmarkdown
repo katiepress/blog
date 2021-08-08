@@ -2,18 +2,21 @@
 title: Trust No One
 author: Katie Press
 date: '2021-01-03'
-slug: index.en-us
+slug: trust-no-one
 categories:
-  - R
-  - X-Files
+  - Projects
 tags:
   - Web Scraping
+  - X-Files
+  - Datasets
 autoThumbnailImage: false
 thumbnailImage: /img/sentiment_small.png
 thumbnailImagePosition: top
 coverImage: /img/sentiment.png
+metaAlignment: center
+summary: "Sentiment analysis of X-Files scripts using tidytext"
 ---
-Sentiment analysis of X-Files scripts using tidytext
+
 <!--more-->
 
 ```{r setup, include=FALSE}

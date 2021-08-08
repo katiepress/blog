@@ -8,14 +8,17 @@ paginate: 7
 canonifyurls: yes
 permalinks:
   post: /:year/:month/:slug/
-taxonomies:
+taxonomies: 
   archive: archives
-  category: categories
+  category: categories 
   tag: tags
 markup:
   goldmark:
     renderer:
       unsafe: yes
+  #highlight: 
+ #   style: "agate"
+ #   codeFences: false
 author:
   bio: R Programmer, Data Enthusiast
   job: Researcher
@@ -74,6 +77,7 @@ params:
   coverImage: images/space3.jpg
   description: Hugo tranquilpeak theme demo
   customCSS: ["/static/css/custom.scss"]
+  customJS: ["https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages.r.min.js"]
   header:
     rightLink:
       class: ''

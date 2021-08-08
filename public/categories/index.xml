@@ -6,11 +6,20 @@
     <description>Recent content in Categories on KPress R Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hardcore-noyce-5a4ea6.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hardcore-noyce-5a4ea6.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TidyTuesday</title>
+      <link>https://hardcore-noyce-5a4ea6.netlify.app/categories/tidytuesday/</link>
+      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hardcore-noyce-5a4ea6.netlify.app/categories/tidytuesday/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>R</title>
       <link>https://hardcore-noyce-5a4ea6.netlify.app/categories/r/</link>
-      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://hardcore-noyce-5a4ea6.netlify.app/categories/r/</guid>
       <description></description>
@@ -19,7 +28,7 @@
     <item>
       <title>The Office</title>
       <link>https://hardcore-noyce-5a4ea6.netlify.app/categories/the-office/</link>
-      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://hardcore-noyce-5a4ea6.netlify.app/categories/the-office/</guid>
       <description></description>

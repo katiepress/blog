@@ -7,14 +7,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.87.0 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="Katie Press">
-<meta name="keywords" content="tech">
+<meta name="keywords" content="">
 <meta name="description" content="
 
 
 
 
-
-Creating an animated heatmap of drought conditions across U.S. counties with ggplot2">
+">
 
 
 <meta property="og:description" content="
@@ -22,8 +21,7 @@ Creating an animated heatmap of drought conditions across U.S. counties with ggp
 
 
 
-
-Creating an animated heatmap of drought conditions across U.S. counties with ggplot2">
+">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tidy Tuesday: Drought Conditions">
 <meta name="twitter:title" content="Tidy Tuesday: Drought Conditions">
@@ -35,15 +33,13 @@ Creating an animated heatmap of drought conditions across U.S. counties with ggp
 
 
 
-
-Creating an animated heatmap of drought conditions across U.S. counties with ggplot2">
+">
 <meta name="twitter:description" content="
 
 
 
 
-
-Creating an animated heatmap of drought conditions across U.S. counties with ggplot2">
+">
 <meta property="og:locale" content="en-us">
 
   
@@ -60,9 +56,9 @@ Creating an animated heatmap of drought conditions across U.S. counties with ggp
   
   
     
-      <meta property="article:tag" content="Datasets">
-    
       <meta property="article:tag" content="Maps">
+    
+      <meta property="article:tag" content="Animation">
     
   
 
@@ -244,12 +240,12 @@ Creating an animated heatmap of drought conditions across U.S. counties with ggp
 
       
   <div class="post-header-cover
-              text-left
+              text-center
               "
        style="background-image:url('/img/drought_map.png')"
        data-behavior="4">
     
-      <div class="post-header main-content-wrap text-left">
+      <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
       Tidy Tuesday: Drought Conditions
@@ -295,7 +291,6 @@ Creating an animated heatmap of drought conditions across U.S. counties with ggp
 <script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactwidget/react-tools.js"></script>
 <script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
 <script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactable-binding/reactable.js"></script>
-<p>Creating an animated heatmap of drought conditions across U.S. counties with ggplot2</p>
 <h2 id="data-import-and-cleaning">Data Import and Cleaning</h2>
 <p>The data provided this week is drought conditions by state. I wanted to make a map, and I thought it would be interesting to look at the drought level by county over time. I downloaded a file from this page on <a href="https://droughtmonitor.unl.edu/DmData/DataDownload/ComprehensiveStatistics.aspx">The U.S. Drought Monitor Website</a></p>
 <p>I filtered by date (August 2019 - present), I chose “County” for the spatial scale, “Percent Area” for statistics type, and “Categorical” for statistics type, and downloaded a csv file.</p>
@@ -396,10 +391,9 @@ map_usa <span style="color:#f92672">&lt;-</span> map_usa <span style="color:#f92
   my_theme
 
 <span style="color:#75715e">#animate(p, renderer = gifski_renderer(&#34;drought.gif&#34;))</span>
-</code></pre></div><div class="figure" style="text-align: center">
-<p><span id="fig:img-with-knitr"></span>
-<img src="https://hardcore-noyce-5a4ea6.netlify.app/img/drought.gif" width="1200px"></p>
-</div>
+</code></pre></div><p align="center">
+<img src="https://hardcore-noyce-5a4ea6.netlify.app/img/drought.gif" alt="Drought Map" class="center">
+</p>
               
             </div>
           </div>
@@ -411,9 +405,9 @@ map_usa <span style="color:#f92672">&lt;-</span> map_usa <span style="color:#f92
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://hardcore-noyce-5a4ea6.netlify.app/tags/datasets/">Datasets</a>
-
   <a class="tag tag--primary tag--small" href="https://hardcore-noyce-5a4ea6.netlify.app/tags/maps/">Maps</a>
+
+  <a class="tag tag--primary tag--small" href="https://hardcore-noyce-5a4ea6.netlify.app/tags/animation/">Animation</a>
 
                   </div>
                 
@@ -426,7 +420,7 @@ map_usa <span style="color:#f92672">&lt;-</span> map_usa <span style="color:#f92
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://hardcore-noyce-5a4ea6.netlify.app/2021/07/tidy-tuesday-olympic-medals/" data-tooltip="Tidy Tuesday: Olympic Medals">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -512,7 +506,7 @@ map_usa <span style="color:#f92672">&lt;-</span> map_usa <span style="color:#f92
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://hardcore-noyce-5a4ea6.netlify.app/2021/07/tidy-tuesday-olympic-medals/" data-tooltip="Tidy Tuesday: Olympic Medals">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>

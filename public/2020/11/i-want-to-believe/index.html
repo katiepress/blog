@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.87.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Katie Press">
+<meta name="keywords" content="">
+<meta name="description" content="">
+
+
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="I Want to Believe">
+<meta name="twitter:title" content="I Want to Believe">
+<meta property="og:url" content="https://hardcore-noyce-5a4ea6.netlify.app/2020/11/i-want-to-believe/">
+<meta property="twitter:url" content="https://hardcore-noyce-5a4ea6.netlify.app/2020/11/i-want-to-believe/">
+<meta property="og:site_name" content="KPress R Blog">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2020-11-01T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2020-11-01T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="Projects">
+    
+  
+  
+    
+      <meta property="article:tag" content="Web Scraping">
+    
+      <meta property="article:tag" content="X-Files">
+    
+      <meta property="article:tag" content="Datasets">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@katie_press">
+
+
+  <meta name="twitter:creator" content="@katie_press">
+
+
+
+
+
+
+  <meta property="og:image" content="https://hardcore-noyce-5a4ea6.netlify.app/img/thetruth_part2_small.png">
+  <meta property="twitter:image" content="https://hardcore-noyce-5a4ea6.netlify.app/img/thetruth_part2_small.png">
+
+
+  <meta property="og:image" content="https://hardcore-noyce-5a4ea6.netlify.app/img/thetruth_part2_plot.png">
+  <meta property="twitter:image" content="https://hardcore-noyce-5a4ea6.netlify.app/img/thetruth_part2_plot.png">
+
+
+
+
+  <meta property="og:image" content="https://hardcore-noyce-5a4ea6.netlify.app/img/tuxedo.jpg">
+  <meta property="twitter:image" content="https://hardcore-noyce-5a4ea6.netlify.app/img/tuxedo.jpg">
+
+
+    <title>I Want to Believe</title>
+
+    <link rel="icon" href="https://hardcore-noyce-5a4ea6.netlify.app/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://hardcore-noyce-5a4ea6.netlify.app/2020/11/i-want-to-believe/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://hardcore-noyce-5a4ea6.netlify.app/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+      
+        <link rel="stylesheet" href="https://hardcore-noyce-5a4ea6.netlify.app/static/css/custom.scss">
+      
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://hardcore-noyce-5a4ea6.netlify.app/">KPress R Blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://hardcore-noyce-5a4ea6.netlify.app/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://hardcore-noyce-5a4ea6.netlify.app/img/tuxedo.jpg" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://hardcore-noyce-5a4ea6.netlify.app/#about">
+          <img class="sidebar-profile-picture" src="https://hardcore-noyce-5a4ea6.netlify.app/img/tuxedo.jpg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Katie Press</h4>
+        
+          <h5 class="sidebar-profile-bio">R Programmer, Data Enthusiast</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://hardcore-noyce-5a4ea6.netlify.app/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-code"></i>
+      
+      <span class="sidebar-button-desc">Blog</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://hardcore-noyce-5a4ea6.netlify.app/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-sitemap"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://hardcore-noyce-5a4ea6.netlify.app/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-hashtag"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://hardcore-noyce-5a4ea6.netlify.app/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-floppy-o"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://hardcore-noyce-5a4ea6.netlify.app/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/katiepress" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://hardcore-noyce-5a4ea6.netlify.app/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-center
+              "
+       style="background-image:url('/img/thetruth_part2_plot.png')"
+       data-behavior="4">
+    
+      <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title" itemprop="headline">
+      I Want to Believe
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2020-11-01T00:00:00Z">
+        
+  November 1, 2020
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://hardcore-noyce-5a4ea6.netlify.app/categories/projects">Projects</a>
+    
+  
+
+  </div>
+
+</div>
+    
+  </div>
+
+
+      <div id="main" data-behavior="4"
+        class="hasCover
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <h1 id="web-scraping-x-files-scripts">Web Scraping X-Files Scripts</h1>
+<p>In the last &ldquo;episode&rdquo; I created a dataset of X-Files episodes using web scraping. The simple episode descriptions are not going to give me the depth of information I need for a real text analysis, so it&rsquo;s time to get some more data!</p>
+<p>Many of the X-Files episode transcripts are available online, so I found a website I could use to scrape most of the text I need. First, I&rsquo;m going to create a list of episode links that I can use to download the transcripts. There are 202 transcripts, so I can simply repeat the link 202 times and add the .txt at the end.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">links <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rep</span>(<span style="color:#a6e22e">paste0</span>(<span style="color:#e6db74">&#34;http://scifi.media/wp-content/uploads/t/x/&#34;</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">202</span>, <span style="color:#e6db74">&#34;.txt&#34;</span>))
+</code></pre></div><p>Now I want to use read_csv to read each link as a new CSV in a list. However, the first time I tried to do this, episode 185 did not import correctly. Upon further investigation, I determined that this was due to a special character in the epiosde name &ldquo;DÆMONICUS&rdquo;. Basically, this is an encoding issue. I just tested out a couple different encoding types and pretty easily found one that worked. Note: I tested them on a subset of just episode 184 and 185 to save time, since it can take a while to read in all of the data.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">#test &lt;- links[184:185]</span>
+
+episodes <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">lapply</span>(links, <span style="color:#a6e22e">function</span>(x) <span style="color:#a6e22e">read_csv</span>(x, locale <span style="color:#f92672">=</span> <span style="color:#a6e22e">locale</span>(encoding <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ISO-8859-1&#34;</span>)))
+</code></pre></div><p>Now get the data into tidy format. This might not be the absolute best way of doing it, but it&rsquo;s pretty easy and quick. First use map_df from purrr to bind all the list elements together in a dataframe. That gives me a very messy dataframe with one column for each episode.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">episodes <span style="color:#f92672">&lt;-</span> episodes <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">map_df</span>(bind_cols, .id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;source&#34;</span>)
+</code></pre></div><p>So I can just use gather to put them in the proper (long) format that I want, and filter out the NAs resulting from the different columns.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">episodes <span style="color:#f92672">&lt;-</span> episodes <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">gather</span>(title, text, <span style="color:#f92672">-</span>source) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">filter</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.na</span>(text))
+</code></pre></div><p>Now I want to do some more text manipulation and cleaning. First I&rsquo;ll look for speakers, which is usually a capitalized name followed by a colon. Then put the spoken text in a separate column. Note that there will be exceptions, text analysis is not an exact science and you can drive yourself crazy trying to fix small issues.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">episodes <span style="color:#f92672">&lt;-</span> episodes <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">mutate</span>(speaker <span style="color:#f92672">=</span> <span style="color:#a6e22e">word</span>(text, <span style="color:#ae81ff">1</span>, sep <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;:&#34;</span>)) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">mutate</span>(speaker <span style="color:#f92672">=</span> <span style="color:#a6e22e">ifelse</span>(speaker <span style="color:#f92672">==</span> text, <span style="color:#66d9ef">NA</span>, speaker)) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">mutate</span>(line <span style="color:#f92672">=</span> <span style="color:#a6e22e">word</span>(text, <span style="color:#ae81ff">2</span>, sep <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;:&#34;</span>))
+</code></pre></div><p>Now I&rsquo;m basically going to filter out anything I&rsquo;ve already determined is a scene description or other descriptive filler.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ep_text <span style="color:#f92672">&lt;-</span> episodes <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">filter</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.na</span>(speaker))
+</code></pre></div><p>I&rsquo;ll check to see how many lines each speaker has. This is also a good way to filter out descriptive text that wasn&rsquo;t already filtered out in the previous step.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">temp <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">count</span>(ep_text, speaker) <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">arrange</span>(<span style="color:#a6e22e">desc</span>(n))
+
+</code></pre></div><p>For example, I see that &ldquo;CUT TO&rdquo; has 297 lines and &ldquo;( CUT TO&rdquo; has 126 lines, so I obviously want to get rid of it because that&rsquo;s not a real speaker. This is where X-Files knowledge comes in handy, because I already know that &ldquo;X&rdquo; and DEEP THROAT&quot; are actual speakers. I&rsquo;m also going to get rid of speakers that are just numbers (formatting issue, probably times). I can&rsquo;t just exclude all of the speakers that include numbers, because there are some that are legitimate. For example, &ldquo;Man 1&rdquo;, and there is an entire episode that takes place in the past (in addition to other flashbacks), so you have things like &ldquo;1939 Scully&rdquo;. It&rsquo;s a great episode so I definitely don&rsquo;t want to miss that! For that reason I&rsquo;ll also just keep a character vector of speakers to exclude in addition to the str_detect. Getting rid of anything with a bracket is also partciularly useful. Finally, I will filter out any speaker with only one line, because this will get rid of a lot of noise as well.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">temp <span style="color:#f92672">&lt;-</span> temp <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">filter</span>(n <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)
+
+ep_text <span style="color:#f92672">&lt;-</span> ep_text <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">filter</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">str_detect</span>(speaker, <span style="color:#e6db74">&#34;CUT|From|from|The|the|\\[|\\(|\\?&#34;</span>), 
+         <span style="color:#f92672">!</span>speaker <span style="color:#f92672">%in%</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;9&#34;</span>, <span style="color:#e6db74">&#34;10&#34;</span>, <span style="color:#e6db74">&#34;11&#34;</span>, <span style="color:#e6db74">&#34;5&#34;</span>,<span style="color:#e6db74">&#34;8&#34;</span>, <span style="color:#e6db74">&#34;6&#34;</span>, <span style="color:#e6db74">&#34;7&#34;</span>, 
+                         <span style="color:#e6db74">&#34;2&#34;</span>, <span style="color:#e6db74">&#34;4&#34;</span>, <span style="color:#e6db74">&#34;12&#34;</span>, <span style="color:#e6db74">&#34;#1&#34;</span>, <span style="color:#e6db74">&#34;1&#34;</span>, <span style="color:#e6db74">&#34;3&#34;</span>, <span style="color:#e6db74">&#34;#2&#34;</span>),
+         <span style="color:#f92672">!</span>speaker <span style="color:#f92672">%in%</span> temp<span style="color:#f92672">$</span>speaker)
+</code></pre></div><p>There are a couple of other duplication issues I want to fix, for example &ldquo;Cigarette-Smoking Man&rdquo; vs. &ldquo;Cigarette Smoking Man&rdquo;. I also want to make sure all of Mulder and Scully&rsquo;s speaker names are uniform because I&rsquo;m definitely going to use them in the analysis.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ep_text <span style="color:#f92672">&lt;-</span> ep_text <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">mutate</span>(speaker <span style="color:#f92672">=</span> <span style="color:#a6e22e">ifelse</span>(
+    speaker <span style="color:#f92672">%in%</span> <span style="color:#a6e22e">c</span>(
+      <span style="color:#e6db74">&#34;1939 CIGARETTE SMOKING MAN&#34;</span>,
+      <span style="color:#e6db74">&#34;CIGARETTE SMOKING MAN&#34;</span>,
+      <span style="color:#e6db74">&#34;CIGARETTE-SMOKING MAN&#34;</span>,
+      <span style="color:#e6db74">&#34;CANCERMAN&#34;</span>,
+      <span style="color:#e6db74">&#34;CANCER MAN&#34;</span>
+    ),
+    <span style="color:#e6db74">&#34;CIGARETTE SMOKING MAN&#34;</span>,
+    <span style="color:#a6e22e">ifelse</span>(
+      speaker <span style="color:#f92672">%in%</span> <span style="color:#a6e22e">c</span>(
+        <span style="color:#e6db74">&#34;1989 MULDER&#34;</span>,
+        <span style="color:#e6db74">&#34;MULDER&#34;</span>,
+        <span style="color:#e6db74">&#34;MULDER AS MORRIS&#34;</span>,
+        <span style="color:#e6db74">&#34;MULDER ON ANSWERING MACHINE&#34;</span>,
+        <span style="color:#e6db74">&#34;MULDER ON RECORDER&#34;</span>,
+        <span style="color:#e6db74">&#34;MULDER ON RECORDING&#34;</span>,
+        <span style="color:#e6db74">&#34;MULDER VOICE OVER&#34;</span>,
+        <span style="color:#e6db74">&#34;MULDER&#39;S VOICE&#34;</span>,
+        <span style="color:#e6db74">&#34;MULDER&#39;S VOICE OVER&#34;</span>,
+        <span style="color:#e6db74">&#34;VERY OLD MULDER&#34;</span>
+      ),
+      <span style="color:#e6db74">&#34;MULDER&#34;</span>,
+      <span style="color:#a6e22e">ifelse</span>(
+        speaker <span style="color:#f92672">%in%</span> <span style="color:#a6e22e">c</span>(
+          <span style="color:#e6db74">&#34;DANA&#34;</span>,
+          <span style="color:#e6db74">&#34;1939 SCULLY&#34;</span>,
+          <span style="color:#e6db74">&#34;FLASHBACK SCULLY&#34;</span>,
+          <span style="color:#e6db74">&#34;SCULLY&#34;</span>,
+          <span style="color:#e6db74">&#34;SCULLY ON MACHINE&#34;</span>,
+          <span style="color:#e6db74">&#34;SCULLY ON TAPE&#34;</span>,
+          <span style="color:#e6db74">&#34;SCULLY VOICE OVER&#34;</span>,
+          <span style="color:#e6db74">&#34;SCULLY&#39;S VOICE OVER&#34;</span>
+        ),
+        <span style="color:#e6db74">&#34;SCULLY&#34;</span>,
+        speaker
+      )
+    )
+  )) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">mutate</span>(speaker <span style="color:#f92672">=</span> <span style="color:#a6e22e">ifelse</span>(<span style="color:#a6e22e">str_detect</span>(speaker, <span style="color:#e6db74">&#34;MANICURE&#34;</span>), <span style="color:#e6db74">&#34;WELL-MANICURED MAN&#34;</span>, speaker)) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">mutate</span>(speaker <span style="color:#f92672">=</span> <span style="color:#a6e22e">str_to_title</span>(speaker))
+</code></pre></div><p>Now I&rsquo;ll join the table from the previous post, by episode number. I&rsquo;m going to save this dataset for the next post.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ep_text <span style="color:#f92672">&lt;-</span> ep_text <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">rename</span>(<span style="color:#e6db74">&#34;no_overall&#34;</span> <span style="color:#f92672">=</span> source,
+         <span style="color:#e6db74">&#34;ep_title&#34;</span> <span style="color:#f92672">=</span> title) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">mutate</span>(no_overall <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.numeric</span>(no_overall)) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">left_join</span>(table_df, by <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;no_overall&#34;</span>) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">mutate</span>(speaker <span style="color:#f92672">=</span> <span style="color:#a6e22e">str_to_title</span>(speaker))
+</code></pre></div><h2 id="plotting-number-of-lines-per-character">Plotting Number of Lines Per Character</h2>
+<p>I&rsquo;m going to do the text analysis in the next post, because this file will take forever to run and if I need to make small adjustments it&rsquo;s going to be very time consuming. However, this post wouldn&rsquo;t be complete without a chart, would it?</p>
+<p>Let&rsquo;s look at the number of lines each character has per season. Of course, for the sake of space I&rsquo;m just going to pick some of the main characters. I will also change the number of lines into a log scale just to even things out for the chart, because Mulder and Scully have the highest number of lines by a long shot, so the secondary characters will be harder to see.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">speakers <span style="color:#f92672">&lt;-</span> ep_text <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">count</span>(season, speaker) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">filter</span>(speaker <span style="color:#f92672">%in%</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Mulder&#34;</span>, <span style="color:#e6db74">&#34;Scully&#34;</span>, <span style="color:#e6db74">&#34;Skinner&#34;</span>, <span style="color:#e6db74">&#34;Cigarette Smoking Man&#34;</span>, <span style="color:#e6db74">&#34;Frohike&#34;</span>, <span style="color:#e6db74">&#34;Langly&#34;</span>, <span style="color:#e6db74">&#34;Doggett&#34;</span>, <span style="color:#e6db74">&#34;Reyes&#34;</span>, <span style="color:#e6db74">&#34;Byers&#34;</span>,  <span style="color:#e6db74">&#34;X&#34;</span>, <span style="color:#e6db74">&#34;Deep Throat&#34;</span>, <span style="color:#e6db74">&#34;Well-Manicured Man&#34;</span>)) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">arrange</span>(season, <span style="color:#a6e22e">desc</span>(n))
+
+speakers<span style="color:#f92672">&lt;-</span>speakers <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">mutate</span>(n2 <span style="color:#f92672">=</span> <span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">log</span>(n), <span style="color:#ae81ff">2</span>),
+         speaker2 <span style="color:#f92672">=</span> <span style="color:#a6e22e">factor</span>(speaker)) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">mutate</span>(n2 <span style="color:#f92672">=</span> <span style="color:#a6e22e">ifelse</span>(n2 <span style="color:#f92672">&lt;</span><span style="color:#ae81ff">.5</span>,<span style="color:#ae81ff">.3</span>, n2))
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">speakers <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">ggplot</span>(<span style="color:#a6e22e">aes</span>(<span style="color:#a6e22e">fct_rev</span>(speaker2), n2,fill <span style="color:#f92672">=</span>speaker2)) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">geom_col</span>(show.legend <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, width <span style="color:#f92672">=</span> <span style="color:#ae81ff">.8</span>, position <span style="color:#f92672">=</span> <span style="color:#a6e22e">position_dodge</span>(<span style="color:#ae81ff">0.7</span>))<span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">facet_wrap</span>(<span style="color:#f92672">~</span>season, nrow <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>)<span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">scale_y_continuous</span>(limits <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">8</span>), expand <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>))<span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">coord_flip</span>()<span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">labs</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Character Lines by Season&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Number of Lines&#34;</span>)<span style="color:#f92672">+</span>
+  my_theme2
+</code></pre></div><p><img src="https://hardcore-noyce-5a4ea6.netlify.app/post/2020-11-01-the-truth-is-out-there-part-ii/index.en-us_files/figure-html/unnamed-chunk-15-1.png" width="720" /></p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://hardcore-noyce-5a4ea6.netlify.app/tags/web-scraping/">Web Scraping</a>
+
+  <a class="tag tag--primary tag--small" href="https://hardcore-noyce-5a4ea6.netlify.app/tags/x-files/">X-Files</a>
+
+  <a class="tag tag--primary tag--small" href="https://hardcore-noyce-5a4ea6.netlify.app/tags/datasets/">Datasets</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://hardcore-noyce-5a4ea6.netlify.app/2021/01/trust-no-one/" data-tooltip="Trust No One">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://hardcore-noyce-5a4ea6.netlify.app/2020/10/the-truth-is-out-there/" data-tooltip="The Truth Is Out There">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hardcore-noyce-5a4ea6.netlify.app/2020/11/i-want-to-believe/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hardcore-noyce-5a4ea6.netlify.app/2020/11/i-want-to-believe/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://hardcore-noyce-5a4ea6.netlify.app/2020/11/i-want-to-believe/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 Katie Press. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://hardcore-noyce-5a4ea6.netlify.app/2021/01/trust-no-one/" data-tooltip="Trust No One">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://hardcore-noyce-5a4ea6.netlify.app/2020/10/the-truth-is-out-there/" data-tooltip="The Truth Is Out There">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hardcore-noyce-5a4ea6.netlify.app/2020/11/i-want-to-believe/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hardcore-noyce-5a4ea6.netlify.app/2020/11/i-want-to-believe/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://hardcore-noyce-5a4ea6.netlify.app/2020/11/i-want-to-believe/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhardcore-noyce-5a4ea6.netlify.app%2F2020%2F11%2Fi-want-to-believe%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fhardcore-noyce-5a4ea6.netlify.app%2F2020%2F11%2Fi-want-to-believe%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fhardcore-noyce-5a4ea6.netlify.app%2F2020%2F11%2Fi-want-to-believe%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://hardcore-noyce-5a4ea6.netlify.app/img/tuxedo.jpg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Katie Press</h4>
+    
+      <div id="about-card-bio">R Programmer, Data Enthusiast</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Researcher
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        USA
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://hardcore-noyce-5a4ea6.netlify.app/images/space3.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages.r.min.js"></script>
+  
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/hardcore-noyce-5a4ea6.netlify.app\/2020\/11\/i-want-to-believe\/';
+          
+            this.page.identifier = '\/2020\/11\/i-want-to-believe\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

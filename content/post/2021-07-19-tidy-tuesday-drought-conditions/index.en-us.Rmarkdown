@@ -211,7 +211,7 @@ p <- map_usa %>%
 ```
 
 
-
+<p align="center">
 <img src="/img/drought.gif" alt="Drought Map" class="center">
-
+</p>
 

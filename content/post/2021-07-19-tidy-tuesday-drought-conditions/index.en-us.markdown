@@ -166,4 +166,6 @@ p <- map_usa %>%
 #animate(p, renderer = gifski_renderer("drought.gif"))
 ```
 
+<p align="center">
 <img src="/img/drought.gif" alt="Drought Map" class="center">
+</p>

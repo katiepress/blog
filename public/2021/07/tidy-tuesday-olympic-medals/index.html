@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.87.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Katie Press">
+<meta name="keywords" content="">
+<meta name="description" content="
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+">
+
+
+<meta property="og:description" content="
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tidy Tuesday: Olympic Medals">
+<meta name="twitter:title" content="Tidy Tuesday: Olympic Medals">
+<meta property="og:url" content="https://hardcore-noyce-5a4ea6.netlify.app/2021/07/tidy-tuesday-olympic-medals/">
+<meta property="twitter:url" content="https://hardcore-noyce-5a4ea6.netlify.app/2021/07/tidy-tuesday-olympic-medals/">
+<meta property="og:site_name" content="KPress R Blog">
+<meta property="og:description" content="
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+">
+<meta name="twitter:description" content="
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2021-07-26T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2021-07-26T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="TidyTuesday">
+    
+  
+  
+    
+      <meta property="article:tag" content="Animation">
+    
+      <meta property="article:tag" content="Olympics">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@katie_press">
+
+
+  <meta name="twitter:creator" content="@katie_press">
+
+
+
+
+
+
+  <meta property="og:image" content="https://hardcore-noyce-5a4ea6.netlify.app/img/still_plot_small.png">
+  <meta property="twitter:image" content="https://hardcore-noyce-5a4ea6.netlify.app/img/still_plot_small.png">
+
+
+  <meta property="og:image" content="https://hardcore-noyce-5a4ea6.netlify.app/img/still_plot.png">
+  <meta property="twitter:image" content="https://hardcore-noyce-5a4ea6.netlify.app/img/still_plot.png">
+
+
+
+
+  <meta property="og:image" content="https://hardcore-noyce-5a4ea6.netlify.app/img/tuxedo.jpg">
+  <meta property="twitter:image" content="https://hardcore-noyce-5a4ea6.netlify.app/img/tuxedo.jpg">
+
+
+    <title>Tidy Tuesday: Olympic Medals</title>
+
+    <link rel="icon" href="https://hardcore-noyce-5a4ea6.netlify.app/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://hardcore-noyce-5a4ea6.netlify.app/2021/07/tidy-tuesday-olympic-medals/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://hardcore-noyce-5a4ea6.netlify.app/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+      
+        <link rel="stylesheet" href="https://hardcore-noyce-5a4ea6.netlify.app/static/css/custom.scss">
+      
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://hardcore-noyce-5a4ea6.netlify.app/">KPress R Blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://hardcore-noyce-5a4ea6.netlify.app/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://hardcore-noyce-5a4ea6.netlify.app/img/tuxedo.jpg" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://hardcore-noyce-5a4ea6.netlify.app/#about">
+          <img class="sidebar-profile-picture" src="https://hardcore-noyce-5a4ea6.netlify.app/img/tuxedo.jpg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Katie Press</h4>
+        
+          <h5 class="sidebar-profile-bio">R Programmer, Data Enthusiast</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://hardcore-noyce-5a4ea6.netlify.app/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-code"></i>
+      
+      <span class="sidebar-button-desc">Blog</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://hardcore-noyce-5a4ea6.netlify.app/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-sitemap"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://hardcore-noyce-5a4ea6.netlify.app/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-hashtag"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://hardcore-noyce-5a4ea6.netlify.app/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-floppy-o"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://hardcore-noyce-5a4ea6.netlify.app/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/katiepress" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://hardcore-noyce-5a4ea6.netlify.app/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-center
+              post-header-cover--partial"
+       style="background-image:url('/img/still_plot.png')"
+       data-behavior="4">
+    
+  </div>
+
+
+      <div id="main" data-behavior="4"
+        class="hasCover
+               hasCoverMetaOut
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title" itemprop="headline">
+      Tidy Tuesday: Olympic Medals
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2021-07-26T00:00:00Z">
+        
+  July 26, 2021
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://hardcore-noyce-5a4ea6.netlify.app/categories/tidytuesday">TidyTuesday</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/core-js/shim.min.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react.min.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react-dom.min.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactwidget/react-tools.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactable-binding/reactable.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/core-js/shim.min.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react.min.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react-dom.min.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactwidget/react-tools.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactable-binding/reactable.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/core-js/shim.min.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react.min.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react-dom.min.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactwidget/react-tools.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactable-binding/reactable.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/core-js/shim.min.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react.min.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react-dom.min.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactwidget/react-tools.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactable-binding/reactable.js"></script>
+<h2 id="background">Background</h2>
+<p>This week’s Tidy Tuesday data is from the Olympic games over time. I thought it would be interesting to create a chart of the countries with the most medals at each Olympic games to see how things changed over time.</p>
+<h2 id="data-import-and-cleaning">Data Import and Cleaning</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">knitr<span style="color:#f92672">::</span>opts_chunk<span style="color:#f92672">$</span><span style="color:#a6e22e">set</span>(echo <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,message<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>,warning<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>)
+<span style="color:#a6e22e">library</span>(tidyverse)
+<span style="color:#a6e22e">library</span>(lubridate)
+<span style="color:#a6e22e">library</span>(janitor)
+<span style="color:#a6e22e">library</span>(ggplot2)
+<span style="color:#a6e22e">library</span>(gganimate)
+<span style="color:#a6e22e">library</span>(ggflags)
+<span style="color:#a6e22e">library</span>(countrycode)
+<span style="color:#a6e22e">library</span>(reactable)
+<span style="color:#75715e">#devtools::install_github(&#34;rensa/ggflags&#34;)</span>
+</code></pre></div><p>Get the provided data from the tidytuesdayR package first. I was expecting one file but there were two, so now I have a list of dataframes which I can unlist into my global environment. I’m not sure if I’ll need the second dataset (regions), but I will go ahead and add them to the olympics dataset just in case.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">data <span style="color:#f92672">&lt;-</span> tidytuesdayR<span style="color:#f92672">::</span><span style="color:#a6e22e">tt_load</span>(<span style="color:#e6db74">&#39;2021-07-27&#39;</span>)
+</code></pre></div><pre><code>## 
+##  Downloading file 1 of 2: `olympics.csv`
+##  Downloading file 2 of 2: `regions.csv`
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">list2env</span>(data, .GlobalEnv)
+</code></pre></div><pre><code>## &lt;environment: R_GlobalEnv&gt;
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">regions <span style="color:#f92672">&lt;-</span> regions <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">clean_names</span>()
+
+olympics <span style="color:#f92672">&lt;-</span> olympics <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">left_join</span>(regions)
+</code></pre></div><p>Count the Olympic medals by country by year. I’m counting one medal per event otherwise they would be over-counted due to the team events since every person on the team gets a medal. I need to use season and not just year when I’m aggregating, because some of the older events had summer and winter Olympics in the same year. Also adding the total medals per region/year.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">year_df <span style="color:#f92672">&lt;-</span> olympics <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">count</span>(year, region, season, event, medal) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">count</span>(year, region, season, medal) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">filter</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.na</span>(medal)) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">rename</span>(<span style="color:#e6db74">&#34;medal_n&#34;</span> <span style="color:#f92672">=</span> n)
+
+year_df <span style="color:#f92672">&lt;-</span> year_df <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">group_by</span>(year, season, region) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">mutate</span>(medal_total <span style="color:#f92672">=</span> <span style="color:#a6e22e">sum</span>(medal_n)) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">ungroup</span>()
+</code></pre></div><p>Add the number of athletes by country by year. Using extra demographic variables in case any athletes have the same name.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">year_df <span style="color:#f92672">&lt;-</span> olympics <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">count</span>(year, season, region, sex, age, name) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">count</span>(year, season, region) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">rename</span>(<span style="color:#e6db74">&#34;athlete_total&#34;</span> <span style="color:#f92672">=</span> n) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">right_join</span>(year_df)
+</code></pre></div><p>Now I have to decide which counties to include in the chart since there are so many. Let’s look at the average number of medals over the last 10 Olympic games. This will be separate for summer and winter because the number and type of events is different for the winter games. I’m just going to save these country names in a vector called “summer.top.10.”</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">year_df <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">filter</span>(season <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Summer&#34;</span>, year <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1979</span>) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">distinct</span>(year, region, medal_total) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">group_by</span>(region) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">summarise</span>(avg_medals <span style="color:#f92672">=</span> <span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">mean</span>(medal_total), <span style="color:#ae81ff">2</span>)) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">arrange</span>(<span style="color:#a6e22e">desc</span>(avg_medals)) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">react_table</span>()
+</code></pre></div><div id="htmlwidget-1" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"region":["USA","Russia","Germany","China","UK","Australia","France","South Korea","Japan","Italy","Cuba","Ukraine","Romania","Hungary","Canada","Netherlands","Bulgaria","Poland","Belarus","Spain","Kazakhstan","Brazil","Sweden","New Zealand","Czech Republic","Kenya","Azerbaijan","Denmark","Serbia","Jamaica","Norway","Turkey","Ethiopia","North Korea","Greece","Uzbekistan","Switzerland","Georgia","South Africa","Iran","Croatia","Finland","Slovakia","Mexico","Argentina","Indonesia","Lithuania","Belgium","Slovenia","Thailand","Armenia","Nigeria","Austria","Colombia","Taiwan","Latvia","Zimbabwe","Individual Olympic Athletes","Ireland","Mongolia","Morocco","Algeria","Egypt","Malaysia","Estonia","India","Namibia","Tanzania","Trinidad","Tunisia","Portugal","Venezuela","Moldova","Bahamas","Bahrain","Chile","Israel","Ivory Coast","Kyrgyzstan","Saudi Arabia","Dominican Republic","Puerto Rico","Costa Rica","Tajikistan","Vietnam",null,"Qatar","Afghanistan","Barbados","Botswana","Burundi","Cameroon","Curacao","Cyprus","Djibouti","Ecuador","Eritrea","Fiji","Gabon","Ghana","Grenada","Guatemala","Guyana","Iceland","Jordan","Kosovo","Kuwait","Lebanon","Macedonia","Mauritius","Montenegro","Mozambique","Niger","Pakistan","Panama","Paraguay","Peru","Philippines","Senegal","Sri Lanka","Sudan","Suriname","Syria","Togo","Tonga","Uganda","United Arab Emirates","Uruguay","Virgin Islands, US","Zambia"],"avg_medals":[111.33,98.89,70.6,60.56,35.5,33.3,31.3,27.22,26.67,26.4,22.62,21,20.4,20.33,19.89,16.1,15.78,15.44,14,13.7,11.67,11,10.5,9.89,9.22,9,7.33,7.2,7,6.4,6.11,5.89,5.88,5.88,5.7,5.5,5.4,5.33,5,4.88,4.71,4.7,4.67,3.9,3.75,3.75,3.57,3.5,3.29,3.22,3.2,3.14,3,3,2.75,2.67,2.67,2.5,2.5,2.5,2.44,2.43,2.4,2.2,2.17,2.14,2,2,2,2,1.88,1.83,1.75,1.71,1.5,1.5,1.5,1.5,1.5,1.5,1.4,1.4,1.33,1.33,1.33,1.33,1.25,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"columns":[{"accessor":"region","name":"region","type":"character"},{"accessor":"avg_medals","name":"avg_medals","type":"numeric"}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"compact":true,"nowrap":true,"dataKey":"44a43d222837c06b5d5bee56425c4958","key":"44a43d222837c06b5d5bee56425c4958"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<p>And here are the top countries for the winter games, which I will save in a winter.top.10 vector.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">year_df <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">filter</span>(season <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Winter&#34;</span>, year <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1979</span>) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">distinct</span>(year, region, medal_total) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">group_by</span>(region) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">summarise</span>(avg_medals <span style="color:#f92672">=</span> <span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">mean</span>(medal_total), <span style="color:#ae81ff">2</span>)) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">arrange</span>(<span style="color:#a6e22e">desc</span>(avg_medals)) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">react_table</span>()
+</code></pre></div><div id="htmlwidget-2" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"region":["Germany","Russia","USA","Norway","Austria","Canada","Italy","Switzerland","Netherlands","Finland","China","South Korea","Sweden","France","Czech Republic","Japan","Poland","Slovenia","Croatia","Belarus","Estonia","Latvia","Liechtenstein","Australia","Luxembourg","Serbia","Kazakhstan","Ukraine","Slovakia","UK","Bulgaria","Belgium","Denmark","Hungary","New Zealand","North Korea","Spain","Uzbekistan"],"avg_medals":[28.2,22.3,18.7,17.8,13.8,13.8,9,8.9,8.78,8,7.57,7.57,7.5,7.4,4.11,4.1,4,3.75,2.75,2.5,2.33,2.33,2.33,2,2,2,1.75,1.75,1.67,1.62,1.5,1,1,1,1,1,1,1]},"columns":[{"accessor":"region","name":"region","type":"character"},{"accessor":"avg_medals","name":"avg_medals","type":"numeric"}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"compact":true,"nowrap":true,"dataKey":"7dd52905b79de4a0639bace79cdced66","key":"7dd52905b79de4a0639bace79cdced66"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<p>Now filter to get the medals per year for the top 10 countries (by season as well). I can use seq_along to order them 1 through 10 after grouping by year. However, there is going to be a problem because in some years, multiple regions have the same number of medals. For example, in 1988, Italy, Japan, and Australia each have 14 medals.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">summer_medals <span style="color:#f92672">&lt;-</span> year_df <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">filter</span>(season <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Summer&#34;</span>, year <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1979</span>, region <span style="color:#f92672">%in%</span> summer.top.10) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">distinct</span>(year, region, medal_total) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">arrange</span>(year, <span style="color:#a6e22e">desc</span>(medal_total)) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">group_by</span>(year) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">mutate</span>(rank <span style="color:#f92672">=</span> <span style="color:#a6e22e">seq_along</span>(medal_total))
+
+summer_medals <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">get_dupes</span>(year, medal_total) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">react_table</span>()
+</code></pre></div><div id="htmlwidget-3" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-3">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"year":[1984,1984,1988,1988,1988,2000,2000,2000,2000,2004,2004,2008,2008,2012,2012,2012,2012,2016,2016],"medal_total":[32,32,14,14,14,28,28,58,58,30,30,41,41,28,28,35,35,42,42],"dupe_count":[2,2,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2],"region":["China","Italy","Australia","Italy","Japan","South Korea","UK","Australia","China","South Korea","UK","France","Germany","Italy","South Korea","Australia","France","France","Germany"],"rank":[4,5,8,9,10,8,9,3,4,9,10,6,7,9,10,7,8,5,6]},"columns":[{"accessor":"year","name":"year","type":"numeric"},{"accessor":"medal_total","name":"medal_total","type":"numeric"},{"accessor":"dupe_count","name":"dupe_count","type":"numeric"},{"accessor":"region","name":"region","type":"character"},{"accessor":"rank","name":"rank","type":"numeric"}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"compact":true,"nowrap":true,"dataKey":"64eb2ebbdad57405a9ae7cfeac6f4b05","key":"64eb2ebbdad57405a9ae7cfeac6f4b05"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<p>I could rank them with a random tie-breaker, but I think I’m going to try something else. I’ll make a new column for the previous rank, and then order by year, medal number, and previous rank. That way if the number of medals is tied, it will rely on the previous year’s ranking to break the tie. This will also mean that more regions can stay the same from one year to another instead of bouncing all around due to a random tie breaker, which I think will make the chart much easier to read.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">summer_medals <span style="color:#f92672">&lt;-</span> summer_medals <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">arrange</span>(region, year) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">group_by</span>(region) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">mutate</span>(prev_rank <span style="color:#f92672">=</span> <span style="color:#a6e22e">lag</span>(rank)) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#75715e">#get_dupes(year, medal_total) %&gt;% </span>
+  <span style="color:#a6e22e">arrange</span>(year, <span style="color:#a6e22e">desc</span>(medal_total), prev_rank) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">group_by</span>(year) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">mutate</span>(final_rank <span style="color:#f92672">=</span> <span style="color:#a6e22e">seq_along</span>(region)) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">ungroup</span>()
+
+summer_medals <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">filter</span>(year <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1980</span>) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">react_table</span>()
+</code></pre></div><div id="htmlwidget-4" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-4">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"year":[1984,1984,1984,1984,1984,1984,1984,1984,1984,1988,1988,1988,1988,1988,1988,1988,1988,1988,1988,1992,1992,1992,1992,1992,1992,1992,1992,1992,1992,1996,1996,1996,1996,1996,1996,1996,1996,1996,1996,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2004,2004,2004,2004,2004,2004,2004,2004,2004,2004,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2012,2012,2012,2012,2012,2012,2012,2012,2012,2012,2016,2016,2016,2016,2016,2016,2016,2016,2016,2016],"region":["USA","Germany","UK","Italy","China","Japan","France","Australia","South Korea","Germany","Russia","USA","South Korea","China","UK","France","Italy","Japan","Australia","Russia","USA","Germany","China","France","South Korea","Australia","Japan","UK","Italy","USA","Germany","Russia","China","Australia","France","Italy","South Korea","UK","Japan","USA","Russia","China","Australia","Germany","France","Italy","South Korea","UK","Japan","USA","Russia","China","Australia","Germany","Japan","France","Italy","South Korea","UK","USA","China","Russia","UK","Australia","Germany","France","South Korea","Italy","Japan","USA","China","Russia","UK","Germany","Japan","Australia","France","South Korea","Italy","USA","China","UK","Russia","Germany","France","Japan","Australia","Italy","South Korea"],"medal_total":[173,59,37,32,32,31,28,24,19,142,131,94,33,28,24,16,14,14,14,112,108,82,53,29,28,27,22,20,19,101,65,63,51,41,37,35,27,15,14,91,89,58,58,56,38,34,28,28,18,101,90,64,50,49,37,33,32,30,30,110,100,72,48,46,41,41,31,27,25,103,89,82,65,44,38,35,35,28,28,121,70,67,56,42,42,41,29,28,21],"rank":[1,2,3,5,4,6,7,8,9,1,2,3,4,5,6,7,9,10,8,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,4,3,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,7,6,8,9,10,1,2,3,4,5,6,7,8,10,9,1,2,3,4,6,5,7,8,9,10],"prev_rank":["NA",2,3,4,"NA","NA",5,6,"NA",2,1,1,9,4,3,7,5,6,8,2,3,1,5,7,4,8,10,6,9,2,3,1,4,7,5,10,6,9,8,1,3,4,5,2,6,7,8,9,10,1,2,4,3,5,10,6,7,8,9,1,3,2,10,4,5,7,9,8,6,1,2,3,4,7,10,5,6,8,9,1,2,4,3,5,8,6,7,9,10],"final_rank":[1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10]},"columns":[{"accessor":"year","name":"year","type":"numeric"},{"accessor":"region","name":"region","type":"character"},{"accessor":"medal_total","name":"medal_total","type":"numeric"},{"accessor":"rank","name":"rank","type":"numeric"},{"accessor":"prev_rank","name":"prev_rank","type":"numeric"},{"accessor":"final_rank","name":"final_rank","type":"numeric"}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"compact":true,"nowrap":true,"dataKey":"a5442c2a0d7220188f856a6ed56157f9","key":"a5442c2a0d7220188f856a6ed56157f9"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">temp_levels <span style="color:#f92672">&lt;-</span> summer_medals <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">filter</span>(year <span style="color:#f92672">==</span> <span style="color:#ae81ff">1988</span>) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">mutate</span>(region <span style="color:#f92672">=</span> <span style="color:#a6e22e">factor</span>(region)) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">mutate</span>(region <span style="color:#f92672">=</span> <span style="color:#a6e22e">fct_reorder</span>(region, final_rank))
+
+summer_medals <span style="color:#f92672">&lt;-</span> summer_medals <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">mutate</span>(region <span style="color:#f92672">=</span> <span style="color:#a6e22e">factor</span>(region, levels <span style="color:#f92672">=</span> temp_levels<span style="color:#f92672">$</span>region))
+
+summer_medals<span style="color:#f92672">$</span>team_country <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">countrycode</span>(summer_medals<span style="color:#f92672">$</span>region, <span style="color:#e6db74">&#34;country.name&#34;</span>, <span style="color:#e6db74">&#34;iso2c&#34;</span>)
+
+summer_medals <span style="color:#f92672">&lt;-</span> summer_medals <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">mutate</span>(team_country <span style="color:#f92672">=</span> <span style="color:#a6e22e">str_to_lower</span>(team_country))
+</code></pre></div><p>For the plot I decided to start at 1988, because that is the first year that all 10 countries were in the games. This way the chart will be consistent from beginning to end. What I’m doing here is making sure that I have the theme and look of the plot the way I want it before I animate it. Notes on this:</p>
+<ul>
+<li>For the geom_point I had to add the grouping aesthetic because if I didn’t, the lines would show up in the animation and the points would not, although the geom_flag worked fine. I tried a bunch of different things and finally got this to work so hopefully it saves someone else the aggravation.</li>
+<li>I used alpha in geom_line to make it slightly more transparent, this is just a stylistic choice and could be deleted for a solid color line.</li>
+<li>In the geom_flag I commented out the filter that I use on the final animated plot so that all the dots are not covered by flags and I can make sure the dots look the way I want them to. I decided to use solid color and no alpha for the points.</li>
+<li>The color scheme was inspired by this <a href="https://www.si.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_700/MTgwMjA0NjA1NjA1NDIyMjAy/dcovtokyo_v.webp">cover image from Sports Illustrated</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">summer_medals <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">filter</span>(year <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">1988</span>) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">ggplot</span>(., <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> year, y <span style="color:#f92672">=</span> final_rank, color <span style="color:#f92672">=</span> region)) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">geom_point</span>(<span style="color:#a6e22e">aes</span>(group <span style="color:#f92672">=</span> <span style="color:#a6e22e">seq_along</span>(final_rank), color <span style="color:#f92672">=</span> region), size <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(color <span style="color:#f92672">=</span> region, alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>), size <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">scale_x_continuous</span>(breaks <span style="color:#f92672">=</span> <span style="color:#a6e22e">seq</span>(<span style="color:#ae81ff">1980</span>, <span style="color:#ae81ff">2016</span>, <span style="color:#ae81ff">4</span>))<span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">scale_y_reverse</span>(breaks <span style="color:#f92672">=</span> <span style="color:#a6e22e">seq</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">1</span>))<span style="color:#f92672">+</span> 
+  <span style="color:#a6e22e">scale_color_manual</span>(values <span style="color:#f92672">=</span> olympic.pal2)<span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">geom_flag</span>(data <span style="color:#f92672">=</span> summer_medals <span style="color:#f92672">%&gt;%</span> 
+              <span style="color:#75715e">#filter(year &gt;1984), </span>
+              <span style="color:#a6e22e">filter</span>(year <span style="color:#f92672">==</span> <span style="color:#ae81ff">1988</span>),
+            <span style="color:#a6e22e">aes</span>(country <span style="color:#f92672">=</span> team_country),
+            size <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">ggtitle</span>(<span style="color:#e6db74">&#34;Countries With the Most Olympic Medals by Year&#34;</span>)<span style="color:#f92672">+</span>
+    <span style="color:#a6e22e">ylab</span>(<span style="color:#e6db74">&#34;Rank&#34;</span>)<span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">labs</span>(caption <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;@katie_press | kpress.dev&#34;</span>)<span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">theme_minimal</span>()<span style="color:#f92672">+</span>
+  my_theme
+</code></pre></div><p><img src="https://hardcore-noyce-5a4ea6.netlify.app/post/2021-07-26-tidy-tuesday-olympic-medals/index.en-us_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Now for the final plot all I’m doing is adding transition_reveal using the year as the reveal, and saving as an object.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">final.plot <span style="color:#f92672">&lt;-</span> summer_medals <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">filter</span>(year <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">1988</span>) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">ggplot</span>(., <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> year, y <span style="color:#f92672">=</span> final_rank, color <span style="color:#f92672">=</span> region)) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">geom_point</span>(<span style="color:#a6e22e">aes</span>(group <span style="color:#f92672">=</span> <span style="color:#a6e22e">seq_along</span>(final_rank), color <span style="color:#f92672">=</span> region), size <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(color <span style="color:#f92672">=</span> region, alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>), size <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">scale_x_continuous</span>(breaks <span style="color:#f92672">=</span> <span style="color:#a6e22e">seq</span>(<span style="color:#ae81ff">1980</span>, <span style="color:#ae81ff">2016</span>, <span style="color:#ae81ff">4</span>))<span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">scale_y_reverse</span>(breaks <span style="color:#f92672">=</span> <span style="color:#a6e22e">seq</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">1</span>))<span style="color:#f92672">+</span> 
+  <span style="color:#a6e22e">scale_color_manual</span>(values <span style="color:#f92672">=</span> olympic.pal2)<span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">geom_flag</span>(data <span style="color:#f92672">=</span> summer_medals <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">filter</span>(year <span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1984</span>), 
+            <span style="color:#a6e22e">aes</span>(country <span style="color:#f92672">=</span> team_country),
+            size <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">ggtitle</span>(<span style="color:#e6db74">&#34;Countries With the Most Olympic Medals by Year&#34;</span>)<span style="color:#f92672">+</span>
+    <span style="color:#a6e22e">ylab</span>(<span style="color:#e6db74">&#34;Rank&#34;</span>)<span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">labs</span>(caption <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;@katie_press | kpress.dev&#34;</span>)<span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">theme_minimal</span>()<span style="color:#f92672">+</span>
+  my_theme <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">transition_reveal</span>(year)
+</code></pre></div><p>Finally I can save the animation as a gif to share. I’m using end_pause here so that my gif pauses for a few seconds once it gets to the end of the animation.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">final.animated <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">animate</span>(final.plot, renderer <span style="color:#f92672">=</span> <span style="color:#a6e22e">gifski_renderer</span>(<span style="color:#e6db74">&#34;olympics.gif&#34;</span>), width <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>, height <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>, units <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;in&#34;</span>, res <span style="color:#f92672">=</span> <span style="color:#ae81ff">300</span>, dev<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;png&#34;</span>, end_pause <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>)
+</code></pre></div><img src="https://hardcore-noyce-5a4ea6.netlify.app/img/olympics.gif" alt="Olympic Medals" class="center">
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://hardcore-noyce-5a4ea6.netlify.app/tags/animation/">Animation</a>
+
+  <a class="tag tag--primary tag--small" href="https://hardcore-noyce-5a4ea6.netlify.app/tags/olympics/">Olympics</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://hardcore-noyce-5a4ea6.netlify.app/2021/08/tidy-tuesday-paralympic-medals/" data-tooltip="Tidy Tuesday: Paralympic Medals">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://hardcore-noyce-5a4ea6.netlify.app/2021/07/tidy-tuesday-drought-conditions/" data-tooltip="Tidy Tuesday: Drought Conditions">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hardcore-noyce-5a4ea6.netlify.app/2021/07/tidy-tuesday-olympic-medals/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hardcore-noyce-5a4ea6.netlify.app/2021/07/tidy-tuesday-olympic-medals/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://hardcore-noyce-5a4ea6.netlify.app/2021/07/tidy-tuesday-olympic-medals/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 Katie Press. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://hardcore-noyce-5a4ea6.netlify.app/2021/08/tidy-tuesday-paralympic-medals/" data-tooltip="Tidy Tuesday: Paralympic Medals">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://hardcore-noyce-5a4ea6.netlify.app/2021/07/tidy-tuesday-drought-conditions/" data-tooltip="Tidy Tuesday: Drought Conditions">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hardcore-noyce-5a4ea6.netlify.app/2021/07/tidy-tuesday-olympic-medals/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hardcore-noyce-5a4ea6.netlify.app/2021/07/tidy-tuesday-olympic-medals/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://hardcore-noyce-5a4ea6.netlify.app/2021/07/tidy-tuesday-olympic-medals/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhardcore-noyce-5a4ea6.netlify.app%2F2021%2F07%2Ftidy-tuesday-olympic-medals%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fhardcore-noyce-5a4ea6.netlify.app%2F2021%2F07%2Ftidy-tuesday-olympic-medals%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fhardcore-noyce-5a4ea6.netlify.app%2F2021%2F07%2Ftidy-tuesday-olympic-medals%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://hardcore-noyce-5a4ea6.netlify.app/img/tuxedo.jpg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Katie Press</h4>
+    
+      <div id="about-card-bio">R Programmer, Data Enthusiast</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Researcher
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        USA
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://hardcore-noyce-5a4ea6.netlify.app/images/space3.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://hardcore-noyce-5a4ea6.netlify.app/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages.r.min.js"></script>
+  
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/hardcore-noyce-5a4ea6.netlify.app\/2021\/07\/tidy-tuesday-olympic-medals\/';
+          
+            this.page.identifier = '\/2021\/07\/tidy-tuesday-olympic-medals\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

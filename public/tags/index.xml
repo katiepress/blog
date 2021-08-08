@@ -6,13 +6,40 @@
     <description>Recent content in Tags on KPress R Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hardcore-noyce-5a4ea6.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hardcore-noyce-5a4ea6.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Animation</title>
+      <link>https://hardcore-noyce-5a4ea6.netlify.app/tags/animation/</link>
+      <pubDate>Wed, 04 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hardcore-noyce-5a4ea6.netlify.app/tags/animation/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Datasets</title>
       <link>https://hardcore-noyce-5a4ea6.netlify.app/tags/datasets/</link>
-      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 04 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>https://hardcore-noyce-5a4ea6.netlify.app/tags/datasets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Olympics</title>
+      <link>https://hardcore-noyce-5a4ea6.netlify.app/tags/olympics/</link>
+      <pubDate>Wed, 04 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hardcore-noyce-5a4ea6.netlify.app/tags/olympics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Scraping</title>
+      <link>https://hardcore-noyce-5a4ea6.netlify.app/tags/web-scraping/</link>
+      <pubDate>Wed, 04 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hardcore-noyce-5a4ea6.netlify.app/tags/web-scraping/</guid>
       <description></description>
     </item>
     
@@ -26,38 +53,38 @@
     </item>
     
     <item>
-      <title>Web Scraping</title>
-      <link>https://hardcore-noyce-5a4ea6.netlify.app/tags/web-scraping/</link>
-      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://hardcore-noyce-5a4ea6.netlify.app/tags/web-scraping/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Modeling</title>
       <link>https://hardcore-noyce-5a4ea6.netlify.app/tags/modeling/</link>
-      <pubDate>Sun, 13 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://hardcore-noyce-5a4ea6.netlify.app/tags/modeling/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>The Office</title>
+      <link>https://hardcore-noyce-5a4ea6.netlify.app/tags/the-office/</link>
+      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hardcore-noyce-5a4ea6.netlify.app/tags/the-office/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Stocks</title>
       <link>https://hardcore-noyce-5a4ea6.netlify.app/tags/stocks/</link>
-      <pubDate>Sun, 13 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 03 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://hardcore-noyce-5a4ea6.netlify.app/tags/stocks/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>R Markdown</title>
-      <link>https://hardcore-noyce-5a4ea6.netlify.app/tags/r-markdown/</link>
-      <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
+      <title>X-Files</title>
+      <link>https://hardcore-noyce-5a4ea6.netlify.app/tags/x-files/</link>
+      <pubDate>Sun, 03 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://hardcore-noyce-5a4ea6.netlify.app/tags/r-markdown/</guid>
+      <guid>https://hardcore-noyce-5a4ea6.netlify.app/tags/x-files/</guid>
       <description></description>
     </item>
     

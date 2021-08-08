@@ -4,19 +4,20 @@ author: Katie Press
 date: '2021-07-12'
 slug: the-office-part-ii-the-smartest-guys-in-the-room/
 categories:
-  - R
-  - The Office
+  - Projects
 tags:
   - Datasets
-  - Web Scraping
-keywords:
-  - tech
+  - Modeling
+  - The Office
 autoThumbnailImage: false
 thumbnailImage: /img/slope_words_small.png
 thumbnailImagePosition: top
-coverImage: /img/sentiment_line.png
+coverImage: /img/slope_words.png
+coverMeta: out
+coverSize: partial
+metaAlignment: center
+summary: "Tidying the Enron email dataset"
 ---
-Tidying the Enron email dataset
 <!--more-->
 
 ```{r setup, include=FALSE}

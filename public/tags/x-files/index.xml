@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>X-Files on KPress R Blog</title>
+    <link>https://hardcore-noyce-5a4ea6.netlify.app/tags/x-files/</link>
+    <description>Recent content in X-Files on KPress R Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hardcore-noyce-5a4ea6.netlify.app/tags/x-files/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Trust No One</title>
+      <link>https://hardcore-noyce-5a4ea6.netlify.app/2021/01/trust-no-one/</link>
+      <pubDate>Sun, 03 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hardcore-noyce-5a4ea6.netlify.app/2021/01/trust-no-one/</guid>
+      <description>&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/core-js/shim.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react-dom.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactwidget/react-tools.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactable-binding/reactable.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/core-js/shim.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react-dom.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactwidget/react-tools.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactable-binding/reactable.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/core-js/shim.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react-dom.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactwidget/react-tools.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactable-binding/reactable.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/core-js/shim.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react-dom.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactwidget/react-tools.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactable-binding/reactable.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/core-js/shim.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react-dom.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactwidget/react-tools.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactable-binding/reactable.js&#34;&gt;&lt;/script&gt;</description>
+    </item>
+    
+    <item>
+      <title>I Want to Believe</title>
+      <link>https://hardcore-noyce-5a4ea6.netlify.app/2020/11/i-want-to-believe/</link>
+      <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hardcore-noyce-5a4ea6.netlify.app/2020/11/i-want-to-believe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Truth Is Out There</title>
+      <link>https://hardcore-noyce-5a4ea6.netlify.app/2020/10/the-truth-is-out-there/</link>
+      <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hardcore-noyce-5a4ea6.netlify.app/2020/10/the-truth-is-out-there/</guid>
+      <description>&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/core-js/shim.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react-dom.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactwidget/react-tools.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactable-binding/reactable.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/core-js/shim.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/react/react-dom.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactwidget/react-tools.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/reactable-binding/reactable.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/d3-bundle/d3-bundle.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/d3-lasso/d3-lasso.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/save-svg-as-png/save-svg-as-png.min.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/ggiraphjs/ggiraphjs.min.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/ggiraphjs/ggiraphjs.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://hardcore-noyce-5a4ea6.netlify.app/rmarkdown-libs/girafe-binding/girafe.js&#34;&gt;&lt;/script&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

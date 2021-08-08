@@ -9,14 +9,12 @@ categories:
 tags:
   - R Markdown
   - Web Scraping
-keywords:
-  - tech
 autoThumbnailImage: false
 thumbnailImage: /img/dots_small.png
 thumbnailImagePosition: top
 coverImage: /img/dots.png
 ---
-Creating an X-Files episode dataset using web scraping.
+Creating an X-Files episode dataset using web scraping
 <!--more-->
 
 ```{r setup, include=FALSE}
@@ -28,6 +26,7 @@ library(lubridate)
 library(ggiraph)
 library(extrafont)
 library(tidytext)
+library(reactable)
 ```
 
 # Background
@@ -73,7 +72,13 @@ tables <- wiki %>%
 I won't show all the tables just for the sake of space, but here is the first one. It looks like the "prod code" column is going to cause issues when I try and map them to one dataframe, because in some cases there are hyperlinks which results in inconsistent column names. (Hint: the table is interactive so you can flip over to the other columns or down to the next page). 
 
 ```{r}
-tables[[1]]
+reactable(tables[[1]],
+          bordered = TRUE,
+                     highlight = TRUE,
+                     striped = TRUE,
+                     compact = TRUE,
+                     wrap = FALSE
+          )
 ```
 
 I'm going to add names to this list of dataframes before I clean the column names.
@@ -172,7 +177,12 @@ table_df <- table_df %>%
 Here's the table so far. 
 
 ```{r}
-table_df
+reactable(table_df,
+          bordered = TRUE,
+                     highlight = TRUE,
+                     striped = TRUE,
+                     compact = TRUE,
+                     wrap = FALSE)
 ```
 
 ## Plotting Episode Ratings

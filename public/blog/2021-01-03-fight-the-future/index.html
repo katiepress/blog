@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.87.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Katie Press">
+<meta name="keywords" content="">
+<meta name="description" content="">
+
+
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fight The Future">
+<meta name="twitter:title" content="Fight The Future">
+<meta property="og:url" content="https://katiepress.us/blog/2021-01-03-fight-the-future/">
+<meta property="twitter:url" content="https://katiepress.us/blog/2021-01-03-fight-the-future/">
+<meta property="og:site_name" content="KPress R Blog">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2021-01-03T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2021-01-03T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="Projects">
+    
+  
+  
+    
+      <meta property="article:tag" content="Stocks">
+    
+      <meta property="article:tag" content="Modeling">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@katie_press">
+
+
+  <meta name="twitter:creator" content="@katie_press">
+
+
+
+
+
+
+  <meta property="og:image" content="https://katiepress.us/img/bbstock_small.png">
+  <meta property="twitter:image" content="https://katiepress.us/img/bbstock_small.png">
+
+
+  <meta property="og:image" content="https://katiepress.us/img/bbstock.png">
+  <meta property="twitter:image" content="https://katiepress.us/img/bbstock.png">
+
+
+
+
+  <meta property="og:image" content="https://katiepress.us/img/tuxedo.jpg">
+  <meta property="twitter:image" content="https://katiepress.us/img/tuxedo.jpg">
+
+
+    <title>Fight The Future</title>
+
+    <link rel="icon" href="https://katiepress.us/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://katiepress.us/blog/2021-01-03-fight-the-future/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://katiepress.us/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+      
+        <link rel="stylesheet" href="https://katiepress.us/static/css/custom.scss">
+      
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://katiepress.us/">KPress R Blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://katiepress.us/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://katiepress.us/img/tuxedo.jpg" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://katiepress.us/#about">
+          <img class="sidebar-profile-picture" src="https://katiepress.us/img/tuxedo.jpg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Katie Press</h4>
+        
+          <h5 class="sidebar-profile-bio">R Programmer, Data Enthusiast</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://katiepress.us/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-code"></i>
+      
+      <span class="sidebar-button-desc">Blog</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://katiepress.us/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-sitemap"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://katiepress.us/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-hashtag"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://katiepress.us/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-floppy-o"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://katiepress.us/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/katiepress" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://katiepress.us/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-center
+              "
+       style="background-image:url('/img/bbstock.png')"
+       data-behavior="4">
+    
+      <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title" itemprop="headline">
+      Fight The Future
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2021-01-03T00:00:00Z">
+        
+  January 3, 2021
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://katiepress.us/categories/projects">Projects</a>
+    
+  
+
+  </div>
+
+</div>
+    
+  </div>
+
+
+      <div id="main" data-behavior="4"
+        class="hasCover
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <h2 id="background-and-disclaimer">Background and Disclaimer</h2>
+<p>This post (unfortunately) has nothing to do with the X-Files 1998 movie &ldquo;Fight the Future&rdquo; but I couldn&rsquo;t resist using the title.</p>
+<p>Facebook created a forecasting package for R and Python called Prophet. I&rsquo;ve seen quite a few tutorials and examples for Prophet in Python but not many for R. Documentation can be found <a href="https://facebook.github.io/prophet/">here</a> for both languages.</p>
+<p>From the description:</p>
+<p>&ldquo;Prophet is a procedure for forecasting time series data based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects. It works best with time series that have strong seasonal effects and several seasons of historical data. Prophet is robust to missing data and shifts in the trend, and typically handles outliers well.&rdquo;</p>
+<p>Disclaimer: This blog post is NOT intended as investment advice. The charts and analyses contained within this post are provided to illustrate the functions of the prophet package and to share my personal opinions on stocks.</p>
+<p>I have the following packages loaded:</p>
+<ul>
+<li>tidyverse</li>
+<li>lubridate</li>
+<li>janitor</li>
+<li>prophet</li>
+<li>BatchGetSymbols</li>
+<li>tidyquant</li>
+<li>knitr</li>
+<li>gtrendsR</li>
+</ul>
+<h2 id="getting-data">Getting Data</h2>
+<p>First, using the package BatchGetSymbols to get the stocks I&rsquo;m interested in.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">stocks <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">BatchGetSymbols</span>(
+  <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;BB&#34;</span>, <span style="color:#e6db74">&#34;CLX&#34;</span>,
+    <span style="color:#e6db74">&#34;UAVS&#34;</span>, <span style="color:#e6db74">&#34;TLRY&#34;</span>,
+    <span style="color:#e6db74">&#34;ENG&#34;</span>, <span style="color:#e6db74">&#34;SPCE&#34;</span>, <span style="color:#e6db74">&#34;MNMD&#34;</span>),
+  first.date <span style="color:#f92672">=</span> <span style="color:#a6e22e">ymd</span>(<span style="color:#e6db74">&#34;2021-06-11&#34;</span>) <span style="color:#f92672">%m-%</span> <span style="color:#a6e22e">years</span>(<span style="color:#ae81ff">4</span>),
+  last.date <span style="color:#f92672">=</span> <span style="color:#a6e22e">ymd</span>(<span style="color:#e6db74">&#34;2021-06-11&#34;</span>),
+  thresh.bad.data <span style="color:#f92672">=</span> <span style="color:#ae81ff">.1</span>
+)<span style="color:#f92672">$</span>df.tickers
+
+stocks <span style="color:#f92672">&lt;-</span> stocks <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">clean_names</span>()
+</code></pre></div><h2 id="forecasting-with-prophet">Forecasting with prophet</h2>
+<p>For the forecasting exercise, I&rsquo;m going to start with BB. I&rsquo;m interested to see what the prophet model will do with sudden price increases, and BB seemed like the more reasonable way to test this, as opposed to GME where we have a $300+ increase. The tidyquant package has a geom_candlestick chart function for ggplot, which is what I&rsquo;m using here.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">stocks <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">filter</span>(ticker <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;BB&#34;</span>, ref_date <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#34;2021-01-01&#34;</span>) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">ggplot</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> ref_date, y <span style="color:#f92672">=</span> price_close)) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">geom_candlestick</span>(
+    <span style="color:#a6e22e">aes</span>(
+      open <span style="color:#f92672">=</span> price_open,
+      high <span style="color:#f92672">=</span> price_high,
+      low <span style="color:#f92672">=</span> price_low,
+      close <span style="color:#f92672">=</span> price_close
+    ),
+    colour_up <span style="color:#f92672">=</span> pal.9[5],
+    colour_down <span style="color:#f92672">=</span> pal.9[1],
+    fill_up <span style="color:#f92672">=</span> pal.9[5],
+    fill_down <span style="color:#f92672">=</span> pal.9[1]
+  ) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">labs</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;BB Daily Chart YTD&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Closing Price&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#f92672">+</span>
+  my_theme
+</code></pre></div><p><img src="https://katiepress.us/post/2021-06-13-fight-the-future/index.en-us_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<h3 id="getting-started">Getting Started</h3>
+<p>Steps:</p>
+<ol>
+<li>Select a ticker from the batch symbols dataframe and rename the columns to correspond to prophet&rsquo;s expected inputs (ds and y).</li>
+<li>Get a dataframe of U.S. holidays using prophet&rsquo;s built-in holiday dataset.</li>
+<li>Create a training dataset to fit the model using historical data, and a test dataset of more recent data to test the results.</li>
+<li>Fit the prophet model to the training dataset</li>
+<li>Make a future dataframe for the prediction and exclude weekends (Saturday is day 7 and Sunday is day 1 using wday from lubridate)</li>
+<li>Use generic R &ldquo;predict&rdquo; function to predict the closing price</li>
+</ol>
+<p>Note: both the prophet and predict functions might take a minute to run, this depends partly on your computer and partly on the amount of data you&rsquo;re using to create the models. On my Windows laptop that I used to use for work, this would take quite a while. With my new M1 Macbook Pro it only takes a few seconds.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">data</span>(<span style="color:#e6db74">&#34;generated_holidays&#34;</span>)
+
+generated_holidays <span style="color:#f92672">&lt;-</span> generated_holidays <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">filter</span>(country <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;US&#34;</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">df_train <span style="color:#f92672">&lt;-</span> stocks <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">filter</span>(ticker <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;BB&#34;</span>, ref_date <span style="color:#f92672">&lt;</span> <span style="color:#e6db74">&#34;2021-03-01&#34;</span>) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">select</span>(<span style="color:#e6db74">&#34;ds&#34;</span> <span style="color:#f92672">=</span> ref_date, <span style="color:#e6db74">&#34;y&#34;</span> <span style="color:#f92672">=</span> price_close)
+
+df_test <span style="color:#f92672">&lt;-</span> stocks <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">filter</span>(ticker <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;BB&#34;</span>, ref_date <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#34;2021-03-01&#34;</span>) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">select</span>(<span style="color:#e6db74">&#34;ds&#34;</span> <span style="color:#f92672">=</span> ref_date, <span style="color:#e6db74">&#34;y&#34;</span> <span style="color:#f92672">=</span> price_close)
+
+m <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">prophet</span>(holidays <span style="color:#f92672">=</span> generated_holidays)
+m <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">fit.prophet</span>(m, df_train)
+
+future <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">make_future_dataframe</span>(m, periods <span style="color:#f92672">=</span> <span style="color:#ae81ff">120</span>)
+
+future <span style="color:#f92672">&lt;-</span> future <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">mutate</span>(week_day <span style="color:#f92672">=</span> <span style="color:#a6e22e">wday</span>(ds)) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">between</span>(week_day, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">6</span>))
+
+forecast <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">predict</span>(m, future)
+
+test <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">plot</span>(m, forecast)
+</code></pre></div><h3 id="initial-results">Initial Results</h3>
+<p>Now I can plot the result. The blue line represents the predicted values, and the light blue shaded areas represent the uncertainty of the predicted model. The pink dots represent the actual closing price of the stock.</p>
+<p>Note that it doesn&rsquo;t come close to predicting $25 back in January (and I didn&rsquo;t expect it to).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">test <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">labs</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;BB Prophet Model&#34;</span>, 
+       subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;120-Day Prediction&#34;</span>,
+       y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Closing Price&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#f92672">+</span>
+  my_theme
+</code></pre></div><p><img src="https://katiepress.us/post/2021-06-13-fight-the-future/index.en-us_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<h3 id="training-vs-test-data">Training vs. Test Data</h3>
+<p>Now using the training dataset which includes the most recent data (March 2021-current), I can compare the model&rsquo;s prediction to the actual price movement (represented by the purple dots).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">forecast <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">ggplot</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.Date</span>(ds), y <span style="color:#f92672">=</span> yhat)) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">geom_line</span>(col <span style="color:#f92672">=</span> pal.9[6], size <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.1</span>) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">geom_point</span>(data <span style="color:#f92672">=</span> df_train, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> ds, y <span style="color:#f92672">=</span> y), col <span style="color:#f92672">=</span> pal.9[9]) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">geom_point</span>(data <span style="color:#f92672">=</span> df_test, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> ds, y <span style="color:#f92672">=</span> y), col <span style="color:#f92672">=</span> pal.9[8]) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">labs</span>(
+    title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;BB Prophet Model vs. Test Data&#34;</span>,
+    subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;120 Day Prediction&#34;</span>,
+    y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Closing Price&#34;</span>,
+    x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+  ) <span style="color:#f92672">+</span>
+  my_theme
+</code></pre></div><p><img src="https://katiepress.us/post/2021-06-13-fight-the-future/index.en-us_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<h3 id="increasing-model-flexibility">Increasing Model Flexibility</h3>
+<p>It looks like I need to increase the flexibility of the forecast, and maybe that would help me get a higher prediction in both January and June (closer to the actual price). I think this result is quite interesting. It predicted the second increase almost exactly, but it still doesn&rsquo;t account for the large dip before the stock shot up to $15 again. Historically though, it predicted downtrends just fine.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">m2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">prophet</span>(df_train, changepoint.prior.scale <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>, holidays <span style="color:#f92672">=</span> generated_holidays)
+forecast2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">predict</span>(m2, future)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">forecast2 <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">ggplot</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.Date</span>(ds), y <span style="color:#f92672">=</span> yhat)) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">geom_line</span>(col <span style="color:#f92672">=</span> pal.9[6], size <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.1</span>) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">geom_point</span>(data <span style="color:#f92672">=</span> df_train, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> ds, y <span style="color:#f92672">=</span> y), col <span style="color:#f92672">=</span> pal.9[9]) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">geom_point</span>(data <span style="color:#f92672">=</span> df_test, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> ds, y <span style="color:#f92672">=</span> y), col <span style="color:#f92672">=</span> pal.9[8]) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">labs</span>(
+    title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;BB Prophet Model vs. Test Data&#34;</span>,
+    subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;120 Day Prediction: Increased Model Flexibility&#34;</span>,
+    y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Closing Price&#34;</span>,
+    x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+  ) <span style="color:#f92672">+</span>
+  my_theme
+</code></pre></div><p><img src="https://katiepress.us/post/2021-06-13-fight-the-future/index.en-us_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<h2 id="one-year-prediction">One Year Prediction</h2>
+<p>Now that I know it (kind of) works, I will predict for the next year, keeping the increase in model flexibility as seen in the last chart. Note that increasing the flexibility also means increasing uncertainty, and I&rsquo;m not sure how that will play out on a longer time frame.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">df <span style="color:#f92672">&lt;-</span> stocks <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">filter</span>(ticker <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;BB&#34;</span>) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">select</span>(<span style="color:#e6db74">&#34;ds&#34;</span> <span style="color:#f92672">=</span> ref_date, <span style="color:#e6db74">&#34;y&#34;</span> <span style="color:#f92672">=</span> price_close)
+
+m3 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">prophet</span>(df, changepoint.prior.scale <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>, holidays <span style="color:#f92672">=</span> generated_holidays)
+
+future3 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">make_future_dataframe</span>(m3, periods <span style="color:#f92672">=</span> <span style="color:#ae81ff">365</span>)
+
+future3 <span style="color:#f92672">&lt;-</span> future3 <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">mutate</span>(week_day <span style="color:#f92672">=</span> <span style="color:#a6e22e">wday</span>(ds)) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">between</span>(week_day, <span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">6</span>))
+
+forecast3 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">predict</span>(m3, future3)
+
+test2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">plot</span>(m3, forecast3)
+</code></pre></div><p>Very interesting, with the longer timeframe for future prediction it looks like increasing the flexibility of the model is not that helpful. For one thing it doesn&rsquo;t predict the current price as accurately as the previous (shorter) prediction. It also increases the uncertainty to the point where the prediction isn&rsquo;t really useful. It&rsquo;s like saying &ldquo;by this time next year, the closing price of BB will be between -$10 and $50&rdquo;.</p>
+<p><img src="https://katiepress.us/post/2021-06-13-fight-the-future/index.en-us_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<h3 id="decrease-model-flexibility">Decrease Model Flexibility</h3>
+<p>What would it look like if I went back to the default flexibility? The resulting prediction still has BB trading around $20 per share, but the uncertainty is much lower, and there&rsquo;s a pretty clear uptrend.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">m4 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">prophet</span>(df, holidays <span style="color:#f92672">=</span> generated_holidays)
+
+forecast4 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">predict</span>(m4, future3)
+
+test3 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">plot</span>(m4, forecast4)
+</code></pre></div><p><img src="https://katiepress.us/post/2021-06-13-fight-the-future/index.en-us_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<h3 id="adding-google-trend-data">Adding Google Trend Data</h3>
+<p>I wondered if there was something else I could do to increase the accuracy of the predictive model. I noticed in the <a href="https://facebook.github.io/prophet/docs/seasonality,_holiday_effects,_and_regressors.html#additional-regressors">prophet documentation</a> that you can use additional regressors in the model. The first thing I thought of was to mine the wallstreetbets reddit data and do a text analysis of sentiment over time. But I don&rsquo;t really have time right now, so I decided to use some Google trend data on hits using BB as the keyword.</p>
+<p>Steps:</p>
+<ol>
+<li>Get the Google trend data, specifying the keyword and date range. Other information is available, but I&rsquo;m only asking it for interest over time.</li>
+<li>Create a new column with the logarithmic scale for hits and a floor date for weeks - since this is weekly data I have to have a way to join it consistently with the stock dataframe.</li>
+<li>Add the Google trend data to the stock dataframe and future dataframe.</li>
+<li>Add as a regressor and fit the prophet model</li>
+</ol>
+<p>At this point, I realized that I had NAs in my Google trend data because (duh) they can&rsquo;t magically provide future trend data. I wondered if it was still worth using, but I decided to test it out anyways. All I did was replace the NAs for the future data with the average hits of the prior data.</p>
+<ol start="5">
+<li>Run the forecast and plot the model.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">df <span style="color:#f92672">&lt;-</span> stocks <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">filter</span>(ticker <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;BB&#34;</span>) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">select</span>(<span style="color:#e6db74">&#34;ds&#34;</span> <span style="color:#f92672">=</span> ref_date, <span style="color:#e6db74">&#34;y&#34;</span> <span style="color:#f92672">=</span> price_close)
+
+google_trend <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">gtrends</span>(
+  keyword <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;BB&#34;</span>,
+  geo <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;US&#34;</span>,
+  onlyInterest <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+  time <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2017-06-11 2021-06-11&#34;</span>
+)<span style="color:#f92672">$</span>interest_over_time
+
+google_trend <span style="color:#f92672">&lt;-</span> google_trend <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">mutate</span>(log_hits <span style="color:#f92672">=</span> <span style="color:#a6e22e">log</span>(hits)) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">mutate</span>(date2 <span style="color:#f92672">=</span> <span style="color:#a6e22e">floor_date</span>(date, <span style="color:#e6db74">&#34;weeks&#34;</span>))
+
+df <span style="color:#f92672">&lt;-</span> df <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">mutate</span>(date2 <span style="color:#f92672">=</span> <span style="color:#a6e22e">floor_date</span>(ds, unit <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;weeks&#34;</span>)) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">left_join</span>(google_trend <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">select</span>(date2, hits, log_hits))
+
+<span style="color:#75715e">#remove df</span>
+m5 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">prophet</span>(holidays <span style="color:#f92672">=</span> generated_holidays)
+
+m5 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">add_regressor</span>(m5, <span style="color:#e6db74">&#34;hits&#34;</span>)
+
+m5 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">fit.prophet</span>(m5, df)
+
+<span style="color:#75715e">#move these two after the fit</span>
+future5 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">make_future_dataframe</span>(m5, periods <span style="color:#f92672">=</span> <span style="color:#ae81ff">365</span>)
+
+future5 <span style="color:#f92672">&lt;-</span> future5 <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">mutate</span>(week_day <span style="color:#f92672">=</span> <span style="color:#a6e22e">wday</span>(ds)) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">between</span>(week_day, <span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">6</span>)) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">mutate</span>(date2 <span style="color:#f92672">=</span> <span style="color:#a6e22e">floor_date</span>(ds, <span style="color:#e6db74">&#34;weeks&#34;</span>)) <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">left_join</span>(google_trend <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">select</span>(date2, hits, log_hits))
+
+
+avg.hits <span style="color:#f92672">&lt;-</span> future5 <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">summarise</span>(avg <span style="color:#f92672">=</span> <span style="color:#a6e22e">mean</span>(hits, na.rm<span style="color:#f92672">=</span><span style="color:#66d9ef">TRUE</span>)) <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">pull</span>(avg)
+
+future5 <span style="color:#f92672">&lt;-</span> future5 <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#a6e22e">mutate</span>(hits <span style="color:#f92672">=</span> <span style="color:#a6e22e">replace_na</span>(hits, avg.hits),
+         log_hits <span style="color:#f92672">=</span> <span style="color:#a6e22e">log</span>(hits))
+
+forecast5 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">predict</span>(m5, future5)
+
+test5 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">plot</span>(m5, forecast5)
+</code></pre></div><p>The results are actually pretty cool, it seems that even though we don&rsquo;t have magic future trend data, using the past trend data was enough to improve the model.</p>
+<ul>
+<li>The new model correctly predicted the huge price increases.</li>
+<li>It accurately predicted the decrease in price after the first spike, whereas the previous models did not.</li>
+<li>We have a more reasonable price prediction for the near future, and potentially a more accurate prediction for the next year.</li>
+<li>Uncertainty increases after January 2022, but it is still much better than the first one-year prediction with the increased flexibility.</li>
+</ul>
+<p>The green line below the chart is just the log scale of the Google trend data so you can see how that played out especially during the price increases.</p>
+<p><img src="https://katiepress.us/post/2021-06-13-fight-the-future/index.en-us_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<h2 id="my-picks-week-of-june-14th-2021">My Picks Week of June 14th 2021</h2>
+<p>My current positions are:</p>
+<ul>
+<li>MNMD (shares)</li>
+<li>TLRY (shares)</li>
+<li>SPCE (puts)</li>
+</ul>
+<p>With ggplot line charts and using facet_wrap, I can easily compare the price action between different tickers. Here is the closing price of each stock for the past calendar year for the six with the most historical data. I&rsquo;m mostly focusing on the first four.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">stocks <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">filter</span>(ref_date <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#34;2020-06-13&#34;</span>,
+         ticker <span style="color:#f92672">%in%</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;CLX&#34;</span>, <span style="color:#e6db74">&#34;UAVS&#34;</span>, <span style="color:#e6db74">&#34;SPCE&#34;</span>,
+                       <span style="color:#e6db74">&#34;MNMD&#34;</span>, <span style="color:#e6db74">&#34;TLRY&#34;</span>, <span style="color:#e6db74">&#34;ENG&#34;</span>)) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">ggplot</span>(<span style="color:#a6e22e">aes</span>(
+    x <span style="color:#f92672">=</span> ref_date,
+    y <span style="color:#f92672">=</span> price_close,
+    group <span style="color:#f92672">=</span> ticker,
+    color <span style="color:#f92672">=</span> ticker
+  )) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">geom_line</span>() <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">labs</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Daily Chart&#34;</span>,
+       y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Closing Price&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">scale_x_date</span>(date_labels <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;%m-%y&#34;</span>,
+               limits <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#a6e22e">today</span>() <span style="color:#f92672">%m-%</span> <span style="color:#a6e22e">years</span>(<span style="color:#ae81ff">1</span>), <span style="color:#a6e22e">today</span>() <span style="color:#f92672">%m+%</span> <span style="color:#a6e22e">months</span>(<span style="color:#ae81ff">1</span>))) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">facet_wrap</span>(<span style="color:#f92672">~</span> ticker, ncol <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, scale <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;free_y&#34;</span>) <span style="color:#f92672">+</span>
+  my_theme
+</code></pre></div><pre><code>## Warning: Removed 234 row(s) containing missing values (geom_path).
+</code></pre><p><img src="https://katiepress.us/post/2021-06-13-fight-the-future/index.en-us_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<h3 id="clx">CLX</h3>
+<p>I picked this ticker because:</p>
+<ol>
+<li>Household goods sector seasonality comes into play during the summer months</li>
+<li>It&rsquo;s been on a downtrend for quite a while and the chart looks ready to break out</li>
+<li>Calls are cheap</li>
+</ol>
+<p>It might not be the best prediction chart, but the charts are not the only basis for this pick. I&rsquo;m planning on entering early this coming week.</p>
+<p><img src="https://katiepress.us/post/2021-06-13-fight-the-future/index.en-us_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<h3 id="eng">ENG</h3>
+<p>I traded this before and sold at the peak, I think it has another run coming. If it can get above $3 and hold I will take a call position.</p>
+<p><img src="https://katiepress.us/post/2021-06-13-fight-the-future/index.en-us_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<h3 id="mnmd">MNMD</h3>
+<p>Mindmed benefitted from the Google trend data, but I didn&rsquo;t plot it because it was very messy looking. I&rsquo;m bullish on this ticker and sector overall for similar reasons as the cannabis stocks.</p>
+<p><img src="https://katiepress.us/post/2021-06-13-fight-the-future/index.en-us_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<h3 id="spce">SPCE</h3>
+<p>I like SPCE overall, but I think it&rsquo;s due for a pretty sharp drop before the next leg up, which is why I have short term puts.</p>
+<p><img src="https://katiepress.us/post/2021-06-13-fight-the-future/index.en-us_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<h3 id="tlry">TLRY</h3>
+<p>TLRY was another case where the Google trend data improved the model quite a bit (not all of them were useful). I didn&rsquo;t include the Google trend line because it was too messy with the actual numbers and not super useful on the log scale.</p>
+<p>Tilray is more of a long-term swing for me, I bought some shares when it was around $17 recently to sell covered calls. Very bullish on this in the near future, and the whole sector really.</p>
+<p><img src="https://katiepress.us/post/2021-06-13-fight-the-future/index.en-us_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<h3 id="uavs">UAVS</h3>
+<p>UAVS is a drone play and I really like the chart setup here. With the historical data it just looks like a giant cup and handle. Drones were also featured in ARK&rsquo;s <a href="https://ark-invest.com/big-ideas-2021/">Big Ideas 2021</a>.</p>
+<p><img src="https://katiepress.us/post/2021-06-13-fight-the-future/index.en-us_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<p>And that&rsquo;s all for today. Maybe I&rsquo;ll check back in a year and see what actually happened. In the meantime, I&rsquo;ll be busy researching - and hopefully making money.</p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://katiepress.us/tags/stocks/">Stocks</a>
+
+  <a class="tag tag--primary tag--small" href="https://katiepress.us/tags/modeling/">Modeling</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://katiepress.us/blog/2021-06-22-the-office-part-i/" data-tooltip="The Office Part I">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://katiepress.us/blog/2021-01-03-trust-no-one/" data-tooltip="Trust No One">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://katiepress.us/blog/2021-01-03-fight-the-future/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://katiepress.us/blog/2021-01-03-fight-the-future/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://katiepress.us/blog/2021-01-03-fight-the-future/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 Katie Press. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://katiepress.us/blog/2021-06-22-the-office-part-i/" data-tooltip="The Office Part I">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://katiepress.us/blog/2021-01-03-trust-no-one/" data-tooltip="Trust No One">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://katiepress.us/blog/2021-01-03-fight-the-future/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://katiepress.us/blog/2021-01-03-fight-the-future/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://katiepress.us/blog/2021-01-03-fight-the-future/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkatiepress.us%2Fblog%2F2021-01-03-fight-the-future%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fkatiepress.us%2Fblog%2F2021-01-03-fight-the-future%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fkatiepress.us%2Fblog%2F2021-01-03-fight-the-future%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://katiepress.us/img/tuxedo.jpg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Katie Press</h4>
+    
+      <div id="about-card-bio">R Programmer, Data Enthusiast</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Researcher
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        USA
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://katiepress.us/images/space3.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://katiepress.us/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages.r.min.js"></script>
+  
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/katiepress.us\/blog\/2021-01-03-fight-the-future\/';
+          
+            this.page.identifier = '\/blog\/2021-01-03-fight-the-future\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

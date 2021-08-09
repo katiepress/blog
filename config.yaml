@@ -3,7 +3,7 @@ languageCode: en-us
 defaultContentLanguage: en-us
 title: Blog Home
 theme: hugo-tranquilpeak-theme
-disqusShortname: hugo-tranquilpeak-theme
+disqusShortname: blog-zxbl2vcnni
 paginate: 7
 canonifyurls: yes
 permalinks:

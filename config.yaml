@@ -16,9 +16,9 @@ markup:
   goldmark:
     renderer:
       unsafe: yes
-  #highlight: 
- #   style: "agate"
- #   codeFences: false
+  highlight: 
+    style: "base16-snazzy"
+    codeFences: true
 author:
   bio: R Programmer, Data Enthusiast
   job: Researcher

@@ -275,102 +275,102 @@
 <p>The data provided this week is drought conditions by state. I wanted to make a map, and I thought it would be interesting to look at the drought level by county over time. I downloaded a file from this page on <a href="https://droughtmonitor.unl.edu/DmData/DataDownload/ComprehensiveStatistics.aspx">The U.S. Drought Monitor Website</a></p>
 <p>I filtered by date (August 2019 - present), I chose “County” for the spatial scale, “Percent Area” for statistics type, and “Categorical” for statistics type, and downloaded a csv file.</p>
 <p>After reading in the csv, I just cleaned it up a bit (similar to the tidytuesday dataset) and then filtered so I have the drought level for the highest percentage area for each county and week.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">dr_county <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">read_csv</span>(<span style="color:#e6db74">&#34;~/Desktop/Rproj/drought_maps/dm_export_20190814_20210714.csv&#34;</span>) <span style="color:#f92672">%&gt;%</span> 
-    <span style="color:#a6e22e">pivot_longer</span>(cols <span style="color:#f92672">=</span> None<span style="color:#f92672">:</span>D4, names_to <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;drought_lvl&#34;</span>, values_to <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;area_pct&#34;</span>) <span style="color:#f92672">%&gt;%</span> 
-    janitor<span style="color:#f92672">::</span><span style="color:#a6e22e">clean_names</span>() <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">mutate</span>(drought_lvl <span style="color:#f92672">=</span><span style="color:#a6e22e">factor</span>(drought_lvl, levels <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;D4&#34;</span>, <span style="color:#e6db74">&#34;D3&#34;</span>, <span style="color:#e6db74">&#34;D2&#34;</span>, <span style="color:#e6db74">&#34;D1&#34;</span>, <span style="color:#e6db74">&#34;D0&#34;</span>, <span style="color:#e6db74">&#34;None&#34;</span>))) 
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">dr_county <span style="color:#ff6ac1">&lt;-</span> <span style="color:#57c7ff">read_csv</span>(<span style="color:#5af78e">&#34;~/Desktop/Rproj/drought_maps/dm_export_20190814_20210714.csv&#34;</span>) <span style="color:#ff6ac1">%&gt;%</span> 
+    <span style="color:#57c7ff">pivot_longer</span>(cols <span style="color:#ff6ac1">=</span> None<span style="color:#ff6ac1">:</span>D4, names_to <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;drought_lvl&#34;</span>, values_to <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;area_pct&#34;</span>) <span style="color:#ff6ac1">%&gt;%</span> 
+    janitor<span style="color:#ff6ac1">::</span><span style="color:#57c7ff">clean_names</span>() <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">mutate</span>(drought_lvl <span style="color:#ff6ac1">=</span><span style="color:#57c7ff">factor</span>(drought_lvl, levels <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#5af78e">&#34;D4&#34;</span>, <span style="color:#5af78e">&#34;D3&#34;</span>, <span style="color:#5af78e">&#34;D2&#34;</span>, <span style="color:#5af78e">&#34;D1&#34;</span>, <span style="color:#5af78e">&#34;D0&#34;</span>, <span style="color:#5af78e">&#34;None&#34;</span>))) 
 
 
-temp_drought <span style="color:#f92672">&lt;-</span> dr_county <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">group_by</span>(fips, valid_start) <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">arrange</span>(fips, valid_start, <span style="color:#a6e22e">desc</span>(area_pct), drought_lvl) <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">1</span>)
+temp_drought <span style="color:#ff6ac1">&lt;-</span> dr_county <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">group_by</span>(fips, valid_start) <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">arrange</span>(fips, valid_start, <span style="color:#57c7ff">desc</span>(area_pct), drought_lvl) <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">slice</span>(<span style="color:#ff9f43">1</span>)
 </code></pre></div><p>This is what the drought data looks like:</p>
 <div id="htmlwidget-1" class="reactable html-widget" style="width:auto;height:auto;"></div>
 <script type="application/json" data-for="htmlwidget-1">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"map_date":[20190813,20190820,20190827,20190903,20190910,20190917],"fips":["01001","01001","01001","01001","01001","01001"],"county":["Autauga County","Autauga County","Autauga County","Autauga County","Autauga County","Autauga County"],"state":["AL","AL","AL","AL","AL","AL"],"valid_start":["2019-08-13","2019-08-20","2019-08-27","2019-09-03","2019-09-10","2019-09-17"],"valid_end":["2019-08-19","2019-08-26","2019-09-02","2019-09-09","2019-09-16","2019-09-23"],"statistic_format_id":[2,2,2,2,2,2],"drought_lvl":["D0","D0","None","None","D0","D0"],"area_pct":[63.29,100,96.69,96.69,93.12,70.42]},"columns":[{"accessor":"map_date","name":"map_date","type":"numeric"},{"accessor":"fips","name":"fips","type":"character"},{"accessor":"county","name":"county","type":"character"},{"accessor":"state","name":"state","type":"character"},{"accessor":"valid_start","name":"valid_start","type":"Date"},{"accessor":"valid_end","name":"valid_end","type":"Date"},{"accessor":"statistic_format_id","name":"statistic_format_id","type":"numeric"},{"accessor":"drought_lvl","name":"drought_lvl","type":"factor"},{"accessor":"area_pct","name":"area_pct","type":"numeric"}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"compact":true,"nowrap":true,"dataKey":"0f9b6e6a39742ba96c5255d396285052","key":"0f9b6e6a39742ba96c5255d396285052"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
 <p>Since the drought data has a FIPS code, I can use that to match onto my mapping data (courtesy of the maps package). I need to make the FIPS code a string and pad it with a leading 0 to match the county drought data.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">data</span>(<span style="color:#e6db74">&#34;county.fips&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#57c7ff">data</span>(<span style="color:#5af78e">&#34;county.fips&#34;</span>)
 
-county.fips <span style="color:#f92672">&lt;-</span> county.fips <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">mutate</span>(region <span style="color:#f92672">=</span> <span style="color:#a6e22e">word</span>(polyname, <span style="color:#ae81ff">1</span>, sep <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;,&#34;</span>),
-         subregion <span style="color:#f92672">=</span> <span style="color:#a6e22e">word</span>(polyname, <span style="color:#ae81ff">2</span>, sep <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;,&#34;</span>)) <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">mutate</span>(subregion <span style="color:#f92672">=</span> <span style="color:#a6e22e">word</span>(subregion, <span style="color:#ae81ff">1</span>, sep <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;:&#34;</span>)) <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">mutate</span>(fips <span style="color:#f92672">=</span> <span style="color:#a6e22e">str_pad</span>(<span style="color:#a6e22e">as.character</span>(fips), side <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;left&#34;</span>, width <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>, <span style="color:#e6db74">&#34;0&#34;</span>))
+county.fips <span style="color:#ff6ac1">&lt;-</span> county.fips <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">mutate</span>(region <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">word</span>(polyname, <span style="color:#ff9f43">1</span>, sep <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;,&#34;</span>),
+         subregion <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">word</span>(polyname, <span style="color:#ff9f43">2</span>, sep <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;,&#34;</span>)) <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">mutate</span>(subregion <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">word</span>(subregion, <span style="color:#ff9f43">1</span>, sep <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;:&#34;</span>)) <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">mutate</span>(fips <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">str_pad</span>(<span style="color:#57c7ff">as.character</span>(fips), side <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;left&#34;</span>, width <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">5</span>, <span style="color:#5af78e">&#34;0&#34;</span>))
 </code></pre></div><p>Now I can get the USA map and join by FIPS.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">map_usa <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">map_data</span>(<span style="color:#e6db74">&#34;county&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">map_usa <span style="color:#ff6ac1">&lt;-</span> <span style="color:#57c7ff">map_data</span>(<span style="color:#5af78e">&#34;county&#34;</span>)
 
-map_usa <span style="color:#f92672">&lt;-</span> map_usa <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">left_join</span>(county.fips)
+map_usa <span style="color:#ff6ac1">&lt;-</span> map_usa <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">left_join</span>(county.fips)
 </code></pre></div><pre><code>## Joining, by = c(&quot;region&quot;, &quot;subregion&quot;)
 </code></pre>
 <p>For some reason the drought data is missing Shannon County, SD, which of course is going to be an issue because it will be a blank space on the map. To deal with that issue, I will first create a time series with tibbletime, then join that to the map data so that each county has a row for each week of the drought data.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">series <span style="color:#f92672">&lt;-</span> tibbletime<span style="color:#f92672">::</span><span style="color:#a6e22e">create_series</span>(<span style="color:#e6db74">&#34;2019-08-20&#34;</span> <span style="color:#f92672">~</span> <span style="color:#e6db74">&#34;2021-07-13&#34;</span>, <span style="color:#e6db74">&#34;weekly&#34;</span>) <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">mutate</span>(join_col <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">rename</span>(<span style="color:#e6db74">&#34;valid_start&#34;</span> <span style="color:#f92672">=</span> date)
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">series <span style="color:#ff6ac1">&lt;-</span> tibbletime<span style="color:#ff6ac1">::</span><span style="color:#57c7ff">create_series</span>(<span style="color:#5af78e">&#34;2019-08-20&#34;</span> <span style="color:#ff6ac1">~</span> <span style="color:#5af78e">&#34;2021-07-13&#34;</span>, <span style="color:#5af78e">&#34;weekly&#34;</span>) <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">mutate</span>(join_col <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">1</span>) <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">rename</span>(<span style="color:#5af78e">&#34;valid_start&#34;</span> <span style="color:#ff6ac1">=</span> date)
 
-map_usa <span style="color:#f92672">&lt;-</span> map_usa <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">mutate</span>(join_col <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">left_join</span>(series)
+map_usa <span style="color:#ff6ac1">&lt;-</span> map_usa <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">mutate</span>(join_col <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">1</span>) <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">left_join</span>(series)
 </code></pre></div><pre><code>## Joining, by = &quot;join_col&quot;
 </code></pre>
 <p>Now I can join the drought data to the map. This should not increase the number of rows in the dataset because it is going to join by week and fips. But there is still the issue of the missing SD county.</p>
 <p>To deal with the missing county, I’m basically just going to separate it from the rest of the data temporarily, along with Bennett county, which is right next to Shannon. Then I will use Bennett county to fill in the missing values from Shannon, assuming they are likely to be very similar. Then I will add the rows back to the map_usa data. I’m also recoding the drought level factors because I realized it would be helpful for the map visualization.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">map_usa <span style="color:#f92672">&lt;-</span> map_usa <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">left_join</span>(temp_drought)
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">map_usa <span style="color:#ff6ac1">&lt;-</span> map_usa <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">left_join</span>(temp_drought)
 </code></pre></div><pre><code>## Joining, by = c(&quot;fips&quot;, &quot;valid_start&quot;)
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">temp_nas <span style="color:#f92672">&lt;-</span> map_usa <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">filter</span>(region <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;south dakota&#34;</span>, subregion <span style="color:#f92672">%in%</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;shannon&#34;</span>, <span style="color:#e6db74">&#34;bennett&#34;</span>)) <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">arrange</span>(valid_start, subregion)
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">temp_nas <span style="color:#ff6ac1">&lt;-</span> map_usa <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">filter</span>(region <span style="color:#ff6ac1">==</span> <span style="color:#5af78e">&#34;south dakota&#34;</span>, subregion <span style="color:#ff6ac1">%in%</span> <span style="color:#57c7ff">c</span>(<span style="color:#5af78e">&#34;shannon&#34;</span>, <span style="color:#5af78e">&#34;bennett&#34;</span>)) <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">arrange</span>(valid_start, subregion)
 
-temp_nas <span style="color:#f92672">&lt;-</span> temp_nas <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">fill</span>(<span style="color:#a6e22e">c</span>(map_date, state<span style="color:#f92672">:</span>area_pct)) <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">mutate</span>(county <span style="color:#f92672">=</span> <span style="color:#a6e22e">replace_na</span>(county, <span style="color:#e6db74">&#34;Shannon County&#34;</span>)) <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">filter</span>(county <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Shannon County&#34;</span>)
+temp_nas <span style="color:#ff6ac1">&lt;-</span> temp_nas <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">fill</span>(<span style="color:#57c7ff">c</span>(map_date, state<span style="color:#ff6ac1">:</span>area_pct)) <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">mutate</span>(county <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">replace_na</span>(county, <span style="color:#5af78e">&#34;Shannon County&#34;</span>)) <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">filter</span>(county <span style="color:#ff6ac1">==</span> <span style="color:#5af78e">&#34;Shannon County&#34;</span>)
 
-map_usa <span style="color:#f92672">&lt;-</span> map_usa <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">filter</span>(fips <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;46113&#34;</span>) <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">bind_rows</span>(temp_nas)
+map_usa <span style="color:#ff6ac1">&lt;-</span> map_usa <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">filter</span>(fips <span style="color:#ff6ac1">!=</span> <span style="color:#5af78e">&#34;46113&#34;</span>) <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">bind_rows</span>(temp_nas)
 
-map_usa <span style="color:#f92672">&lt;-</span> map_usa <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">mutate</span>(drought_lvl <span style="color:#f92672">=</span> <span style="color:#a6e22e">fct_recode</span>(drought_lvl, 
-                                  <span style="color:#e6db74">&#34;Abnormally Dry&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;D0&#34;</span>,
-                                  <span style="color:#e6db74">&#34;Moderate &#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;D1&#34;</span>,
-                                  <span style="color:#e6db74">&#34;Severe&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;D2&#34;</span>,
-                                  <span style="color:#e6db74">&#34;Extreme&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;D3&#34;</span>,
-                                  <span style="color:#e6db74">&#34;Exceptional&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;D4&#34;</span>))
+map_usa <span style="color:#ff6ac1">&lt;-</span> map_usa <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">mutate</span>(drought_lvl <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">fct_recode</span>(drought_lvl, 
+                                  <span style="color:#5af78e">&#34;Abnormally Dry&#34;</span> <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;D0&#34;</span>,
+                                  <span style="color:#5af78e">&#34;Moderate &#34;</span> <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;D1&#34;</span>,
+                                  <span style="color:#5af78e">&#34;Severe&#34;</span> <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;D2&#34;</span>,
+                                  <span style="color:#5af78e">&#34;Extreme&#34;</span> <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;D3&#34;</span>,
+                                  <span style="color:#5af78e">&#34;Exceptional&#34;</span> <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;D4&#34;</span>))
 </code></pre></div><h2 id="plot-drought-level-by-county">Plot Drought Level by County</h2>
 <p>Now I can map the data. First I’m just going to do a regular map using the latest date that we have as the county fills. I’m using the viridis color palette so it looks more like a heatmap, even though the data is categorical.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"> map_usa <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">ungroup</span>() <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">filter</span>(valid_start <span style="color:#f92672">==</span> <span style="color:#a6e22e">max</span>(valid_start)) <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">ggplot</span>(<span style="color:#a6e22e">aes</span>(long, lat, group <span style="color:#f92672">=</span> group)) <span style="color:#f92672">+</span>
-  <span style="color:#a6e22e">geom_polygon</span>(<span style="color:#a6e22e">aes</span>(fill<span style="color:#f92672">=</span><span style="color:#a6e22e">fct_rev</span>(drought_lvl))) <span style="color:#f92672">+</span>
-  <span style="color:#a6e22e">borders</span>(<span style="color:#e6db74">&#34;state&#34;</span>)<span style="color:#f92672">+</span>
-  <span style="color:#a6e22e">coord_map</span>() <span style="color:#f92672">+</span>
-  viridis<span style="color:#f92672">::</span><span style="color:#a6e22e">scale_fill_viridis</span>(discrete <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, option <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;B&#34;</span>)<span style="color:#f92672">+</span>
-  <span style="color:#a6e22e">theme_minimal</span>()<span style="color:#f92672">+</span>
-  <span style="color:#a6e22e">labs</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Drought Level by County&#34;</span>)<span style="color:#f92672">+</span>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"> map_usa <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">ungroup</span>() <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">filter</span>(valid_start <span style="color:#ff6ac1">==</span> <span style="color:#57c7ff">max</span>(valid_start)) <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">ggplot</span>(<span style="color:#57c7ff">aes</span>(long, lat, group <span style="color:#ff6ac1">=</span> group)) <span style="color:#ff6ac1">+</span>
+  <span style="color:#57c7ff">geom_polygon</span>(<span style="color:#57c7ff">aes</span>(fill<span style="color:#ff6ac1">=</span><span style="color:#57c7ff">fct_rev</span>(drought_lvl))) <span style="color:#ff6ac1">+</span>
+  <span style="color:#57c7ff">borders</span>(<span style="color:#5af78e">&#34;state&#34;</span>)<span style="color:#ff6ac1">+</span>
+  <span style="color:#57c7ff">coord_map</span>() <span style="color:#ff6ac1">+</span>
+  viridis<span style="color:#ff6ac1">::</span><span style="color:#57c7ff">scale_fill_viridis</span>(discrete <span style="color:#ff6ac1">=</span> <span style="color:#ff6ac1">TRUE</span>, option <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;B&#34;</span>)<span style="color:#ff6ac1">+</span>
+  <span style="color:#57c7ff">theme_minimal</span>()<span style="color:#ff6ac1">+</span>
+  <span style="color:#57c7ff">labs</span>(title <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;Drought Level by County&#34;</span>)<span style="color:#ff6ac1">+</span>
   my_theme
 </code></pre></div><p><img src="https://katiepress.us/post/2021-07-19-tidy-tuesday-drought-conditions/index.en-us_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <h2 id="animate-the-map">Animate the Map</h2>
 <p>Now, I tried using transition_time from gganimate because that seemed like the most logical thing to do, but there is a lot of data and it was taking quite a long time to run. This is why I ended up using transition_manual, which I don’t think is the ideal solution. You have to have exactly 100 frames, or some factor of 100, which wouldn’t work for any dataset. You’ll notice in the tibbletime series I created, I used exactly 100 weeks.</p>
 <p>To animate the map, all I did was add the transition. I also added a week subtitle that will change with every frame of the gif. If you’re just testing out your map styling/formatting, I would recommend filtering to the last 10 frames, as I did in the plot below (commented out). That way it runs a lot faster and you can make sure you’re happy with the look of the map before running the whole dataset.</p>
 <p>Also commented out at the bottom of this code chunk is how I saved the gif out to a file.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">p <span style="color:#f92672">&lt;-</span> map_usa <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#a6e22e">ungroup</span>() <span style="color:#f92672">%&gt;%</span> 
-  <span style="color:#75715e">#filter(valid_start &gt; &#34;2021-05-04&#34;) %&gt;% </span>
-  <span style="color:#a6e22e">ggplot</span>(<span style="color:#a6e22e">aes</span>(long, lat, group <span style="color:#f92672">=</span> group)) <span style="color:#f92672">+</span>
-  <span style="color:#a6e22e">geom_polygon</span>(<span style="color:#a6e22e">aes</span>(fill<span style="color:#f92672">=</span><span style="color:#a6e22e">fct_rev</span>(drought_lvl))) <span style="color:#f92672">+</span>
-  <span style="color:#a6e22e">borders</span>(<span style="color:#e6db74">&#34;state&#34;</span>)<span style="color:#f92672">+</span>
-  <span style="color:#a6e22e">coord_map</span>() <span style="color:#f92672">+</span>
-  viridis<span style="color:#f92672">::</span><span style="color:#a6e22e">scale_fill_viridis</span>(discrete <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, option <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;B&#34;</span>)<span style="color:#f92672">+</span>
-  <span style="color:#a6e22e">theme_minimal</span>()<span style="color:#f92672">+</span>
-  <span style="color:#a6e22e">transition_manual</span>(frames <span style="color:#f92672">=</span> valid_start)<span style="color:#f92672">+</span>
-  <span style="color:#a6e22e">labs</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Drought Level by County&#34;</span>, subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Week: {current_frame}&#34;</span>)<span style="color:#f92672">+</span>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">p <span style="color:#ff6ac1">&lt;-</span> map_usa <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#57c7ff">ungroup</span>() <span style="color:#ff6ac1">%&gt;%</span> 
+  <span style="color:#78787e">#filter(valid_start &gt; &#34;2021-05-04&#34;) %&gt;% </span>
+  <span style="color:#57c7ff">ggplot</span>(<span style="color:#57c7ff">aes</span>(long, lat, group <span style="color:#ff6ac1">=</span> group)) <span style="color:#ff6ac1">+</span>
+  <span style="color:#57c7ff">geom_polygon</span>(<span style="color:#57c7ff">aes</span>(fill<span style="color:#ff6ac1">=</span><span style="color:#57c7ff">fct_rev</span>(drought_lvl))) <span style="color:#ff6ac1">+</span>
+  <span style="color:#57c7ff">borders</span>(<span style="color:#5af78e">&#34;state&#34;</span>)<span style="color:#ff6ac1">+</span>
+  <span style="color:#57c7ff">coord_map</span>() <span style="color:#ff6ac1">+</span>
+  viridis<span style="color:#ff6ac1">::</span><span style="color:#57c7ff">scale_fill_viridis</span>(discrete <span style="color:#ff6ac1">=</span> <span style="color:#ff6ac1">TRUE</span>, option <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;B&#34;</span>)<span style="color:#ff6ac1">+</span>
+  <span style="color:#57c7ff">theme_minimal</span>()<span style="color:#ff6ac1">+</span>
+  <span style="color:#57c7ff">transition_manual</span>(frames <span style="color:#ff6ac1">=</span> valid_start)<span style="color:#ff6ac1">+</span>
+  <span style="color:#57c7ff">labs</span>(title <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;Drought Level by County&#34;</span>, subtitle <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;Week: {current_frame}&#34;</span>)<span style="color:#ff6ac1">+</span>
   my_theme
 
-<span style="color:#75715e">#animate(p, renderer = gifski_renderer(&#34;drought.gif&#34;))</span>
+<span style="color:#78787e">#animate(p, renderer = gifski_renderer(&#34;drought.gif&#34;))</span>
 </code></pre></div><p align="center">
 <img src="https://katiepress.us/img/drought.gif" alt="Drought Map" class="center">
 </p>

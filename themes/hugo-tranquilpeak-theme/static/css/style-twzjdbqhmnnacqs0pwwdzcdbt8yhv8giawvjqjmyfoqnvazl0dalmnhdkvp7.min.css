@@ -3772,8 +3772,8 @@ a.tag--small {
 }
 
 pre>code {
-	background: #282c34;
-	color: #abb2bf
+	background: #282a36;
+	color: #e2e4e5
 }
 
 pre>code.codeblock {
@@ -3781,7 +3781,7 @@ pre>code.codeblock {
 }
 
 code {
-	background-color: #282c34
+	background-color: #282a36
 }
 
 .codeblock--tabbed figcaption .tab.active {
@@ -3792,8 +3792,8 @@ code {
 
 .codeblock,
 figure.highlight {
-	background: #282c34;
-	color: #abb2bf
+	background: #282a36;
+	color: #e2e4e5
 }
 
 .codeblock figcaption,

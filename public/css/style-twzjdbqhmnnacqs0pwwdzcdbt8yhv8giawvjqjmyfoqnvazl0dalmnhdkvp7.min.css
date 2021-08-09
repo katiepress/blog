@@ -3171,14 +3171,14 @@ a.fancybox {
 	}
 	.postShorten.postShorten--thumbnailimg-right .postShorten-thumbnailimg img {
 		display: block;
-		width: 140px;
-		height: 140px;
+		width: 250px; /*change*/
+		height: 250px;/*change*/
 		object-fit: cover;
 		overflow: hidden
 	}
 	.postShorten.postShorten--thumbnailimg-right .postShorten-wrap {
 		float: left;
-		width: calc(100% - 140px - 20px)
+		width: calc(100% - 250px - 35px)/*change*/
 	}
 	.postShorten.postShorten--thumbnailimg-left .postShorten-thumbnailimg {
 		float: left;
@@ -3186,14 +3186,14 @@ a.fancybox {
 	}
 	.postShorten.postShorten--thumbnailimg-left .postShorten-thumbnailimg img {
 		display: block;
-		width: 140px;
-		height: 140px;
+		width: 250px;
+		height: 250px;
 		object-fit: cover;
 		overflow: hidden
 	}
 	.postShorten.postShorten--thumbnailimg-left .postShorten-wrap {
 		float: right;
-		width: calc(100% - 140px - 20px)
+		width: calc(100% - 250px - 35px)
 	}
 	.postShorten.postShorten--thumbnailimg-top .postShorten-thumbnailimg {
 		margin-top: 5px

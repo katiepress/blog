@@ -1,0 +1,100 @@
+---
+title: My Struggle
+author: Katie Press
+date: '2021-08-09'
+slug: my-struggle
+categories:
+  - Projects
+tags:
+  - Blogdown
+draft: yes
+summary: "I've got 99 problems and all of them are related to this blog"
+---
+
+<!--more-->
+Yes, the title of this post is yet another X-Files episode, but it seemed so appropriate I couldn't resist. I have been working on updating my blog all weekend and it was just as terrible as I remembered. I appreciate the blogdown package and how easy it makes it to publish directly from R/Rstudio. However, I'm notoriously picky about design, and because I don't know that much about the underlying Hugo code it makes it really hard to customize things how I want them. I had a number of strange issues so I figured I would write a post in case anyone else ran up against the same problems.
+
+Like last time, I started with a theme from [https://themes.gohugo.io](https://themes.gohugo.io). The main reason I decided to update was because my previous theme (Future Imperfect Slim) was really laggy and slow. When looking for a new theme my main criteria were a) fast loading and b) has syntax highlighting. I also like having images in my post overviews but I didn't want a gallery style, rather a list based on the date published. That ended up excluding quite a few themes. In the end I chose the [Tranquilpeak theme](https://github.com/kakawait/hugo-tranquilpeak-theme), which seemed to be the closest to what I wanted. 
+
+
+## Steps to Create your Blogdown Site
+
+The first time I used blogdown, I tried creating the site first, adding the theme, and connecting to Github. The workflow that ended up working best for me was the following: 
+
+1.	Create a Github repository
+2.	Create an R version control project
+3.	Create the blogdown site with the theme you want
+4.	Make adjustments to your theme and customize to your liking
+5.	Push the changes to Github
+6.	Connect your Github repo to Netlify to publish
+
+Now, from start to finish with pictures! 
+
+### Step 1: Create your Github repo. It’s recommended to create a .readme file at this time. 
+
+
+<img src="https://lh3.googleusercontent.com/3mpqDaO6zJhHjvn1O5m2wY7qqXhu1jzJiWo8FrDELPMgFY2xwcKdQ0AWmPmpOlZ_Dq6NoNKjaFq77ak_hXnydsZ8DtFEsT8Y4HfZrsd4TvZCpZ1N3vMFreBJf6dtB8zq1EmyQHd7wzXWbyqBaSQVfB9wHktYNUHgBOCEi5GHut-iF3Sg-VnMaktXTFUOePVn07QzXiVa3Qaf-YGuc5XqMRJ2XK8VoHX2PSAFMrW9oPy7ejUtpJx-KyU0qYTzphk3d4dBE9uEaWhzmPVGQX84mgXDtXFXdcgh0KMtEGlkYJD8AhcpKlg3x9axfXMBw2sjuBx48nUxPzUGaoBH_ILeR3qtG62ybdDLm5jBSJeYMjWCwYkYwyHbwtzFn5J5cAb3u2U6K7YMPhx9C3Cb4Gemy1MDeCooyI_bBcz14NyNVGfyT0HUURZy_YKVl1HYAYgdOgBDR5BSvDoTWZJrNKpXmWII0hRjvomvqWQYiW6uJODNbJT99mSY4C0iRw-mmwAq49BZ3v4Bw7S3OdZ4BKnYYGoxuWGyCQso2Qui1Qe5mDyTDcOH2EYPK5pwnCUnMajk506TGDX4basLHVUvZouOLO2_y3aQe7QRzS9jtH9u7iXhbVA-tZYaaAXZIeUR-yWIXlDPPlpHujmy8gPMzQQcGtQVTPoG-HVmCYFyUOsBDeZ_fLnce4PdZ1JI-GqLPyCnNkv2aIAOIVsLXnJxet0doh2-=w1372-h1398-no?authuser=0" alt="Github repo" class="center">
+
+Now you should have a fresh repository that looks something like this:  
+
+
+<img src="https://lh3.googleusercontent.com/0_caZXRGYQLk3PNekrWqB7Os-JB2cN5F82pOhCplFuNuBAP538AXAxowdJdbnBN5llmv0MhcVxJziH30UHMWgeFAhuOxJO-OM7qoIatiB2LgUy8gS1wCtjQL7kMh8sfmlqjtqZPvqzcGA405CLfwawM6qQ7soXW6meXLla1qlJfuVNsxNFTpfVQSd-s1EaqyQ0-cFO4GGihMD7ZEx9dUtbDTwmB0TS12MZFrw3Nn1O6CYUbX5hky9Emyo-AQg_1e4jCcjDQI3N9U1M5vQa15kl8Q8ABm8QKFDJiigMyGCxTMZUExTDStAVoya71qJtJ5wI8eC_6wWBYK4jDPR81sRvpmYX9NRwW4_lc6wEGimnmyYgV-A_4GCZZgN1YFzzFOJJIVm8gv7gKH_a1z8dElLRIrZHugieNYaPdI6wbFSN9bJoeTOi1dQTTpIO-ENUX5wiQeguDiZjHxteENc3kxwtmkMZmBZWNJNXLuv_PeYOFjkb7oipps0Yx_pMmxBGXkSvtUsXEWRLSoLX-4D-1Euj58BUs_-lT5-wsiutPTnV_XgpVbt37C77bK1NwH-QoFIl4HK15eKobMZVrmQhs-fPb5OvrmLL-jW9f-pUdzbU2jpFUY6p4BKNfjWnKjbLKZ6016sup3R9r5EWYMOk7Y5qAykstGRiAvffFxPIPeLdJGuRgTxzCPvyh-m0mUezAof9W1aVYbL-aTr60hAcYdOTTx=w2004-h962-no?authuser=0" alt="Github repo" class="center">
+
+### Step 2: Choose version control for your R project
+<center><img src="https://lh3.googleusercontent.com/wTVWl8awj5pwd6CDjbr1bgMP38q5WMNF2K0tGcDBL6iGpok9PSRwSfuBRzEv8SHT3oT-GHAEFXGVt7pu7IeaMO8GirVHmaS7KKVtn5GijdmCc1V4Lfxqo60PxnYCGRa_aeVAw89-ex888sJWeNgQPsMXYWwp29u3ZDwg1vrSzudeMAn7hKgxYeCJNOmj3bcRnnR1TylA7w-h213CJQcP1YO0Tswu6p7UlaxvjMMhr2hcL4KvnMEiq4BUHNBX-mxX4hA3r8aaEnyZscNZBgjb93_OVfOuGIbeu1ZBfb7T5wwTIo4bglbWCMiMk-YukKbTxSVFuwb-PCRShnOzPlW7CFY2IBrSQuWPQI5UTUQoYiLEanaJtDwn9iIR2X5cqrZ7YP1jnRxrQ3QQdMFjbiqHTfCw5pMui5JBr35eJy_yKXrQymZMJXhZVeVdk0WspLD_lqTOIZ0fOt_OfqJY0bk4IKInpWQbX1Q8iuFD4PVylUDptqeXWWEUzKyTbMf40SVGJ5L1K4lC3j6Lq7RuByKB1yGHTurzZLeewFFjz48OBuax2XCmNrQMpcUWn4iBoqLQv9i5z5kcaExOJm_8E4VcFjbXKeI4Gk3ZVNgCb32lXyPjvZtaYWCzdQccl2MLFLj3tOcu0kRUWjhw6xWdOWZDjKiX5st-TzpicGDnqCbHVcggeVyMwfkuos332JSiwzVewfloBkuN_6-KvI_L0bUgSxd2=w1178-h836-no?authuser=0" alt="Step 2"></center>
+
+When you click on version control, you should see two options. Choose the Github option – also note that if you don’t have Git installed you may need to do that first and follow the instructions to add Github to your RStudio.  
+
+<center><img src="https://lh3.googleusercontent.com/04ckUJFk36kvjJ4_E1mT2BZM0a_ALBHJnNTwNVhLOLGGw7VuRDSfrJJRjkJ_E-0J1oKpHVryXMFCYT390hlsqGYOeGWCb0zj5qwHlK367DwgBcpTlTBr3gtONHV6MqiZsE5qgqBWCeCuH5h1FXaL8Fe4EeAyJ6XqjYzmTa5Paap5jVxPpYWJnq2Iy2G6E3tlGRB0RuIGfSCj9aThXhxrg02JUiTnXMI71ku2cHQUSlXLlTcJnwOtjWJgHlMlQ60S6An7JM-INomv686nJ7Q4fNJC29CXJUYQr66A3N7ppz3sdR0P8u8ImCBuzsMrdBkXg1SXr7lFSv48WtLNY-rI_lBkyDFrdpAMxrWx1SFCzL2kyhvn_P5x5R6XmBRM4Ya7UqaqqkdgeHcIyIODhSTublLCw8_CErKwtOtugqeBKMiU2G93HgdXL3YD04CVB1Asdm-uRPwKtL5gCiC57WHXEZlaMyOtiy6JdtjVKHFpl8XbbNYnbr2tr2JY0xyqPor_JO04NT0kpHNVzugqD7UF7W35uoI-tXHZ7rR7v9640M47uSgh4HZalF_PGsPVHA9oSNw0Ao2U6wJr9PS3OAGlywwbl0kjXMVfvrlIVfyMnQB8u6bMKR8xtaujXmyUPrdnTSZGTz0l17NKU0Trg88Q9szjOhVqwhY1SctFs2ygjMdXe45lqUe8sec4PN3pWgpttqr9mHU4AYUBjNA_CHkTeq81=w1180-h836-no?authuser=0" alt="Step 2.2"></center>
+
+Now you can input the info from your Github repo, I just pasted in the whole web address and it fills everything in automatically. You can change the location of your project of course, I’m just keeping it on my desktop for the purpose of this example. 
+
+<center><img src="https://lh3.googleusercontent.com/DnOZ1RA_BfHK7iTo_GbWM6gAHliS8jCDz_5cpHzolrEYMt-bpNbzv-dhUenpAYwK1oBcj4xkXjqvI_kLe_OSykJsmHqcm7_QEUb3xfKqqnmvfz36FgcUQGlIAemHyYGQKoydWbQy2ce1Wj90bIKIhYCkyunJfV8Ntn7mF-X4bUsyq1c1-oQXjo1GSGP458y9iL_HPRdMms5YZehTRqnqOTRiU8F1d_wT6suU_JpWlTZfUSu48de-oRk-kSaILh2db5aagb5MTAlk9SBCiPKTMBhG9ekfzw1PPRPcgEbJEEYE5MkPOvnCh8Fp2_YPCzt3XZJx4j1uwmrtlacZxBcX9kw8H9TDeJzkrkUCeoreiWZIWiTP0KWeYUy2V67lHuCk1aVxfMymCJ9-SiXyqKU2LIXl03aaI6_yUmlweanntmRpY-rkpe00rtm-F-HWneHZDCKGZ4Wplz3XuoYf7Ri0uYanfenMVmhNtrQnI1KGMf0NlIr9HDHYxOSIxx-V7TxctsYzBjY9zc84HLWHqxacXXxKkJJOwzGEx2gQ9OT_JUkUx0F1XpCauumYX-CyB1of9aEkj-7I2p1uHfcxeqTg7xNv6Uj2WjRfyd8mq51sb_A_76dz29YywAHiVyHT5bLWnS68GOhBLPfsfG8ZTujieATFBH9MkzNqX7wc6NWzJAK3hkC8yeyiL-Pk8BQ7eltcxBeKNDXs8ZaQe3YIPvON6Dh_=w1170-h828-no?authuser=0" alt="Step 2.3"></center>
+
+
+### Step 3: Create the Site 
+
+If you don’t have Hugo installed already you’ll need to do that, but you can use the blogdown::install_hugo command. I recommend installing Hugo extended because many themes (including Tranquilpeak) require it for style customization and so on. But in any case, make SURE you have the most recent version of Hugo and blogdown, and your theme. 
+
+To make sure I had the most recent Tranquilpeak version I went to “releases” and grabbed the source code link: 
+
+<center><img src="https://lh3.googleusercontent.com/BfytJkXLTL3-AxC4ylf-G2lnId5Pj2luFxQeudhhi47ATpqutQEsP6Azqs2QCsgUBoZQwp6OMRWTA2FzPlamBCVjIKmWgzYMxoM2JBqo8woI9hFZfwCIdp7lOCepilktNbm5Shk0G6mjYtWXFvJ45mCXxBKHgXeYmNt_-RsCRn4DnokcP5iLxBjOZEtnj5vEU_G-_CESwz4elpjDfQV15h_FrkTA7C5iaTNIq-na_d8Bm8kBj8sgk0fFY4zAaW1kBG_wz4JfTbB-CZkXXBmVanjBQiRJgC7cNAJkH2iyQZHtS_IIDqV4lo87DlMTyIcfBo_55DAJB0SZBVMOtpieIXmLH7sMa9LndsoprQIC3QJQ5yGNGJHNWgpLU6-uw9H2AMJpuOQKSdRoF9GTRTFYZaFB2vPRKk7K4GZ9_fzZnDo-2S0qRzQ9crs26e_7y9J44nwfQDFO4gPIF0hmkmV7J6-DI-_4da5yFrehbOGwh-Lun6JiwmOgot1VwEW3iJ0aP7b44w5nOkXTZXM0PLxuqPEuRglAJ558R-abY_boFENZwlL1d8ZkG7lAIvkr8llu0zwgCNfveigeTbRjY-QiNM_TUc3635A7IsDC8xLUMNkacEnQ8yy44ke-RgUchE_FF6ksqBIkUJN0MICYZrA4Wlsj0mYZbaGsW9PyQ-ltjaQHgin9bEstk7ETYUAOQC0cneBXOn-ID6vi91mJjDcyPrEE=w366-h240-no?authuser=0" alt="get recent version"></center>
+
+
+```{r eval=FALSE, include=TRUE}
+library(blogdown)
+
+# if you need to install hugo 
+install_hugo(version = "latest", extended = TRUE)
+
+#or update hugo
+update_hugo()
+
+
+# create the site, using the latest version of tranquilpeak theme from github
+new_site(theme = "https://github.com/kakawait/hugo-tranquilpeak-theme/archive/refs/tags/0.4.8-BETA.tar.gz")
+
+```
+
+Once you run the new_site() command you should see this in your console, it only takes a few seconds. 
+
+<center><img src="https://lh3.googleusercontent.com/K32YdI33-A4E8c_4YJGGcVvEdIr6-ZExrNQsVRkhvqXgNUCMPU5BOZu74eep_m3uSkPkIYk03F3x1oZKsHAT_OFpgECnjlxdzb8dXC6PHNUW3k5AFADt8_WkgoYVtyIKR4xrxt4ZPjT5nuuotfw71jhMnHuJbUxkglwEBe9ch0QmT7frU0jB3zkpg6R8oEYwBPf4dNPR6q9REpWrpZvIokZENARuqrOm-KI68i_ChI7jYC-5s6pvsl6UQUcVBLaTO7FYpM4YzX6Ws1yx26s0pVf91KplSZTMthvxZiiRjHz-J7eLYf_x_C40uqa4viTaZ8BdIbT_bHHutlLAKfLbRvQ_BpQPHK4KcBsLvkepxP_1ZAmHDCxQaO0WkoZ8iKT93Io2vArZfrDWN4MAVVf5J6I_POlPIuFz-qLm5AolrvdjJhayTI6jfojMnJ4BeAnpM1edLS-ii_YjQMh6_yihuxxkpo7rrdXK01XbHj8bX3Ra9Wi-1xVQDmTGcevVgTKG-i9LmPVOgmjcqVF9LVoDZhXnpo-LKglpc1FSYvjytsrAknf6ZhJF8vsYWG9rOMMYPEAuzKYGhYm06NBgwidvwrCjeKPerdR4FswitbdgGxBlEMdCEDtOBDuSXWtFbv7cH3KsFMIOUcDS3GiW19UBii8fybwjbdmulKN3PzRjKkMKtoqlY65se9xqu_CHCkbOUDACxvEO-dC1AVrBisnyUWr9=w2156-h682-no?authuser=0" alt="building site"></center>
+
+You can type “y”, hit enter, and your site preview should come up in the viewer pane, which you can expand into the browser if you want. You’ll also notice that an .RMD document has been generated as an example/template. 
+
+<center><img src="https://lh3.googleusercontent.com/bJvLOOvCml0FJjwOP6pwDfazhxNC8uoV6ia1ive0Rlc601dRwjR4BGdufKNVs_QcYh4MZ_PND3wH_aQIodu4_XjByXicnhPtfIWQsRGPSM9XYNdmiFrmYlYjiqBB74e3CTKc79nPUSUdQohD12eZrETztg6jOQE95hH0YpqLQ9ZhA9hPUFVpS1p3RC_FMgUN15nLop9vd-AwML5gQErMofMT7ajFoJup39fYYcj16uw6OjAFEMhbE0XLsq8_W43uIeXdU5Tn3pgPf2MgCmXF9Oi7H0kEpqTO0U1GprHN026WpNv9piiQ8gAolJXHGVe6AZ3lWttH92_hcrJkAJgLWRomm9zAl8aSgNMA-2e31IDHCG6IfDtezrnTXEk__wR3H6NmOC6F9Ahyylabyh3_DlBIQ9a2ET3GCfm2IRB7b3oPySdyDVSrnllFhWBOvrz3J1SpLtCuSWfGvQAiHN1bCaMx6YfcmPh7N3KqcR3Sl-ITqwayMVGKsbG3DekuHGfaFo8Ps1-AQRbJrf2IrT8LadExF9MBMZeYH8yt5R0ER73YpMElPrUoOekSd70T20uUekvowVsMHjynitbToRorcXwj9MfQPklCKisgI5NubCeabL8UL0pVF2GbQW5dfLoEKQYXlV3YBSPAkNuI9F-64-NkgdhAHc32xQnUJ1sTxTdcwsBvG_ii2SqLv71wX9T6bklp1UYZGfRATyMEZVKTkh8_=w2350-h1302-no?authuser=0" alt="site preview"></center>
+
+If you look at your project files, you should see a bunch of new folders that were generated with your theme download. 
+
+
+<center><img src="https://lh3.googleusercontent.com/QEuKpEpko0MsaiRCy2BEVIcXMTAfaVocU3--4mZFL-Vf8sJ2eebzjmlOXo1sIPWNBSYGsL84FytiJ_p4pjvuv3-6tqe_ruF-Us9y7mQHC3MIt0atlW9Y5qUtJ4-KlGpTzxRC01kb9id1jLNgJmbOd5pGc3G_pzgz1zMtByilRhyPg_3-X4Ue12LoBN7TycX-MjA_Sn3WoryNSRNERs3macSkfLw-Cy0MJ29ZDbQWnSB4vW0Bl9kKHrjNPO5I4iuS3ncxKtS45h6OrCuHBw7A3SPJV0Y9FH5382MtispqF0rIMKunrytkO3T1ymN2JCExkjkxNhtdrtTVjjI55gIbKC1LPQ9a7tVZxd3SB0_-vwoZlcCDQiR_PJfIlNsswDp1Bo1rJ5ZcougtXnDcyC6ZlSGXtpWMNJNfB6dxCss5xxyttv6DA7GpKHiu0jTRnFYfcj3Ct2-mh1JhEB67YpsAkwmhdU-9Q_OGdxEtuZEOim6XOsHn3WsevDvcRLxfZBQcJPFEflJpVi6zbb9fRzvXEAB8gC9rHqH-Kc4s7J7IItAdN3ZzUrE58ACFyV0Mm1JB2YlMtmZ9ESbH3v23jzW0F7myAshiY2DlJR14DarwOzkzQ2DM_K9hPLbu_2r8R4zrKfkZNRdL1C_tuEvbe4XXxNYgfOqVWgE9HmFZhW3JJOTAXIhfdio1Bd9d-OkVa39wTp3ItCanU49Exboyj5T4yqFI=w1318-h966-no?authuser=0" alt="theme files"></center>
+
+
+### Step 4: Theme Customization
+
+I'm not going to go too far down this rabbit hole because there is pretty much no limit to customization if you know what you're doing. However, I did run into a syntax highlighting customization issue that I wanted to cover here. First, let's look at the file called config.yaml - you will be able to make several customizations there (depending on your theme). 
+
+
+
+
+

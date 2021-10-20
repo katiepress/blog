@@ -11,7 +11,7 @@ tags:
   - Olympics
   - Datasets
 #thumbnailImage: /img/winter_small.png
-thumbnailImage: https://lh3.googleusercontent.com/zIKhkqEyJe_UQkHWVPby4nHU1JgEFvEMd__ALLEAzn9Bcrks8APpPOGu09mGq0Yalh0JsyaY-JjHx8UWAkx9WBQvDjPOP7e643-im0E0JTwrTSNpKjCI2HddyXVJ-niXyyTkC6W79o2FkkexPZ8BFgPc8v-sm9IRN2Py8-uqEWJ3-oZPGz3K7RN0WaDp4IAuZcht92QpPwpICfEGAYRLrzCqXIcrVX9C7hswxVidUFXjrgih9jQsbAvr9ONWGCnkjj7_MvwhdhJbfkofwzF_gYPO3toKBFXIZW-YEr7Fo0vQWiPB8E9CeMauFsB66K8Gst4EF0lgbeR95hHGn7OBlmahjZb9LKJrBtWN7yXtll1jInHDgTm80YxDSZTAvBW0quAaCxZkr6vRCcw3biSA6ocE46xMRTaKBqll3c5Rxe80C3xxtjOK2YYsDYt6Q919ozzQGn0rhGP4DIrZ5Qk1nc9vIBi7EcbjSQOeiSdLEdQrU5Wcy6LRDODP3-NC3JV_oohtogWzErAV91RjBv1FPjGDzfrV2l4sQT-S2rccUZK-hvvEWDdOBnAl3jakEm7Rq6E_xWNEu0HfiaaAtgJODGTn7HYuLdIDN0c7431SQdO8_LUyL2GMSMW1u2diWdFanocanXf2PgxJlWoWfQMf5xKTyXy62zU2O_xPaf_LFS6r25Xu98XP8WTC_kuKr_XZ13P-O1_1fEOseyo0_JytE8Ls=w750-h250-no?authuser=0
+thumbnailImage: https://i.ibb.co/frXBWwD/paralympic-header-small.png
 thumbnailImagePosition: bottom
 summary: "Web scraping paralympics data to create an interactive circular bar chart"
 ---
@@ -249,7 +249,7 @@ plot_data <- plot_data %>%
 Create a theme for the plot for visual specifications. I'm using the same theme from my [last blog post](https://kpress.dev/blog/2021-07-26-tidy-tuesday-olympic-medals/), which was inspired by this image from Sports Illustrated: 
 
 <p align="center">
-<img src="https://lh3.googleusercontent.com/jvYu9-1oROr68-mXTq98c8xFEjH91ZcH_WkdInudxbq0HGGcSBTLrC4I42Jo7XEI4yY0CWy2derxB42Ys6VDtNKbavpAvseTd6eVWmNgEPZuBCW7Xok1g2KRi3LYNub9z0XTvIdmx3LGqis76MFXDUweTUPRg1BInCpDd8aSgm9GKGOPDeOhHDHpSqvZ97vHcK6HJRF1gBR13f3HQHrSF9By90NJvyMHkAyZPQhJoQoxcnageAZrhsglGJea59Lf3pdgC_dfp295eAI3JkAvD6T4WEZK3BcwLVMCgF9W2crUlFUJq7NO2tQMc3JBBSCEZH72O_Sl_i8v25hhktd8nmWlSDGM0RTOBcZeNP1B9S8BJEz3hdpBgUtiET506L3W4q81KbZ2Ar2RsCz_Sc4m8EGwkC35mTXpncIszYmXwcJxDTOifqWIHdWYWZukDuIlEzJB8g6_pnJCKhQUBID4m_Fiirs0L33n1MYEbDhH8u1mcCPbUEVihsGUeNT-AR-cMjCM3_tinpNhmrmn_11Fd5Ys-3sxLXhdV-A7UhIWM1mLF32qt80j3grqBbbtuTBo27fXuTDBj8_8qOYpipybcPTbbgL2ygqr2zrTwTZeleUMtCdmkVFoBIoblfiOf6j10oZhvbPDTKpdVw_UkmGBDSvLrJ9ZV2KNURSaG0We9aPj_54-DtDKDgC09QxA8ApRNoLdod8S2VPCBVlAfDuPrTg=w449-h250-no?authuser=0" alt="Olympic Medals" class="center">
+<img src="https://i.ibb.co/4t1DTKd/tokyo-image.jpg" alt="Olympic Medals" class="center">
 </p>
 
 
@@ -430,7 +430,7 @@ base_data2 <- base_data2 %>%
 This time I need to create a different theme. I was inspired by a photo from the Sochi Games opening ceremonies. I just used an online color picker tool, fed in the linked image, and copied some of the colors that came up. 
 
 <p align="center">
-<img src="https://lh3.googleusercontent.com/bRdRDCxy_IvB1jTn05Gan8KDOg7J8tnFhEOcexSepr2FsXXS2NNX5mN9zZ8c22KKGRc4_qIFsPIkdIBFD9M8IFXya6rSqBcm29_QZLPE59-ixj3_NU185g65fK-W0QiGKpTiHAbQuMPmYTjajBjB2QU5bMPUGnHE5SnsxXDqrHQorh6mOweOSF3lyzPqIiN4M_j2ICnopcN7bHq9nVMt8t8S9anNcOL59n_G32h02BpBZzVxGwL2dt59YSLrq0mNn5SafqrIFTasfd1Ngg4O3SgtP__z2U6AgxM5MLXHdKBmiqKDxot7DGSMBxiM394IgA3aZfv_ciuseV56D0W5-ZFS6u0Hjdaj5lUox6KF4SUgmrwwT-qk6KiZtq6rF7QuPF75H7BdDkcKDJaEo-jkCQG3uo8J083rcTuiCXhT7mKVi_-SEc4EJHkPuDdhAi7owWNQCLCMxQxKgGIuITBdRgiUhSjs0z9SmXyAUL-biJukC_lW2ZSjntpmkY5IR9XJZVZJ_Cb5tHVT0-E2kEkJh3F-04Z3bdVkCh8LzF_xs6vcZpvKaZSavChrjNtUk1Pe5ZZZ-kRdR6CLSC88iW2nv2RQkppxGiCss4hwT1LYhYHrdUjt1D2bgMyGCyMCoStQeH1G5lRTlPiQEzdmowPqBfk65pkKnoQ6wTJDEWN3Hu6XnUAduEBpz-LOzboEm7ps7jzZQOVSyh9Cqo1zFw2Qzjk=w600-h368-no?authuser=0" alt="Olympic Medals" class="center">
+<img src="https://i.ibb.co/n3TbZQh/sochi-2014.jpg" alt="Olympic Medals" class="center">
 </p>
 
 

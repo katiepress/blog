@@ -8,7 +8,7 @@ categories:
 tags:
   - Maps
 autoThumbnailImage: false
-thumbnailImage: https://i.ibb.co/PMdRWX0/tuskegee-final-small.png
+thumbnailImage: https://i.ibb.co/4K17pr2/tuskegee-final-small2.jpg
 thumbnailImagePosition: bottom
 coverImage: https://i.ibb.co/s2cB32H/tuskegee-final.png
 coverMeta: out
@@ -90,6 +90,8 @@ state_counts &lt;- state_counts %&gt;%
   select(fips, count_group)</code></pre>
 <p>Now plot the base map, excluding Alaska and Hawaii since there are no airmen from those states anyways. I’m adding a geom_text layer here with a fontawesome icon of a fighter jet - this is from the emojifont package. Here I’m assigning colors to the states based on a discrete variable, which is not usually best practice for count data. However, I’m going for a certain style here that is inspired by WEB DuBois maps:</p>
 <p><img src="https://staticweb.usafacts.org/media/images/service-pnp-ppmsca-33900-33900v.width-1200.jpg" alt="DuBois Maps" class="center"></p>
+<p>I was also inspired by this vintage-style poster</p>
+<p><img src="https://www.squadronposters.com/wp-content/uploads/Tuskegee_Airmen_Red_Tails_16x20_SP00661Mfeature-vintage-print.jpg" alt="Squadron Poster" class="center"></p>
 <p>The size of the fighter jet icon will also correspond to the number of airmen from that particular city. I was having a terrible time trying to format the legend for this, until I realized that I had the label inside the aesthetic. As soon as I took it out everything worked perfectly.</p>
 <pre class="r"><code>state_map &lt;- plot_usmap(
     regions = &quot;state&quot;,

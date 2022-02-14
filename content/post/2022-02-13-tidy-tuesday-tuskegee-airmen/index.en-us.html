@@ -1,0 +1,168 @@
+---
+title: "Tidy Tuesday: Tuskegee Airmen"
+author: Katie Press
+date: '2022-02-13'
+slug: tidy-tuesday-tuskegee-airmen
+categories:
+  - TidyTuesday
+tags:
+  - Maps
+autoThumbnailImage: false
+thumbnailImage: https://i.ibb.co/PMdRWX0/tuskegee-final-small.png
+thumbnailImagePosition: bottom
+coverImage: https://i.ibb.co/s2cB32H/tuskegee-final.png
+coverMeta: out
+coverSize: partial
+metaAlignment: center
+summary: "Creating a map of Tuskegee Airmen by State and Hometown with ggplot2"
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<pre class="r"><code>knitr::opts_chunk$set(echo = TRUE,message=FALSE,warning=FALSE)
+library(tidyverse)
+library(usmap)
+library(emojifont)
+library(showtext)</code></pre>
+<div id="data" class="section level2">
+<h2>Data</h2>
+<p>I geocoded as many of the records as I could - some of the hometowns and/or states were incorrect and had to be cleaned up. I uploaded this file to <a href="https://www.kaggle.com/katiepress/Tuskegee-airmen">Kaggle</a> as well.</p>
+<pre class="r"><code>airmen &lt;- readRDS(&quot;/Users/katiepress/Desktop/Rproj/Tuskeegee/airmen.RDS&quot;)</code></pre>
+<div id="colors-and-fonts-for-styling-the-map" class="section level3">
+<h3>Colors and Fonts for Styling the Map</h3>
+<pre class="r"><code>cadet.light &lt;- &quot;#386F81&quot;
+blood.red &lt;- &quot;#780e0d&quot;
+alabaster &lt;- &quot;#F2F0E3&quot;
+field.drab &lt;- &quot;#645B40&quot;
+cadet &lt;- &quot;#4d6673&quot;
+medal.yellow &lt;-  &quot;#E3A95D&quot;
+gunmetal &lt;- &quot;#172a33&quot;
+
+font_add_google(name = &quot;Yesteryear&quot;, family = &quot;yesteryear&quot;)
+font_add_google(name = &quot;Dynalight&quot;, family = &quot;dynalight&quot;)
+font_add(family = &quot;chuterolk&quot;, regular = &quot;./Users/katiepress/Downloads/ChuterolkFreeRegular-L3R55.ttf&quot;)</code></pre>
+</div>
+<div id="count-of-airmen-per-hometown-and-state" class="section level3">
+<h3>Count of Airmen per Hometown and State</h3>
+<p>This information will be used for the state colors and the point overlays. I’m also adding the fontawesome icon I want to use instead of points for my cities. This can be done using the emojifont package, and I’m storing that in a column called “label”.</p>
+<pre class="r"><code>city_counts &lt;- count(airmen, new_city, new_state, &quot;lon&quot; = longitude, 
+                     &quot;lat&quot; = latitude) %&gt;% 
+  filter(!is.na(lon)) %&gt;% 
+  select(lon, lat , everything())
+
+city_counts &lt;- city_counts %&gt;% 
+  filter(!new_state %in% c(&quot;HT&quot;, &quot;HAITI&quot;, &quot;UNK&quot;, &quot;VI&quot;))
+
+city_counts &lt;- city_counts %&gt;% 
+  arrange(desc(lon)) %&gt;% 
+  slice(8:362)
+
+city_counts &lt;- city_counts %&gt;% 
+  mutate(label = fontawesome(&#39;fa-fighter-jet&#39;))
+
+city_counts &lt;- city_counts %&gt;% 
+  mutate(count_group = factor(case_when(n &lt; 6 ~ &quot;1-5&quot;,
+                                 between(n, 6, 10) ~ &quot;6-10&quot;,
+                                 between(n, 11, 20) ~ &quot;11-20&quot;,
+                                 n &gt; 20 ~ &quot;20+&quot;), levels = c(&quot;1-5&quot;, &quot;6-10&quot;, &quot;11-20&quot;, &quot;20+&quot;))) 
+
+city_counts &lt;- city_counts %&gt;% filter(new_state != &quot;TD&quot;)
+
+cities_t &lt;- usmap_transform(city_counts)
+
+state_counts &lt;- count(airmen %&gt;% filter(new_state %in% state.abb), new_state)
+
+
+state_counts &lt;- state_counts %&gt;% 
+  mutate(count_group = factor(case_when(n &lt;11 ~ &quot;1-10&quot;,
+                                 between(n, 11, 25) ~ &quot;11-25&quot;,
+                                 between(n, 26, 50) ~ &quot;26-50&quot;,
+                                 n &gt; 50 ~ &quot;50+&quot;), 
+                              levels = c(&quot;1-10&quot;, &quot;11-25&quot;, &quot;26-50&quot;, &quot;50+&quot;)))</code></pre>
+</div>
+</div>
+<div id="creating-the-map" class="section level2">
+<h2>Creating the Map</h2>
+<p>I’m using the usmap package for the base plot, which is actually a ggplot2 format I believe, just a shortcut way of doing things. First, get some map info and join the state counts from earlier. Important note here - apparently to use this information in your map, you can only have two columns and one of them has to be a fips code or state.</p>
+<pre class="r"><code>usa_map &lt;- usmap::us_map(regions = &quot;states&quot;) %&gt;% 
+  left_join(state_counts %&gt;% select(&quot;abbr&quot; =  new_state, count_group)) %&gt;% 
+  select(fips, count_group)</code></pre>
+<p>Now plot the base map, excluding Alaska and Hawaii since there are no airmen from those states anyways. I’m adding a geom_text layer here with a fontawesome icon of a fighter jet - this is from the emojifont package. Here I’m assigning colors to the states based on a discrete variable, which is not usually best practice for count data. However, I’m going for a certain style here that is inspired by WEB DuBois maps:</p>
+<p><img src="https://staticweb.usafacts.org/media/images/service-pnp-ppmsca-33900-33900v.width-1200.jpg" alt="DuBois Maps" class="center"></p>
+<p>The size of the fighter jet icon will also correspond to the number of airmen from that particular city. I was having a terrible time trying to format the legend for this, until I realized that I had the label inside the aesthetic. As soon as I took it out everything worked perfectly.</p>
+<pre class="r"><code>state_map &lt;- plot_usmap(
+    regions = &quot;state&quot;,
+    exclude = c(&quot;Alaska&quot;, &quot;Hawaii&quot;),
+    data = usa_map,
+    values = &quot;count_group&quot;
+  ) +
+  geom_text(
+    data = cities_t,
+    aes(x = lon.1, y = lat.1, size = count_group),
+    label = fontawesome(&#39;fa-fighter-jet&#39;),
+    color = alabaster,
+    family = &#39;fontawesome-webfont&#39;
+  )  +
+  scale_fill_manual(
+    name = &quot;Airmen per State&quot;,
+    values = c(field.drab, &quot;#203A46&quot;, blood.red, medal.yellow),
+    na.value = &quot;#DADABE&quot;
+  ) +
+  scale_size_manual(name = &quot;Airmen per Hometown&quot;, values = c(5, 7, 9, 11)) +
+  labs(
+    title = &quot;The&quot;,
+    subtitle = &quot;TUSKEGEE AIRMEN&quot;,
+    caption = str_c(&quot;Red Tails 1941-1949&quot;)
+  )</code></pre>
+</div>
+<div id="finalize-the-map" class="section level2">
+<h2>Finalize the Map</h2>
+<p>It took a lot of code to format since I used several different fonts and I’m pretty picky about how my visualizations look in general. I was pretty satisfied with the result, EXCEPT for the fact that I could not get it to look the same when I tried printing it inline in this Rmarkdown document, or saving with ggsave(). This is one of the things that annoys me about ggplot. In any case, I was able to save the PNG to my desktop and I will leave the code here and just upload the photo of the chart. If you want to print it out inline, I’ve used fig.height=6, fig.width=6, dev=‘png’, dpi=300 in the setup for this chunk.</p>
+<pre class="r"><code>plot +
+  guides(
+    size = guide_legend(title.position = &quot;top&quot;, title.hjust = .5),
+    fill = guide_legend(title.position = &quot;top&quot;, title.hjust = .5)
+  ) +
+  theme(
+    legend.position = &quot;bottom&quot;,
+    legend.text = element_text(
+      family = &quot;chuterolk&quot;,
+      size = 28,
+      color = alabaster
+    ),
+    legend.title = element_text(
+      family = &quot;chuterolk&quot;,
+      size = 32,
+      color = alabaster
+    ),
+    legend.background = element_rect(fill = cadet.light, color = cadet.light),
+    panel.background = element_rect(fill = cadet.light, color = cadet.light),
+    legend.key = element_rect(fill = NA),
+    plot.background = element_rect(fill = cadet.light, color = cadet.light),
+    plot.title = element_text(
+      family = &quot;dynalight&quot;,
+      color = alabaster,
+      size = 40,
+      hjust = .4,
+      vjust = -0.1
+    ),
+    plot.subtitle = element_text(
+      family = &quot;chuterolk&quot;,
+      color = alabaster,
+      size = 60,
+      hjust = .5
+    ),
+    plot.caption = element_text(
+      family = &quot;yesteryear&quot;,
+      color = blood.red,
+      size = 40,
+      vjust = 54,
+      hjust = .5
+    ),
+    legend.key.size = unit(1, &#39;cm&#39;),
+    legend.spacing = unit(2.2, &#39;inches&#39;),
+    legend.margin = margin(0, 0, 0, 20)
+  )</code></pre>
+<p><img src="https://i.ibb.co/s2cB32H/tuskegee-final.png" alt="Tuskegee Airmen Final Map" class="center"></p>
+</div>

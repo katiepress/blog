@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.87.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Katie Press">
+<meta name="keywords" content="">
+<meta name="description" content="Creating a map of Tuskegee Airmen by State and Hometown with ggplot2">
+
+
+<meta property="og:description" content="Creating a map of Tuskegee Airmen by State and Hometown with ggplot2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tidy Tuesday: Tuskegee Airmen">
+<meta name="twitter:title" content="Tidy Tuesday: Tuskegee Airmen">
+<meta property="og:url" content="https://kpress.dev/blog/2022-02-13-tidy-tuesday-tuskegee-airmen/">
+<meta property="twitter:url" content="https://kpress.dev/blog/2022-02-13-tidy-tuesday-tuskegee-airmen/">
+<meta property="og:site_name" content="Blog Home">
+<meta property="og:description" content="Creating a map of Tuskegee Airmen by State and Hometown with ggplot2">
+<meta name="twitter:description" content="Creating a map of Tuskegee Airmen by State and Hometown with ggplot2">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2022-02-13T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2022-02-13T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="TidyTuesday">
+    
+  
+  
+    
+      <meta property="article:tag" content="Maps">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@katie_press">
+
+
+  <meta name="twitter:creator" content="@katie_press">
+
+
+
+
+
+
+  <meta property="og:image" content="https://i.ibb.co/PMdRWX0/tuskegee-final-small.png">
+  <meta property="twitter:image" content="https://i.ibb.co/PMdRWX0/tuskegee-final-small.png">
+
+
+  <meta property="og:image" content="https://i.ibb.co/s2cB32H/tuskegee-final.png">
+  <meta property="twitter:image" content="https://i.ibb.co/s2cB32H/tuskegee-final.png">
+
+
+
+
+  <meta property="og:image" content="https://kpress.dev/img/tuxedo.jpg">
+  <meta property="twitter:image" content="https://kpress.dev/img/tuxedo.jpg">
+
+
+    <title>Tidy Tuesday: Tuskegee Airmen</title>
+
+    <link rel="icon" href="https://kpress.dev/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://kpress.dev/blog/2022-02-13-tidy-tuesday-tuskegee-airmen/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://kpress.dev/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+      
+        <link rel="stylesheet" href="https://kpress.dev/static/css/custom.scss">
+      
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://kpress.dev/">Blog Home</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://kpress.dev/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://kpress.dev/img/tuxedo.jpg" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://kpress.dev/#about">
+          <img class="sidebar-profile-picture" src="https://kpress.dev/img/tuxedo.jpg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Katie Press</h4>
+        
+          <h5 class="sidebar-profile-bio">R Programmer, Data Enthusiast</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kpress.dev/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-code"></i>
+      
+      <span class="sidebar-button-desc">Blog</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kpress.dev/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-sitemap"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kpress.dev/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-hashtag"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kpress.dev/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-floppy-o"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/katiepress" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-center
+              post-header-cover--partial"
+       style="background-image:url('https://i.ibb.co/s2cB32H/tuskegee-final.png')"
+       data-behavior="5">
+    
+  </div>
+
+
+      <div id="main" data-behavior="5"
+        class="hasCover
+               hasCoverMetaOut
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title" itemprop="headline">
+      Tidy Tuesday: Tuskegee Airmen
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2022-02-13T00:00:00Z">
+        
+  February 13, 2022
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://kpress.dev/categories/tidytuesday">TidyTuesday</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+<script src="https://kpress.dev/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<pre class="r"><code>knitr::opts_chunk$set(echo = TRUE,message=FALSE,warning=FALSE)
+library(tidyverse)
+library(usmap)
+library(emojifont)
+library(showtext)</code></pre>
+<div id="data" class="section level2">
+<h2>Data</h2>
+<p>I geocoded as many of the records as I could - some of the hometowns and/or states were incorrect and had to be cleaned up. I uploaded this file to <a href="https://www.kaggle.com/katiepress/Tuskegee-airmen">Kaggle</a> as well.</p>
+<pre class="r"><code>airmen &lt;- readRDS(&quot;/Users/katiepress/Desktop/Rproj/Tuskeegee/airmen.RDS&quot;)</code></pre>
+<div id="colors-and-fonts-for-styling-the-map" class="section level3">
+<h3>Colors and Fonts for Styling the Map</h3>
+<pre class="r"><code>cadet.light &lt;- &quot;#386F81&quot;
+blood.red &lt;- &quot;#780e0d&quot;
+alabaster &lt;- &quot;#F2F0E3&quot;
+field.drab &lt;- &quot;#645B40&quot;
+cadet &lt;- &quot;#4d6673&quot;
+medal.yellow &lt;-  &quot;#E3A95D&quot;
+gunmetal &lt;- &quot;#172a33&quot;
+
+font_add_google(name = &quot;Yesteryear&quot;, family = &quot;yesteryear&quot;)
+font_add_google(name = &quot;Dynalight&quot;, family = &quot;dynalight&quot;)
+font_add(family = &quot;chuterolk&quot;, regular = &quot;./Users/katiepress/Downloads/ChuterolkFreeRegular-L3R55.ttf&quot;)</code></pre>
+</div>
+<div id="count-of-airmen-per-hometown-and-state" class="section level3">
+<h3>Count of Airmen per Hometown and State</h3>
+<p>This information will be used for the state colors and the point overlays. I’m also adding the fontawesome icon I want to use instead of points for my cities. This can be done using the emojifont package, and I’m storing that in a column called “label”.</p>
+<pre class="r"><code>city_counts &lt;- count(airmen, new_city, new_state, &quot;lon&quot; = longitude, 
+                     &quot;lat&quot; = latitude) %&gt;% 
+  filter(!is.na(lon)) %&gt;% 
+  select(lon, lat , everything())
+
+city_counts &lt;- city_counts %&gt;% 
+  filter(!new_state %in% c(&quot;HT&quot;, &quot;HAITI&quot;, &quot;UNK&quot;, &quot;VI&quot;))
+
+city_counts &lt;- city_counts %&gt;% 
+  arrange(desc(lon)) %&gt;% 
+  slice(8:362)
+
+city_counts &lt;- city_counts %&gt;% 
+  mutate(label = fontawesome(&#39;fa-fighter-jet&#39;))
+
+city_counts &lt;- city_counts %&gt;% 
+  mutate(count_group = factor(case_when(n &lt; 6 ~ &quot;1-5&quot;,
+                                 between(n, 6, 10) ~ &quot;6-10&quot;,
+                                 between(n, 11, 20) ~ &quot;11-20&quot;,
+                                 n &gt; 20 ~ &quot;20+&quot;), levels = c(&quot;1-5&quot;, &quot;6-10&quot;, &quot;11-20&quot;, &quot;20+&quot;))) 
+
+city_counts &lt;- city_counts %&gt;% filter(new_state != &quot;TD&quot;)
+
+cities_t &lt;- usmap_transform(city_counts)
+
+state_counts &lt;- count(airmen %&gt;% filter(new_state %in% state.abb), new_state)
+
+
+state_counts &lt;- state_counts %&gt;% 
+  mutate(count_group = factor(case_when(n &lt;11 ~ &quot;1-10&quot;,
+                                 between(n, 11, 25) ~ &quot;11-25&quot;,
+                                 between(n, 26, 50) ~ &quot;26-50&quot;,
+                                 n &gt; 50 ~ &quot;50+&quot;), 
+                              levels = c(&quot;1-10&quot;, &quot;11-25&quot;, &quot;26-50&quot;, &quot;50+&quot;)))</code></pre>
+</div>
+</div>
+<div id="creating-the-map" class="section level2">
+<h2>Creating the Map</h2>
+<p>I’m using the usmap package for the base plot, which is actually a ggplot2 format I believe, just a shortcut way of doing things. First, get some map info and join the state counts from earlier. Important note here - apparently to use this information in your map, you can only have two columns and one of them has to be a fips code or state.</p>
+<pre class="r"><code>usa_map &lt;- usmap::us_map(regions = &quot;states&quot;) %&gt;% 
+  left_join(state_counts %&gt;% select(&quot;abbr&quot; =  new_state, count_group)) %&gt;% 
+  select(fips, count_group)</code></pre>
+<p>Now plot the base map, excluding Alaska and Hawaii since there are no airmen from those states anyways. I’m adding a geom_text layer here with a fontawesome icon of a fighter jet - this is from the emojifont package. Here I’m assigning colors to the states based on a discrete variable, which is not usually best practice for count data. However, I’m going for a certain style here that is inspired by WEB DuBois maps:</p>
+<p><img src="https://staticweb.usafacts.org/media/images/service-pnp-ppmsca-33900-33900v.width-1200.jpg" alt="DuBois Maps" class="center"></p>
+<p>The size of the fighter jet icon will also correspond to the number of airmen from that particular city. I was having a terrible time trying to format the legend for this, until I realized that I had the label inside the aesthetic. As soon as I took it out everything worked perfectly.</p>
+<pre class="r"><code>state_map &lt;- plot_usmap(
+    regions = &quot;state&quot;,
+    exclude = c(&quot;Alaska&quot;, &quot;Hawaii&quot;),
+    data = usa_map,
+    values = &quot;count_group&quot;
+  ) +
+  geom_text(
+    data = cities_t,
+    aes(x = lon.1, y = lat.1, size = count_group),
+    label = fontawesome(&#39;fa-fighter-jet&#39;),
+    color = alabaster,
+    family = &#39;fontawesome-webfont&#39;
+  )  +
+  scale_fill_manual(
+    name = &quot;Airmen per State&quot;,
+    values = c(field.drab, &quot;#203A46&quot;, blood.red, medal.yellow),
+    na.value = &quot;#DADABE&quot;
+  ) +
+  scale_size_manual(name = &quot;Airmen per Hometown&quot;, values = c(5, 7, 9, 11)) +
+  labs(
+    title = &quot;The&quot;,
+    subtitle = &quot;TUSKEGEE AIRMEN&quot;,
+    caption = str_c(&quot;Red Tails 1941-1949&quot;)
+  )</code></pre>
+</div>
+<div id="finalize-the-map" class="section level2">
+<h2>Finalize the Map</h2>
+<p>It took a lot of code to format since I used several different fonts and I’m pretty picky about how my visualizations look in general. I was pretty satisfied with the result, EXCEPT for the fact that I could not get it to look the same when I tried printing it inline in this Rmarkdown document, or saving with ggsave(). This is one of the things that annoys me about ggplot. In any case, I was able to save the PNG to my desktop and I will leave the code here and just upload the photo of the chart. If you want to print it out inline, I’ve used fig.height=6, fig.width=6, dev=‘png’, dpi=300 in the setup for this chunk.</p>
+<pre class="r"><code>plot +
+  guides(
+    size = guide_legend(title.position = &quot;top&quot;, title.hjust = .5),
+    fill = guide_legend(title.position = &quot;top&quot;, title.hjust = .5)
+  ) +
+  theme(
+    legend.position = &quot;bottom&quot;,
+    legend.text = element_text(
+      family = &quot;chuterolk&quot;,
+      size = 28,
+      color = alabaster
+    ),
+    legend.title = element_text(
+      family = &quot;chuterolk&quot;,
+      size = 32,
+      color = alabaster
+    ),
+    legend.background = element_rect(fill = cadet.light, color = cadet.light),
+    panel.background = element_rect(fill = cadet.light, color = cadet.light),
+    legend.key = element_rect(fill = NA),
+    plot.background = element_rect(fill = cadet.light, color = cadet.light),
+    plot.title = element_text(
+      family = &quot;dynalight&quot;,
+      color = alabaster,
+      size = 40,
+      hjust = .4,
+      vjust = -0.1
+    ),
+    plot.subtitle = element_text(
+      family = &quot;chuterolk&quot;,
+      color = alabaster,
+      size = 60,
+      hjust = .5
+    ),
+    plot.caption = element_text(
+      family = &quot;yesteryear&quot;,
+      color = blood.red,
+      size = 40,
+      vjust = 54,
+      hjust = .5
+    ),
+    legend.key.size = unit(1, &#39;cm&#39;),
+    legend.spacing = unit(2.2, &#39;inches&#39;),
+    legend.margin = margin(0, 0, 0, 20)
+  )</code></pre>
+<p><img src="https://i.ibb.co/s2cB32H/tuskegee-final.png" alt="Tuskegee Airmen Final Map" class="center"></p>
+</div>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://kpress.dev/tags/maps/">Maps</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://kpress.dev/blog/2021-08-04-tidy-tuesday-paralympic-medals/" data-tooltip="Tidy Tuesday: Paralympic Medals">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kpress.dev/blog/2022-02-13-tidy-tuesday-tuskegee-airmen/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2022 Katie Press. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://kpress.dev/blog/2021-08-04-tidy-tuesday-paralympic-medals/" data-tooltip="Tidy Tuesday: Paralympic Medals">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kpress.dev/blog/2022-02-13-tidy-tuesday-tuskegee-airmen/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fkpress.dev%2Fblog%2F2022-02-13-tidy-tuesday-tuskegee-airmen%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://kpress.dev/img/tuxedo.jpg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Katie Press</h4>
+    
+      <div id="about-card-bio">R Programmer, Data Enthusiast</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Researcher
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        USA
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://kpress.dev/images/space3.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://kpress.dev/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages.r.min.js"></script>
+  
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/kpress.dev\/blog\/2022-02-13-tidy-tuesday-tuskegee-airmen\/';
+          
+            this.page.identifier = '\/blog\/2022-02-13-tidy-tuesday-tuskegee-airmen\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'blog-zxbl2vcnni';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.87.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Katie Press">
+<meta name="keywords" content="">
+<meta name="description" content="Recreating a Du Bois Data Viz with ggplot2">
+
+
+<meta property="og:description" content="Recreating a Du Bois Data Viz with ggplot2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tidy Tuesday: Du Bois Challenge 2022">
+<meta name="twitter:title" content="Tidy Tuesday: Du Bois Challenge 2022">
+<meta property="og:url" content="https://kpress.dev/blog/2022-02-15-tidy-tuesday-dubois-challenge-2022/">
+<meta property="twitter:url" content="https://kpress.dev/blog/2022-02-15-tidy-tuesday-dubois-challenge-2022/">
+<meta property="og:site_name" content="Blog Home">
+<meta property="og:description" content="Recreating a Du Bois Data Viz with ggplot2">
+<meta name="twitter:description" content="Recreating a Du Bois Data Viz with ggplot2">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2022-02-15T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2022-02-15T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="TidyTuesday">
+    
+  
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@katie_press">
+
+
+  <meta name="twitter:creator" content="@katie_press">
+
+
+
+
+
+
+  <meta property="og:image" content="https://i.ibb.co/YBGXvDh/dubois-final-small.png">
+  <meta property="twitter:image" content="https://i.ibb.co/YBGXvDh/dubois-final-small.png">
+
+
+  <meta property="og:image" content="https://i.ibb.co/jGq4Rqs/dubois-final.png">
+  <meta property="twitter:image" content="https://i.ibb.co/jGq4Rqs/dubois-final.png">
+
+
+
+
+  <meta property="og:image" content="https://kpress.dev/img/tuxedo.jpg">
+  <meta property="twitter:image" content="https://kpress.dev/img/tuxedo.jpg">
+
+
+    <title>Tidy Tuesday: Du Bois Challenge 2022</title>
+
+    <link rel="icon" href="https://kpress.dev/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://kpress.dev/blog/2022-02-15-tidy-tuesday-dubois-challenge-2022/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://kpress.dev/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+      
+        <link rel="stylesheet" href="https://kpress.dev/static/css/custom.scss">
+      
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://kpress.dev/">Blog Home</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://kpress.dev/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://kpress.dev/img/tuxedo.jpg" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://kpress.dev/#about">
+          <img class="sidebar-profile-picture" src="https://kpress.dev/img/tuxedo.jpg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Katie Press</h4>
+        
+          <h5 class="sidebar-profile-bio">R Programmer, Data Enthusiast</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kpress.dev/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-code"></i>
+      
+      <span class="sidebar-button-desc">Blog</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kpress.dev/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-sitemap"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kpress.dev/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-hashtag"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kpress.dev/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-floppy-o"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/katiepress" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-center
+              post-header-cover--partial"
+       style="background-image:url('https://i.ibb.co/jGq4Rqs/dubois-final.png')"
+       data-behavior="5">
+    
+  </div>
+
+
+      <div id="main" data-behavior="5"
+        class="hasCover
+               hasCoverMetaOut
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title" itemprop="headline">
+      Tidy Tuesday: Du Bois Challenge 2022
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2022-02-15T00:00:00Z">
+        
+  February 15, 2022
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://kpress.dev/categories/tidytuesday">TidyTuesday</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+<script src="https://kpress.dev/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>This week’s Tidy Tuesday challenge is a collaboration with the <a href="https://nightingaledvs.com/the-dubois-challenge/">#DuboisChallenge2022</a>. One of the things I love about Du Bois’ data visualizations is that he used them to highlight the achievements and culture of Black Americans in addition to the struggles they faced. I own the book <a href="https://www.amazon.com/dp/B07JQ2LWVB/ref=dp-kindle-redirect?_encoding=UTF8&amp;btkr=1">W.E.B Du Bois’s Data Portraits Visualizing Black America</a> and I thought I would share the summary from the back of the cover:</p>
+<div style="display: flex; justify-content: center;">
+<div>
+<p><img src="https://i.ibb.co/r09T3qt/WEBD-Data-Portraits-Book-Cover-721x1024.jpg%22%20alt=%22DuBois%20LineChart" style="width:90.0%" /></p>
+</div>
+<div>
+<blockquote>
+<p>“At the 1900 Paris Exposition, the famed sociologist and civil rights activist W.E.B Du Bois presented a series of groundbreaking data visualizations advocating for African American progress. These graphs, charts, and maps provided powerful glimpses into the lives of black Americans to convey both a literal and figurative representation of what Du Bois famously referred to as”the color line“. From advances in education to the lingering effects of slavery, these infographics—beautiful in design and impactful in content—made visible a wide spectrum of black experience.”</p>
+</blockquote>
+</div>
+</div>
+<p>With that in mind, I decided to focus on educational advances in more recent history using census data. My new version of the chart is on the left, and the chart I used for inspiration is on the right:</p>
+<div style="display: flex; justify-content: center;">
+<div>
+<center>
+<p><img src="https://i.ibb.co/jGq4Rqs/dubois-final.png%22%20alt=%22DuBois%20LineChart" style="width:70.0%" /></p>
+<p><a href="https://ibb.co/J28kQ8g">New DuBois Chart</a></p>
+</center>
+</div>
+<div>
+<center>
+<p><img src="https://i.ibb.co/9hMH9Pc/dubois-linechart.jpg%22%20alt=%22DuBois%20LineChart" style="width:100.0%" /></p>
+<p><a href="https://ibb.co/ZSZz69G">Original DuBois Chart</a></p>
+</center>
+</div>
+</div>
+<div id="data" class="section level3">
+<h3>Data</h3>
+<p>I retrieved this data from the <a href="https://www.census.gov/data/tables/time-series/demo/educational-attainment/cps-historical-time-series.html">U.S. Census historical tables</a> and decided to copy and paste what I wanted into another sheet as opposed to reading it into R and trying to clean it up. I’ve done that before, but this is not a lot of data and sometimes you just have to work smarter not harder. I’ve also uploaded it to <a href="https://www.kaggle.com/katiepress/race-education-data">Kaggle</a>.</p>
+<pre class="r"><code>data &lt;- read_excel(&quot;/Users/katiepress/Desktop/Rproj/DuboisChallenge/race_education_data.xlsx&quot;, 
+    sheet = &quot;clean_data&quot;) %&gt;% clean_names()</code></pre>
+</div>
+<div id="color-palette" class="section level3">
+<h3>Color Palette</h3>
+<p>I used <a href="https://coolors.co">coolors.co</a> to create my color palette. They have an image upload feature and it’s really easy to find complementary colors in the generator as well. I knew I probably wouldn’t use them all on this chart, but I might create more for the Dubois Challenge soon.</p>
+<pre class="r"><code>dark.blue &lt;- &quot;#2459a6&quot;
+dark.red &lt;- &quot;#bd0f2e&quot;
+dark.green &lt;- &quot;#428e6b&quot;
+dark.brown &lt;- &quot;#494030&quot;
+light.tan &lt;- &quot;#EAE1D6&quot;
+dark.yellow &lt;- &quot;#eeaf01&quot;
+dark.black &lt;- &quot;#131211&quot;
+light.pink &lt;- &quot;#E6A09E&quot;
+light.blue &lt;- &quot;#6b7ead&quot;
+medium.brown &lt;- &quot;#a27c65&quot;
+light.brown &lt;- &quot;#D5C3AF&quot;
+pale.blue &lt;- &quot;#a9a9b5&quot;
+
+
+scales::show_col(c(dark.blue, dark.red, dark.green, dark.brown, dark.black, light.tan, dark.yellow, light.pink, light.blue, light.brown, medium.brown, pale.blue))</code></pre>
+<p><img src="https://kpress.dev/post/2022-02-15-tidy-tuesday-dubois-challenge-2022/index.en-us_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>I’m going to set a few color values for the charts so if I want to change something, I only have to updated it here and not a bunch of different places.</p>
+<pre class="r"><code>background.color &lt;- light.tan
+hline.color &lt;- light.pink
+linecol.1 &lt;- dark.black
+linecol.2 &lt;- dark.red
+grid.color &lt;- light.pink
+text.annotate.color &lt;- dark.brown
+annotation.size &lt;- 5</code></pre>
+</div>
+</div>
+<div id="creating-the-chart" class="section level2">
+<h2>Creating the Chart</h2>
+<p>First I will create a line chart of the overall percentages of high school and college educated African Americans over time. I’m taking some liberties with the colors here because I want to use two different lines instead of one like the original chart I’m using for inspiration.</p>
+<p>I’m being strategic about the axis breaks and labels - I want to create enough space for everything but I only want certain years to be labeled. I also needed to use expand inside the scales to make sure the grid doesn’t extend beyond the panel so I can keep the same look as the original chart. I briefly considered creating two plots and arranging them in a grid because of the split between the scale and the grid in the original plot. But I realized that was going to be too annoying, and thought of an easier way - using geom_rect. The first draft looks very ugly, but it will improve from here.</p>
+<pre class="r"><code>plot &lt;- data %&gt;%
+  filter(!is.na(year)) %&gt;%
+  mutate(total_black = total_black / 100) %&gt;%
+  select(variable, year, contains(&quot;_black&quot;)) %&gt;%
+  ggplot(aes(x = year, y = total_black, color = variable)) +
+  geom_line(size = 2) +
+  scale_color_manual(values = c(linecol.1, linecol.2)) +
+  scale_y_continuous(
+    limits = c(0, 1),
+    labels = c(&quot;&quot;, &quot;&quot;, &quot;20%&quot;, &quot;&quot;, &quot;40%&quot;, &quot;&quot;, &quot;60%&quot;, &quot;&quot;, &quot;80%&quot;, &quot;&quot;, &quot;100%&quot;),
+    breaks = seq(0, 1, .1),
+    minor_breaks = seq(0, 1, .05),
+    expand = c(0, 0)
+  ) +
+  scale_x_continuous(
+    limits = c(1920, 2020),
+    breaks = c(1920, 1940, 1960, 1980, 2000, 2020),
+    minor_breaks = seq(1920, 2020, 5),
+    expand = c(0, 0),
+    labels = c(&quot;&quot;, &quot;1940&quot;, &quot;1960&quot;, &quot;1980&quot;, &quot;2000&quot;, &quot;2020&quot;)
+  ) +
+  annotate(
+    &quot;rect&quot;,
+    xmin = 1930,
+    xmax = 1940,
+    ymin = 0,
+    ymax = 1,
+    fill = background.color
+  )
+
+plot</code></pre>
+<p><img src="https://kpress.dev/post/2022-02-15-tidy-tuesday-dubois-challenge-2022/index.en-us_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="add-horizontal-lines" class="section level3">
+<h3>Add Horizontal Lines</h3>
+<p>I’m using geom_segment to add the horizontal lines to “connect” what will look like two different portions of the chart in the end. Then I’ll add geom_text to replace the y-axis. I would have just used hjust in the axis theme but for some reason the “100” at the top was skewed to the side instead of being centered like the other numbers. I tried expanding the grid limit just a bit over 0 on the y axis but that didn’t work. This was just as well, because I decided to add percentages to resemble the dollar signs in the original chart. I’m using the font “Jeffries” which is part of the themedubois package, but extrafont wasn’t working for me for some reason, so I’ve downloaded the free font and added it to my local font book.</p>
+<pre class="r"><code>plot &lt;- plot+
+  geom_segment(x = 1930, y = .2, xend = 1940, yend = .2, color = hline.color)+
+  geom_segment(x = 1930, y = .4, xend = 1940, yend = .4, color = hline.color)+
+  geom_segment(x = 1930, y = .6, xend = 1940, yend = .6, color = hline.color)+
+  geom_segment(x = 1930, y = .8, xend = 1940, yend = .8, color = hline.color)+
+  annotate(
+    &quot;text&quot;,
+    x = 1925,
+    y = c(.2, .4, .6, .8, .98),
+    label = c(&quot;20&quot;, &quot;40&quot;, &quot;60&quot;, &quot;80&quot;, &quot;100&quot;),
+    color = text.annotate.color,
+    size = annotation.size,
+    family = &quot;Jefferies&quot;
+  ) +
+  annotate(
+    &quot;text&quot;,
+    x = 1925,
+    y = c(.075, .125, .275, .325, .475, .525, .675, .725, .875, .925),
+    label = &quot;%&quot;,
+    color = text.annotate.color,
+    family = &quot;Jefferies&quot;,
+    size = annotation.size
+  ) +
+  theme(
+    axis.ticks = element_blank(),
+    axis.text.y = element_blank(),
+    axis.title = element_blank(),
+    legend.position = &quot;bottom&quot;
+  )
+
+plot</code></pre>
+<p><img src="https://kpress.dev/post/2022-02-15-tidy-tuesday-dubois-challenge-2022/index.en-us_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="add-annotations-for-historical-events." class="section level3">
+<h3>Add annotations for historical events.</h3>
+<p>Right now it’s going to look like the text is way too large, but I’m going to make the entire plot size larger in a minute.</p>
+<pre class="r"><code>plot &lt;- plot + 
+  annotate(&quot;text&quot;, x = 1954, y = .36, label = &quot;Brown v. Board of Education&quot;,
+    color = text.annotate.color,
+    family = &quot;Jefferies&quot;,
+    size = annotation.size, angle = 90)+
+  annotate(&quot;text&quot;, x = 1960, y = .32, label = &quot; SNCC \n Formed&quot;,
+    color = text.annotate.color,
+    family = &quot;Jefferies&quot;,
+    size = annotation.size)+
+  annotate(&quot;text&quot;, x = 1964, y = .15, label = &quot;Civil \n Rights \n Act&quot;,
+    color = text.annotate.color,
+    family = &quot;Jefferies&quot;,
+    size = annotation.size)+
+  annotate(&quot;text&quot;, x = 1972, y = .5, label = &quot;Title IX&quot;,
+    color = text.annotate.color,
+    family = &quot;Jefferies&quot;,
+    size = annotation.size)+
+  annotate(&quot;text&quot;, x = 1978, y = .62, label = &quot;Affirmative Action&quot;,
+    color = text.annotate.color,
+    family = &quot;Jefferies&quot;,
+    size = annotation.size, angle = 90)+
+  annotate(&quot;text&quot;, x = 2000, y = .3, label = &quot;No Child \n Left Behind&quot;,
+    color = text.annotate.color,
+    family = &quot;Jefferies&quot;,
+    size = annotation.size)+
+  annotate(&quot;text&quot;, x = 2012, y = .6, label = &quot;White House Initiative on \n Educational  Excellence \n for African Americans&quot;,
+    color = text.annotate.color,
+    family = &quot;Jefferies&quot;,
+    size = annotation.size, angle = 90)+
+  annotate(&quot;text&quot;, x = 2015, y = .95, label = &quot;Covid-19&quot;,
+    color = text.annotate.color,
+    family = &quot;Jefferies&quot;,
+    size = annotation.size)+
+  annotate(&quot;text&quot;, x = 1995, y = .85, label = &quot;Million Man March&quot;,
+    color = text.annotate.color,
+    family = &quot;Jefferies&quot;,
+    size = annotation.size)
+
+plot</code></pre>
+<p><img src="https://kpress.dev/post/2022-02-15-tidy-tuesday-dubois-challenge-2022/index.en-us_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="styling" class="section level3">
+<h3>Styling</h3>
+<p>I added a title and a caption for the data source. At this stage, I’m making the background a uniform color and changing the grid lines to light red. I realized at the last minute I also needed to make the grid panel outline a darker color, so I added more geom_segments for that. I would usually use the panel.background color in the theme, plus maybe the outline color of the geom_rect I used to separate the two pieces of the plot. But I couldn’t do that and remain true to the original, because there are no lines across the top in the original. This is obviously not the most efficient way of doing things, but again I’m going for style here.</p>
+<p>After adding the rest of the theme elements, things are finally starting to come together here, it just needs to be resized.</p>
+<pre class="r"><code>plot &lt;- plot+
+  ggtitle(&quot;EDUCATIONAL ATTAINMENT OF AFRICAN AMERICANS \n IN THE UNITED STATES&quot;)+
+  labs(caption = &quot;Data Source: U.S. Census Bureau Table  A-2.  Percent of People 25 Years and Over Who Have Completed High School or College \n by Race, Hispanic Origin and Sex: Selected Years 1940 to 2020&quot;)+
+  geom_segment(x = 1940, y = 0, xend = 1940, yend = 1, color = dark.brown, size = .15)+
+  geom_segment(x = 1930, y = 0, xend = 1930, yend = 1, color = dark.brown, size = .15)+
+  geom_segment(x = 1920, y = 0, xend = 1920, yend = 1, color = dark.brown, size = .15)+
+  geom_segment(x = 2020, y = 0, xend = 2020, yend = 1, color = dark.brown, size = .15)+
+   geom_segment(x = 1920, y = 0, xend = 1930, yend = 0, color = dark.brown, size = .15)+
+  geom_segment(x = 1940, y = 0, xend = 2020, yend = 0, color = dark.brown, size = .15)+
+  geom_segment(x = 1920, y = 1, xend = 1930, yend = 1, color = dark.brown, size = .15)+
+  geom_segment(x = 1940, y = 1, xend = 2020, yend = 1, color = dark.brown, size = .15)+
+  theme(plot.background = element_rect(fill = background.color, color = background.color),
+        panel.background = element_rect(fill = background.color),
+        #panel.border = element_rect(color = dark.brown, fill =NA),
+        panel.grid = element_line(color = grid.color),
+        legend.position = &quot;bottom&quot;,
+        legend.title=element_blank(),
+        legend.background = element_rect(background.color),
+        legend.key = element_rect(fill = NA),
+        legend.text = element_text(color = text.annotate.color, family = &quot;Jefferies&quot;, size = 16),
+        axis.text.x = element_text(color = text.annotate.color, family = &quot;Jefferies&quot;, size = 14),
+        plot.margin=unit(c(.2,.6,.2,.6),&quot;cm&quot;),
+        plot.title = element_text(size = 24, color = dark.black, family = &quot;Jefferies&quot;, hjust = .5),
+        plot.caption = element_text(size = 9, family = &quot;Jefferies&quot;, color = dark.black)
+        )
+
+plot</code></pre>
+<p><img src="https://kpress.dev/post/2022-02-15-tidy-tuesday-dubois-challenge-2022/index.en-us_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="final-sized-plot" class="section level2">
+<h2>Final Sized Plot</h2>
+<p>Here’s the final result! This chunk uses fig.width=7, fig.height=10, dev=‘png’, dpi=300. It can be saved as a png using the same specifications with ggsave().
+<img src="https://kpress.dev/post/2022-02-15-tidy-tuesday-dubois-challenge-2022/index.en-us_files/figure-html/unnamed-chunk-8-1.png" width="2100" style="display: block; margin: auto;" /></p>
+</div>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://kpress.dev/blog/2022-02-13-tidy-tuesday-tuskegee-airmen/" data-tooltip="Tidy Tuesday: Tuskegee Airmen">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kpress.dev/blog/2022-02-15-tidy-tuesday-dubois-challenge-2022/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2022 Katie Press. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://kpress.dev/blog/2022-02-13-tidy-tuesday-tuskegee-airmen/" data-tooltip="Tidy Tuesday: Tuskegee Airmen">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kpress.dev/blog/2022-02-15-tidy-tuesday-dubois-challenge-2022/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fkpress.dev%2Fblog%2F2022-02-15-tidy-tuesday-dubois-challenge-2022%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://kpress.dev/img/tuxedo.jpg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Katie Press</h4>
+    
+      <div id="about-card-bio">R Programmer, Data Enthusiast</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Researcher
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        USA
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://kpress.dev/images/space3.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://kpress.dev/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages.r.min.js"></script>
+  
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/kpress.dev\/blog\/2022-02-15-tidy-tuesday-dubois-challenge-2022\/';
+          
+            this.page.identifier = '\/blog\/2022-02-15-tidy-tuesday-dubois-challenge-2022\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'blog-zxbl2vcnni';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

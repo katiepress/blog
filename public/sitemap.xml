@@ -3,24 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://kpress.dev/</loc>
-    <lastmod>2022-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2022-02-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://kpress.dev/categories/</loc>
-    <lastmod>2022-02-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://kpress.dev/tags/maps/</loc>
-    <lastmod>2022-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2022-02-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://kpress.dev/post/</loc>
+    <lastmod>2022-02-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kpress.dev/blog/2022-02-15-tidy-tuesday-dubois-challenge-2022/</loc>
+    <lastmod>2022-02-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kpress.dev/categories/tidytuesday/</loc>
+    <lastmod>2022-02-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kpress.dev/tags/maps/</loc>
     <lastmod>2022-02-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://kpress.dev/tags/</loc>
     <lastmod>2022-02-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://kpress.dev/blog/2022-02-13-tidy-tuesday-tuskegee-airmen/</loc>
-    <lastmod>2022-02-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://kpress.dev/categories/tidytuesday/</loc>
     <lastmod>2022-02-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://kpress.dev/tags/animation/</loc>

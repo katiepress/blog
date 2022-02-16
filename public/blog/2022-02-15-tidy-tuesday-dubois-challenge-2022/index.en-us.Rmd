@@ -93,6 +93,7 @@ data <- read_excel("/Users/katiepress/Desktop/Rproj/DuboisChallenge/race_educati
 
 ### Color Palette
 I used [coolors.co](https://coolors.co) to create my color palette. They have an image upload feature and it's really easy to find complementary colors in the generator as well. I knew I probably wouldn't use them all on this chart, but I might create more for the Dubois Challenge soon. 
+
 ```{r fig.align='center'}
 dark.blue <- "#2459a6"
 dark.red <- "#bd0f2e"

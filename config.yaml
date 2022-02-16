@@ -75,9 +75,9 @@ params:
   autoThumbnailImage: yes
   clearReading: yes
   coverImage: images/space3.jpg
-  description: Hugo tranquilpeak theme demo
+  description: Kpress R Blog
   customCSS: ["/static/css/custom.scss"]
-  customJS: ["https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages.r.min.js"]
+#  customJS: ["https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages.r.min.js"]
   header:
     rightLink:
       class: ''
@@ -96,6 +96,6 @@ params:
    #   name: Google+
    #   url: https://plus.google.com/share?url=%s
   sidebarBehavior: 2
-  syntaxHighlighter: highlight.js
+#  syntaxHighlighter: highlight.js
   thumbnailImage: yes
   thumbnailImagePosition: bottom

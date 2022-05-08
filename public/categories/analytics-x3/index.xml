@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Analytics X3 on Blog Home</title>
+    <link>https://kpress.dev/categories/analytics-x3/</link>
+    <description>Recent content in Analytics X3 on Blog Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kpress.dev/categories/analytics-x3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Analytics X3: Tidy Tuesday US Solar</title>
+      <link>https://kpress.dev/blog/2022-05-06-analytics-x3-tidytuesday-us-solar/</link>
+      <pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kpress.dev/blog/2022-05-06-analytics-x3-tidytuesday-us-solar/</guid>
+      <description>Tidy Tuesday Analysis in R, Python, and Julia</description>
+    </item>
+    
+  </channel>
+</rss>

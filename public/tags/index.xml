@@ -6,7 +6,34 @@
     <description>Recent content in Tags on Blog Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kpress.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kpress.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>julia</title>
+      <link>https://kpress.dev/tags/julia/</link>
+      <pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kpress.dev/tags/julia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>plots</title>
+      <link>https://kpress.dev/tags/plots/</link>
+      <pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kpress.dev/tags/plots/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://kpress.dev/tags/python/</link>
+      <pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kpress.dev/tags/python/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Maps</title>
       <link>https://kpress.dev/tags/maps/</link>

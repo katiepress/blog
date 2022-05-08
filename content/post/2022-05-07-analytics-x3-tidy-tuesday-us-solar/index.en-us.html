@@ -1,0 +1,257 @@
+---
+title: 'Analytics X3: Tidy Tuesday US Solar'
+author: Katie Press
+date: '2022-05-06'
+slug: analytics-x3-tidytuesday-us-solar
+categories:
+  - Analytics X3
+  - TidyTuesday
+tags:
+  - plots
+  - julia
+  - python
+autoThumbnailImage: false
+thumbnailImage: https://i.ibb.co/yRqNZvk/solar-bubble-small.png
+thumbnailImagePosition: bottom
+coverImage: https://i.ibb.co/TWL7Mfb/solar-bubble.png
+coverMeta: out
+coverSize: partial
+metaAlignment: center
+summary: "Tidy Tuesday Analysis in R, Python, and Julia"
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="introducing-analytics-three-ways-ax3" class="section level1">
+<h1>Introducing Analytics Three Ways (AX3)</h1>
+<p>I love the show Top Chef, and I’ve been watching it for years. One funny thing I’ve noticed is that whenever one of the chefs tries to make a dish too fancy by presenting it in different ways (e.g., “grilled cheese three ways”), it usually ends in disaster. Or, one of the grilled cheese preparations is delicious, and one is some weird kind of deconstructed thing with foam on it that doesn’t taste good at all. The important lesson here is that it’s better to do one thing you’re good at than doing multiple things you’re mediocre (or bad) at.</p>
+<p>So, naturally I’ve decided to ignore this advice completely. I have been using R for years almost on a daily basis, so I’m quite comfortable with it. But lately I’ve been experimenting with some other languages, trying to learn the syntactical differences as well as the benefits and drawbacks to each one in comparison with R. I decided to use the Tidy Tuesday challenges to practice these skills, specifically in Python and Julia (at least for now). I’m just going to add a blanket disclaimer here that applies to all future AX3 posts, which is that I am not an expert in either Python OR Julia, and my analyses in these languages might not be ideal so please be nice if you have comments or suggestions.</p>
+<p>I’m still deciding on how to best share the Python and Julia scripts. If I shared all the code in Rmarkdown it might get really long, so for now I’ll probably sprinkle in a little bit here and there. You can find my code on Github:</p>
+<ul>
+<li><a href="https://github.com/katiepress/TidyTuesday/blob/2f12c465782a7166aeb61a31f02c9aa6d2341f8f/2022-05-03%20US%20Solar.Rmd">Rmarkdown Analysis</a></li>
+<li><a href="https://github.com/katiepress/TidyTuesday/blob/7ddccbf32f2a9c602df1e0d7eefba605592a6098/2022-05-03%20US%20Solar.ipynb">Python Analysis in Jupyter Notebook</a></li>
+<li><a href="https://github.com/katiepress/TidyTuesday/blob/7ddccbf32f2a9c602df1e0d7eefba605592a6098/2022-05-03%20US%20Solar%20Julia.ipynb">Julia Analysis in Jupyter Notebook</a></li>
+</ul>
+<p>I will do my best to keep the structure of the code very similar between the three files, and with operations in the same order. Also just FYI, I’ve been using VSCode for Python/Julia and still using RStudio for R.</p>
+<div id="data-overview" class="section level2">
+<h2>Data Overview</h2>
+<p>This week’s Tidy Tuesday data is from Berkeley Lab’s “Utility-Scale Solar 2021 Edition”. I downloaded the data from the Tidy Tuesday Github repo but, as usual, got distracted by all the other information I found about the data online. I found this <a href="https://emp.lbl.gov/pv-ppa-prices">Tableau Dashboard</a> and I really like how it looks (especially the bubble chart), so I decided to try and recreate it using ggplot2.</p>
+<p>I went to the <a href="https://emp.lbl.gov/sites/default/files/2021_utility-scale_solar_data_update_0.xlsm">original Excel file</a> for the Tidy Tuesday data and figured out which tabs held the data to create the dashboard visualizations. I used the readxl package to read in the data and then saved it out as a csv file to use in my Julia and Python analyses. I’ve also uploaded the <a href="https://www.kaggle.com/datasets/katiepress/us-solar-ppa-prices">ppa_price csv</a> to Kaggle. This is the data in original format, so you can use it to import at the beginning of the file if you’re following along with one of the scripts, just change the file path to wherever you’re storing it.</p>
+<pre class="r"><code>ppa_price &lt;- read_excel(
+  &quot;/Users/katiepress/Desktop/Rproj/Tidy Tuesday/2021_utility-scale_solar_data_update_0.xlsm&quot;, 
+  sheet = &quot;PPA Price by Project (PV only)&quot;, 
+  range = &quot;A24:L357&quot;
+)
+#write_csv(ppa_price, file = &quot;ppa_price.csv&quot;)</code></pre>
+</div>
+</div>
+<div id="data-analysis" class="section level1">
+<h1>Data Analysis</h1>
+<p>This analysis has a few main components that are commonly needed no matter which programming language you’re using, such as:</p>
+<ul>
+<li>Reading in and examining the data</li>
+<li>Converting data from wide to long</li>
+<li>Creating new variables, changing data types</li>
+<li>Dealing with date-time formatting</li>
+<li>Plotting</li>
+</ul>
+<p>I wanted to use the programs’ native plotting mechanisms (or close to them), so tried as best I could to create plots in python Seaborn and Julia’s default gr() plotting backend, and it didn’t go so well. I ended up having to use Plotly for both Python and Julia, and I’ve used Plotly with R in the past so it was a little bit easier to figure out. However, I use ggplot2 about 90% of the time, so I stuck with that for the R analysis.</p>
+<div id="examining-the-data" class="section level2">
+<h2>Examining the Data</h2>
+<p>I don’t always do this in R because I can just visually check out the dataset in Rstudio to see what the types are. But to check the types of all the columns in the dataset (similar to python’s dtypes), you could use str(). So we can see that in R, the first column is a date, and all the other columns have been read in as numeric.</p>
+<pre class="r"><code>str(ppa_price)</code></pre>
+<pre><code>## tibble [333 × 12] (S3: tbl_df/tbl/data.frame)
+##  $ PPA Execution Date : POSIXct[1:333], format: &quot;2006-09-01&quot; &quot;2007-06-25&quot; ...
+##  $ Capacity (MW)      : num [1:333] 7 5 550 210 10 30 30 19 12.6 230 ...
+##  $ CAISO              : num [1:333] NA 221 151 132 169 ...
+##  $ West (non-ISO)     : num [1:333] 240 NA NA NA NA ...
+##  $ MISO               : num [1:333] NA NA NA NA NA NA NA NA NA NA ...
+##  $ SPP                : num [1:333] NA NA NA NA NA NA NA NA NA NA ...
+##  $ ERCOT              : num [1:333] NA NA NA NA NA ...
+##  $ PJM                : num [1:333] NA NA NA NA NA NA NA NA NA NA ...
+##  $ NYISO              : num [1:333] NA NA NA NA NA NA NA NA NA NA ...
+##  $ ISO-NE             : num [1:333] NA NA NA NA NA NA NA NA NA NA ...
+##  $ Southeast (non-ISO): num [1:333] NA NA NA NA NA ...
+##  $ Hawaii             : num [1:333] NA NA NA NA NA NA NA NA NA NA ...</code></pre>
+<p>The data is in wide format. The bar chart at the bottom is based on the capacity (MW) which is the second column in the table. But to tell which region it is, you have to look and see which region column is not NA. Note that Python has the same head() function, while in Julia you could use first().</p>
+<pre class="r"><code>head(ppa_price) </code></pre>
+<pre><code>## # A tibble: 6 × 12
+##   `PPA Execution Date` `Capacity (MW)` CAISO `West (non-ISO)`  MISO   SPP ERCOT
+##   &lt;dttm&gt;                         &lt;dbl&gt; &lt;dbl&gt;            &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 2006-09-01 00:00:00                7   NA              240.    NA    NA    NA
+## 2 2007-06-25 00:00:00                5  221.              NA     NA    NA    NA
+## 3 2008-07-01 00:00:00              550  151.              NA     NA    NA    NA
+## 4 2008-07-23 00:00:00              210  132.              NA     NA    NA    NA
+## 5 2008-12-19 00:00:00               10  169.              NA     NA    NA    NA
+## 6 2009-02-23 00:00:00               30   NA              132.    NA    NA    NA
+## # … with 5 more variables: PJM &lt;dbl&gt;, NYISO &lt;dbl&gt;, `ISO-NE` &lt;dbl&gt;,
+## #   `Southeast (non-ISO)` &lt;dbl&gt;, Hawaii &lt;dbl&gt;</code></pre>
+</div>
+<div id="converting-data-from-wide-to-long" class="section level2">
+<h2>Converting Data from Wide to Long</h2>
+<p>There are 333 rows in the table. In R, we can use pivot_longer, which has the benefit of being able to drop NAs as well. Note: this can be done with gather() instead of pivot_longer, but it’s recommended to switch to pivot_longer instead for any new code you’re writing.</p>
+<pre class="r"><code>ppa_price_long &lt;- ppa_price %&gt;% 
+  pivot_longer(cols = c(CAISO:Hawaii),
+               names_to = &quot;region&quot;, 
+               values_to = &quot;price&quot;, 
+               values_drop_na = TRUE)</code></pre>
+</div>
+<div id="clean-the-column-names" class="section level2">
+<h2>Clean the Column Names</h2>
+<p>I usually do this right away when I read in a new dataset, but in this case I didn’t because I knew I wanted to gather those region columns into one column, and if I cleaned the columns before I gathered I would just have to reformat them later for the charts. So now I can use the clean_names() function from janitor - which I was happy to see is also available in Python.</p>
+<pre class="r"><code>ppa_price_long &lt;- ppa_price_long %&gt;%
+  clean_names() </code></pre>
+</div>
+<div id="convert-region-to-factor" class="section level2">
+<h2>Convert Region to Factor</h2>
+<p>This is really going to be helpful for the chart so that it automatically knows the order for the regions, and I can create a color palette that corresponds with them as well. This will be in alphabetical order.</p>
+<pre class="r"><code>ppa_price_long &lt;- ppa_price_long %&gt;%
+  mutate(region_cat = factor(region, ordered = TRUE))</code></pre>
+</div>
+<div id="dealing-with-dates" class="section level2">
+<h2>Dealing with Dates</h2>
+<p>I thought R and Python were similarly easy to deal with when it comes to date, and Julia was a little bit more difficult. In any case, I don’t necessarily NEED to do anything here since my dates have already been read in as POSIXct format, but I usually would convert them to lubridate date format anyways. So I’ll do that here, and then create a year column for more aggregation later.</p>
+<pre class="r"><code>ppa_price_long &lt;- ppa_price_long %&gt;% 
+  mutate_if(is.POSIXct, as_date) %&gt;% 
+  mutate(ppa_year = year(ppa_execution_date))</code></pre>
+</div>
+<div id="bubble-chart-in-ggplot2" class="section level2">
+<h2>Bubble Chart in GGplot2</h2>
+<p>Create the Tableau color palette for the plot. You can technically use the tableau color scales from ggthemes, but I noticed the colors were in a weird order on the dashboard? I just decided to use the hex codes so I could be sure that they would map to the right regions.</p>
+<pre class="r"><code>color.pal &lt;- c(
+  &quot;#4E79A7&quot;, #dark blue
+  &quot;#F28E2B&quot;, #orange
+  &quot;#E15759&quot;, #red
+  &quot;#76B7B2&quot;, #teal
+  &quot;#59A14F&quot;, #green
+  &quot;#BAB0AC&quot;, #gray
+  &quot;#B07AA1&quot;, #purple
+  &quot;#FF9DA7&quot;, #pink
+  &quot;#9C755F&quot;, #brown
+  &quot;#EDC948&quot; #yellow
+  )</code></pre>
+<p>Now use ggplot to make the bubble chart. Normally it probably wouldn’t take so much formatting, but I wanted to try and get as close to the Tableau dashboard as possible. I’m not really going to bother with the legend here because I’m going to combine the charts into one plot later on and I’m not going to use this legend.</p>
+<pre class="r"><code>p1 &lt;- ppa_price_long %&gt;% 
+  ggplot(aes(x = ppa_execution_date,
+             y = price,
+             size = capacity_mw,
+             color = region))+
+  geom_point(shape = 1, stroke = 1.2)+
+  scale_size(guide = &quot;none&quot;)+
+  scale_color_manual(values = color.pal, name = &quot;Region&quot;)+
+  #ggthemes::scale_color_tableau()+
+  scale_x_date(date_breaks = &quot;2 years&quot;, date_labels = &quot;%Y&quot;)+
+  ylab(&quot;PPA Price (2020 $/MWh)&quot;)+
+  theme_light()+
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.minor.y = element_blank(),
+        panel.border = element_blank(),
+        axis.line.x.bottom = element_line(color = &quot;lightgray&quot;),
+        axis.line.y.left = element_line(color = &quot;lightgray&quot;),
+        axis.title.y = element_text(size = 10),
+        axis.title.x = element_blank())+
+  guides(color = guide_legend(
+    override.aes=list(shape = 15)))
+
+p1</code></pre>
+<p><img src="/post/2022-05-07-analytics-x3-tidy-tuesday-us-solar/index.en-us_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="stacked-bar-in-ggplot2" class="section level2">
+<h2>Stacked Bar in GGplot2</h2>
+<p>This first chunk of code is to create the aggregation by year that will be used for the numbers on the very top of the bar. There are other ways to do this, you could use annotate() for example, but I thought this was a nice hack. Basically I’m going to sum by year, but I’m going to keep the region that corresponds to the top bar on the chart. Then I join it to the dataset I’m using for the stacked bar plot so each year only has one total and the rest of the rows have NA totals. That way I can use geom_text and it will actually look nice.</p>
+<pre class="r"><code>year_totals &lt;- ppa_price_long %&gt;% 
+  group_by(ppa_year) %&gt;% 
+  arrange(ppa_year, region) %&gt;% 
+  summarise(year_total = prettyNum(trunc(sum(capacity_mw)),
+                                   big.mark = &quot;,&quot;),
+            region = first(region))</code></pre>
+<p>I’m doing the aggregation by region and year as part of this code right before the ggplot starts, and left joined the year totals on as I mentioned above. Adding the label argument as part of the aes() in the overall ggplot makes it really easy to use geom_text when you have multiple plot layers. The rest of this formatting, again, is really just to try and match the Tableau dashboard. Looks pretty good so far.</p>
+<pre class="r"><code>p2 &lt;- ppa_price_long %&gt;% 
+  group_by(region, ppa_year) %&gt;% 
+  summarise(capacity_mw = sum(capacity_mw)) %&gt;% 
+  left_join(year_totals) %&gt;% 
+  ggplot(aes(x = ppa_year,
+             y = capacity_mw,
+             color = region,
+             fill = region,
+             label = year_total))+
+  geom_col(width = 0.7)+
+  geom_text(position = position_stack(), vjust = -0.5, size = 3) +
+  scale_fill_manual(values = color.pal)+
+  scale_color_manual(values = color.pal)+
+  scale_x_continuous(breaks = seq(2006, 2021, 1))+
+  scale_y_continuous(limits = c(0, 3500), 
+                     expand = c(0,0),
+                     labels = c(&quot;0K&quot;, &quot;1K&quot;, &quot;2K&quot;, &quot;3K&quot;),
+                     breaks = c(0, 1000, 2000, 3000))+
+  ylab(&quot;Capacity (MW-AC)&quot;)+
+  theme_light()+
+  theme(legend.position = &quot;top&quot;,
+        axis.title.y = element_text(size = 10),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.minor.y = element_blank(),
+        panel.border = element_blank(),
+        axis.line.x.bottom = element_line(color = &quot;lightgray&quot;),
+        axis.line.y.left = element_line(color = &quot;lightgray&quot;),
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(angle = 90))</code></pre>
+<p><img src="/post/2022-05-07-analytics-x3-tidy-tuesday-us-solar/index.en-us_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+</div>
+<div id="pie-chart-in-ggplot2" class="section level2">
+<h2>Pie Chart in GGplot2</h2>
+<p>At first I wasn’t going to do a pie chart, because they are not really ideal and especially not with so many categories. But then I realized it would be a good way to use this plot for the legend when I arrange them all together. Plus it looks more like the dashboard.</p>
+<p>To create a pie chart in ggplot2 you basically have to create a single stacked bar and then force it to polar coordinates. So here’s the aggregation code I’m going to base the plot on.</p>
+<pre class="r"><code>cumulative_cap &lt;- ppa_price_long %&gt;% 
+  group_by(region) %&gt;% 
+  summarise(cumulative_capacity = round(sum(capacity_mw))) %&gt;% 
+  mutate(capacity_label = prettyNum(cumulative_capacity, big.mark = &quot;,&quot;))</code></pre>
+<p>The really tricky part is to add labels, and I’m not going to do that for all of the regions since they are not shown on the dashboard either. I ended up deciding to use annotate instead just to show those five specific regions. Also note that I’m using the direction argument in coord_polar(), all that does is flip the slices the opposite way, which I needed to match the dashboard.</p>
+<pre class="r"><code>p3 &lt;- ggplot(cumulative_cap,
+             aes(x=&quot;&quot;,
+                 y=cumulative_capacity,
+                 fill=region))+
+  geom_bar(stat=&quot;identity&quot;, width=1)+
+  scale_fill_manual(values = color.pal)+
+  coord_polar(&quot;y&quot;, start=0, direction = -1)+
+  annotate(&quot;text&quot;, y = 4000, x = 1,
+           label = &quot;West (non-ISO)\n 7,919&quot;, size = 3)+
+  annotate(&quot;text&quot;, y = 18000, x = 1.1,
+           label = &quot;CAISO \n 8,649&quot;, color = &quot;white&quot;, size = 3)+
+  annotate(&quot;text&quot;, y = 8800, x = 1.6,
+           label = &quot;Southwest (non-ISO) \n 2,538&quot;, size = 3)+
+  annotate(&quot;text&quot;, y = 13000, x = 1.7,
+           label = &quot;ISO-NE \n 326&quot;, size = 3)+
+  annotate(&quot;text&quot;, y = 11000, x = 1.7,
+           label = &quot;PJM \n 739&quot;, size = 3)+
+  theme_void()+
+  labs(caption = &quot;Cumulative Capacity (MW-AC)&quot;,
+       title = &quot;Utility-Scale Solar \n Power Purchase Agreement Prices for PV&quot;,
+       subtitle = &quot;Source: Berkeley Lab \n&quot;)+
+  theme(legend.position=&quot;top&quot;,
+        legend.title = element_blank(),
+        legend.key.size = unit(.5, &#39;cm&#39;),
+        plot.caption = element_text(hjust = .5),
+        plot.title = element_text(hjust = 0.5, size = 12),
+        plot.subtitle = element_text(hjust = 0.5, size = 10))+
+  guides(fill = guide_legend(nrow = 5, byrow = TRUE))</code></pre>
+</div>
+<div id="arranging-the-plots" class="section level2">
+<h2>Arranging the Plots</h2>
+<p>Now I’m going to use the ggarrange() function from ggpubr to put these all together. What’s happening here is I’m basically using nested ggarranges so that I can put the bubble and bar charts together first, and then have the pie chart + legend in its own column that spans both of those rows.</p>
+<pre class="r"><code>ggarrange(ggarrange(p1, p2, nrow=2, legend = &quot;none&quot;), 
+                  p3, widths = c(2, 1), heights = c(1,1))</code></pre>
+<p><img src="/post/2022-05-07-analytics-x3-tidy-tuesday-us-solar/index.en-us_files/figure-html/unnamed-chunk-16-1.png" width="2400" /></p>
+<p>The only thing missing from this is, of course, the interactivity. I could have used Plotly to accomplish that, or even created the ggplots first and then converted them to Plotly. I will add the interactive Plotly charts I created using Python to the end of this post.</p>
+</div>
+<div id="interactive-bubble-chart-from-python-plotly" class="section level2">
+<h2>Interactive Bubble Chart from Python Plotly</h2>
+<p><embed src="/post/2022-05-07-analytics-x3-tidy-tuesday-us-solar/index.en-us_files/plotly_bubble.html" width="800" height="600" /></p>
+</div>
+<div id="interactive-bar-chart-from-python-plotly" class="section level2">
+<h2>Interactive Bar Chart from Python Plotly</h2>
+<p><embed src="/post/2022-05-07-analytics-x3-tidy-tuesday-us-solar/index.en-us_files/plotly_bar.html" width="800" height="600" /></p>
+</div>
+</div>

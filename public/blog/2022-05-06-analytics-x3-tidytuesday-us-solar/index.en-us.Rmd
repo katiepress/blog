@@ -268,9 +268,7 @@ p3 <- ggplot(cumulative_cap,
   annotate("text", y = 11000, x = 1.7,
            label = "PJM \n 739", size = 3)+
   theme_void()+
-  labs(caption = "Cumulative Capacity (MW-AC)",
-       title = "Utility-Scale Solar \n Power Purchase Agreement Prices for PV",
-       subtitle = "Source: Berkeley Lab \n")+
+  labs(caption = "Cumulative Capacity (MW-AC)")+
   theme(legend.position="top",
         legend.title = element_blank(),
         legend.key.size = unit(.5, 'cm'),
@@ -285,9 +283,28 @@ p3 <- ggplot(cumulative_cap,
 
 Now I'm going to use the ggarrange() function from ggpubr to put these all together. What's happening here is I'm basically using nested ggarranges so that I can put the bubble and bar charts together first, and then have the pie chart + legend in its own column that spans both of those rows.
 
+```{r}
+p_full <- ggarrange(
+  ggarrange(p1, p2, nrow=2, legend = "none"), 
+  p3, 
+  widths = c(2, 1), heights = c(1,1))
+```
+
 ```{r fig.height=6, fig.width=8, message=FALSE, warning=FALSE, dev='png', dpi=300}
-ggarrange(ggarrange(p1, p2, nrow=2, legend = "none"), 
-                  p3, widths = c(2, 1), heights = c(1,1))
+annotate_figure(p_full,
+               top = text_grob(
+                 "Utility-Scale Solar \n Power Purchase Agreement Prices for PV", 
+                 face = "bold",
+                 size = 14, 
+                 color = color.pal[1]),
+               bottom = text_grob(
+                 "Source: Berkeley Lab", 
+                 hjust = 1,
+                 x = .9,
+                 face = "italic",
+                 size = 9,
+                 color = color.pal[1])
+)
 ```
 
 The only thing missing from this is, of course, the interactivity. I could have used Plotly to accomplish that, or even created the ggplots first and then converted them to Plotly. I will add the interactive Plotly charts I created using Python to the end of this post.

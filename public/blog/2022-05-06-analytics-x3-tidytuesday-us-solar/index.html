@@ -459,9 +459,7 @@ p1</code></pre>
   annotate(&quot;text&quot;, y = 11000, x = 1.7,
            label = &quot;PJM \n 739&quot;, size = 3)+
   theme_void()+
-  labs(caption = &quot;Cumulative Capacity (MW-AC)&quot;,
-       title = &quot;Utility-Scale Solar \n Power Purchase Agreement Prices for PV&quot;,
-       subtitle = &quot;Source: Berkeley Lab \n&quot;)+
+  labs(caption = &quot;Cumulative Capacity (MW-AC)&quot;)+
   theme(legend.position=&quot;top&quot;,
         legend.title = element_blank(),
         legend.key.size = unit(.5, &#39;cm&#39;),
@@ -473,9 +471,26 @@ p1</code></pre>
 <div id="arranging-the-plots" class="section level2">
 <h2>Arranging the Plots</h2>
 <p>Now I’m going to use the ggarrange() function from ggpubr to put these all together. What’s happening here is I’m basically using nested ggarranges so that I can put the bubble and bar charts together first, and then have the pie chart + legend in its own column that spans both of those rows.</p>
-<pre class="r"><code>ggarrange(ggarrange(p1, p2, nrow=2, legend = &quot;none&quot;), 
-                  p3, widths = c(2, 1), heights = c(1,1))</code></pre>
-<p><img src="https://kpress.dev/post/2022-05-07-analytics-x3-tidy-tuesday-us-solar/index.en-us_files/figure-html/unnamed-chunk-16-1.png" width="2400" /></p>
+<pre class="r"><code>p_full &lt;- ggarrange(
+  ggarrange(p1, p2, nrow=2, legend = &quot;none&quot;), 
+  p3, 
+  widths = c(2, 1), heights = c(1,1))</code></pre>
+<pre><code>## Warning: Removed 59 rows containing missing values (geom_text).</code></pre>
+<pre class="r"><code>annotate_figure(p_full,
+               top = text_grob(
+                 &quot;Utility-Scale Solar \n Power Purchase Agreement Prices for PV&quot;, 
+                 face = &quot;bold&quot;,
+                 size = 14, 
+                 color = color.pal[1]),
+               bottom = text_grob(
+                 &quot;Source: Berkeley Lab&quot;, 
+                 hjust = 1,
+                 x = .9,
+                 face = &quot;italic&quot;,
+                 size = 9,
+                 color = color.pal[1])
+)</code></pre>
+<p><img src="https://kpress.dev/post/2022-05-07-analytics-x3-tidy-tuesday-us-solar/index.en-us_files/figure-html/unnamed-chunk-17-1.png" width="2400" /></p>
 <p>The only thing missing from this is, of course, the interactivity. I could have used Plotly to accomplish that, or even created the ggplots first and then converted them to Plotly. I will add the interactive Plotly charts I created using Python to the end of this post.</p>
 </div>
 <div id="interactive-bubble-chart-from-python-plotly" class="section level2">

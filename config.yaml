@@ -17,8 +17,8 @@ markup:
     renderer:
       unsafe: yes
   highlight: 
-    style: "base16-snazzy"
-    codeFences: true
+    style: dracula
+    codeFences: false
 author:
   bio: R Programmer, Data Enthusiast
   job: Researcher
@@ -77,6 +77,7 @@ params:
   coverImage: images/space3.jpg
   description: Kpress R Blog
   customCSS: ["/static/css/custom.scss"]
+  customJS: ["https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages.r.min.js"]
   header:
     rightLink:
       class: ''
@@ -95,7 +96,6 @@ params:
    #   name: Google+
    #   url: https://plus.google.com/share?url=%s
   sidebarBehavior: 2
-  #syntaxHighlighter: highlight.js
-  #customJS: ["https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages.r.min.js"]
+  syntaxHighlighter: highlight.js
   thumbnailImage: yes
   thumbnailImagePosition: bottom

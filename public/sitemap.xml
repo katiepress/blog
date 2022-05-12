@@ -2,16 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://kpress.dev/</loc>
+    <lastmod>2022-05-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kpress.dev/categories/</loc>
+    <lastmod>2022-05-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kpress.dev/post/</loc>
+    <lastmod>2022-05-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kpress.dev/blog/2022-05-10-tidy-tuesday-nyt-bestsellers/</loc>
+    <lastmod>2022-05-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kpress.dev/categories/tidytuesday/</loc>
+    <lastmod>2022-05-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://kpress.dev/categories/analytics-x3/</loc>
     <lastmod>2022-05-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://kpress.dev/blog/2022-05-06-analytics-x3-tidytuesday-us-solar/</loc>
-    <lastmod>2022-05-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://kpress.dev/</loc>
-    <lastmod>2022-05-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://kpress.dev/categories/</loc>
     <lastmod>2022-05-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://kpress.dev/tags/julia/</loc>
@@ -20,16 +29,10 @@
     <loc>https://kpress.dev/tags/plots/</loc>
     <lastmod>2022-05-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://kpress.dev/post/</loc>
-    <lastmod>2022-05-06T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://kpress.dev/tags/python/</loc>
     <lastmod>2022-05-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://kpress.dev/tags/</loc>
-    <lastmod>2022-05-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://kpress.dev/categories/tidytuesday/</loc>
     <lastmod>2022-05-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://kpress.dev/blog/2022-02-15-tidy-tuesday-dubois-challenge-2022/</loc>
